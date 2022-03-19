@@ -2,9 +2,8 @@ function sumar(num1, num2) {
     return num1 + num2
 }
 
-console.log(sumar(4, 5))
-
-console.log(sumar('hola', 'chau'))
+console.log(sumar(4, 5))//9
+console.log(sumar('hola', 'chau'))//holachau
 
 
 function cuentaDoble(num1, num2, operacion) {
@@ -13,8 +12,7 @@ function cuentaDoble(num1, num2, operacion) {
     return result1 + result2
 }
 
-console.log(cuentaDoble(2, 3, sumar))
-
+console.log(cuentaDoble(2, 3, sumar))//10
 function crearMultiplicador(multip) {
 
     return function (n) {
@@ -34,9 +32,9 @@ function crearMultiplicador(multip) {
 //     return 4 * n
 // }
 
-const doble = crearMultiplicador(2)
-const triple = crearMultiplicador(3)
-const cuadruple = crearMultiplicador(4)
+const doble = crearMultiplicador(2)//20
+const triple = crearMultiplicador(3)//30
+const cuadruple = crearMultiplicador(4)//40
 
 console.log(doble(10))
 console.log(triple(10))
@@ -49,5 +47,3 @@ const nombre = "marian"
 const fraseLarga = 'hola como estas "' + nombre + '", todo bien? - ' + "'" + (sumar(2, 3)) + "'"
 
 console.log(fraseLarga)
-© 2022 GitHub, Inc.
-Terms
