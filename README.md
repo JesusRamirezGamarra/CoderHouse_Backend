@@ -2,6 +2,18 @@
 Curso de Coder House - Backend
 #### https://github.com/drmaquino/ch-backend-30935
 
+Desafio : se encuentra en el directorio : /desafio y dentro de este directorio existe 1 directorio x desafio e.g : 01-clases
+
+#### desafio 01 : clases Javascript 
+
+##### solucion 1 : https://jesusramirezgamarra.github.io/CoderHouse_Backend/desafio/01-clases/js/index.html
+
+##### solucion 2 : https://jesusramirezgamarra.github.io/CoderHouse_Backend/desafio/01-clases/protptype/index.html
+
+
+
+
+
 Clase #02 : Declaración de variables.
     //Acceso a github desde Visual code + MACOS   
     
