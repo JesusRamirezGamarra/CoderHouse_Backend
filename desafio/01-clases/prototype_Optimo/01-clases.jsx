@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./images/JS.ico">
-    <title>Document</title>
-</head>
-<body>
-
 // >> Consigna: 
 // 1) Declarar una clase Usuario
 // 2) Hacer que Usuario cuente con los siguientes atributos:
@@ -32,6 +21,43 @@
 //          {nombre: 'Fundacion', autor: 'Isaac Asimov'}     ] 
 //      usuario.getBooks() debería devolver ['El señor de las moscas', 'Fundacion'].
 // getFullName: Suponiendo que el usuario tiene: nombre: 'Elon' y apellido: 'Musk' usuario.getFullName() deberia devolver 'Elon Musk'
-    <script src="./01-clases.jsx"></script>
-</body>
-</html>
+
+
+function Usuario(nombre, apellido, libros, mascotas) {
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.libros = libros;
+    this.mascotas = mascotas;
+}
+Usuario.prototype._getFullName = () => `${this.nombre} ${this.apellido}`
+Usuario.prototype._addMascota = (mascota) => mascotas.push(mascota)
+Usuario.prototype._countMascota = () => mascotas.length
+Usuario.prototype._addBook = (nombre, autor, nroPaginas ) => libros.push(nombre,autor,nroPaginas)
+Usuario.prototype._getBookNames = () =>  libros.map( item =>  item.nombre )
+
+const nombre = 'Lucio Jesus'
+const apellido = 'Ramirez Gamarra'
+const mascotas = []
+const libros = []
+const usuario = new Usuario(nombre,apellido,[],[])
+console.log('0.Carga de datos :')
+console.table(usuario)
+console.log('1.Metodo: _getFullName() : string')
+console.log(usuario._getFullName());
+
+console.log('2.Metodo: _addMascota(mascota) : void')
+usuario._addMascota('Gata: Michi')
+usuario._addMascota('Perra: Dishy')
+usuario._addMascota('Torguta: Pancha')
+usuario._addMascota('Conejo: Bugs')
+
+console.log('3.Metodo: _countMascota() : number')
+console.log(usuario._countMascota());
+
+console.log('4.Metodo: _addBook(nombre, autor) : void')
+usuario._addBook('REST', 'ALEX SOOJUNG-KIM PANG',450)
+usuario._addBook('CURSO DE JAVASCRIPT', 'ASTOR DE CASO PARRA',289)
+usuario._addBook('JAVASCRIPT: GUIA COMPLETA', 'ALESSANDRA SALVAGGIO GUALTIERO TESTA',589)
+
+console.log('5.Metodo: _getBookNames() : string[]')
+console.table(usuario._getBookNames());
