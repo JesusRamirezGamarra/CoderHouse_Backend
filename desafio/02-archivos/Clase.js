@@ -23,9 +23,7 @@ export class Contenedor {
     
     async getById (idNumber) {
         const data = await this.getAll();
-        const oProducto = data.find((element) => element.id == idNumber);
-        if (oProducto)console.log(" async getById (idNumber= ", idNumber, ") :  ", oProducto);
-        else return null
+        return data.find((element) => element.id == idNumber);
     }
     
     async getAll() {
@@ -66,10 +64,6 @@ export class Contenedor {
             console.warn(`Fix : ${e}`)
         }
     }
-
-
-
-
 
 
 
