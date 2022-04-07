@@ -15,11 +15,11 @@ Antes de iniciar el servidor, colocar en el archivo 'productos.txt' tres product
 
 _Server glitch : _
 ```
-https://periwinkle-modern-pilot.glitch.me_
+https://periwinkle-modern-pilot.glitch.me
 ```
 _Codigo Server Error
 ```
-_https://glitch.com/edit/#!/periwinkle-modern-pilot_
+https://glitch.com/edit/#!/periwinkle-modern-pilot
 ```
 
 _Se utilizo:_
