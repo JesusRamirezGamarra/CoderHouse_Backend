@@ -1,0 +1,11 @@
+{
+  "name": "03-servidorexpress",
+  "version": "1.0.1",
+  "description": "Desafio 03 - Servidor Express : CoderHouse",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lucio Jesus Ramirez Gamarra",
+  "license": "ISC"
+}
