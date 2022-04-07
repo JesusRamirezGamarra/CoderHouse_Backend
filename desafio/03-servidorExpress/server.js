@@ -6,9 +6,11 @@ let contadorVisitas = 0
 
 
 
+
 // index
 app.get('/', (req, res) => {
     contadorVisitas++
+    // var ip = req.header('x-forwarded-for') || req.connection.remoteAddress;
     // res.sendFile(__dirname + '/index.html')
 
     res.send(`
