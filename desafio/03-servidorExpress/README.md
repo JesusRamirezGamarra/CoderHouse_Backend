@@ -12,3 +12,10 @@ _2) Incluir un archivo de texto 'productos.txt' y utilizar la clase Contenedor d
 ```
 Antes de iniciar el servidor, colocar en el archivo 'productos.txt' tres productos como en el ejemplo del desafío anterior.
 ```
+
+_Se utilizo:_
+```
+_npm i express_
+_nodemon index.js_
+_https://glitch.com/_
+```
