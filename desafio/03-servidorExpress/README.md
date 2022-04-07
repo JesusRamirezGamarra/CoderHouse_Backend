@@ -24,8 +24,8 @@ https://glitch.com/edit/#!/periwinkle-modern-pilot
 
 _Se utilizo:_
 ```
-_npm i express_
-_npm install moment_
-_nodemon index.js_
-_https://glitch.com/_
+npm i express
+npm install moment
+nodemon index.js
+https://glitch.com/
 ```
