@@ -13,11 +13,11 @@ _2) Incluir un archivo de texto 'productos.txt' y utilizar la clase Contenedor d
 Antes de iniciar el servidor, colocar en el archivo 'productos.txt' tres productos como en el ejemplo del desafío anterior.
 ```
 
-_Server glitch : _
+Server glitch : 
 ```
 https://periwinkle-modern-pilot.glitch.me
 ```
-_Codigo Server Error
+Codigo Server Error
 ```
 https://glitch.com/edit/#!/periwinkle-modern-pilot
 ```
