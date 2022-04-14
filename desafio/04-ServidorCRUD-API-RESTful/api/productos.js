@@ -28,4 +28,4 @@ class Productos {
 }
 
 // exporto una instancia de la clase
-module.exports = new Productos();
+module.exports = Productos;

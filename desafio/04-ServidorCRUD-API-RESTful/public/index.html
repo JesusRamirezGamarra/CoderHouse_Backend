@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Ingreso de Productos</title>
 </head>
-
+<!-- guardar -->
 <body>
-
     <h2>Ingrese Producto</h2>
-    <form action="/api/productos/guardar" method="POST">
-        Nombre: <input type="text" name="title"></br>
-        Precio: <input type="text" name="price"> </br>
-        Foto URL: <input type="text" name="thumbnail"></br>
+    <form action="../api/productos/" method="POST">
+    <!-- <form action="http://localhost:8080/api/Productos/" method="POST"> -->
+        Nombre: <input type="text" name="title">
+        Precio: <input type="text" name="price">
+        Foto URL: <input type="text" name="thumbnail">
         <button>Enviar</button>
     </form>
 
