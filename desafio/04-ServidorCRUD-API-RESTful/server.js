@@ -22,7 +22,7 @@ app.use('/api/productos', router);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // pongo a escuchar el servidor en el puerto indicado
-const puerto = 8080;
+const puerto = 8000;
 
 const server = app.listen(puerto, () => {
     console.log(`servidor escuchando en http://localhost:${puerto}`);

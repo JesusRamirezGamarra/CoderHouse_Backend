@@ -38,12 +38,26 @@ router.post('/', (req, res) => {
 })
 
 
+router.put('/:id', (req, res) => {
+    let id = req.params.id;
+    let producto = productos.listar(id);
+    if (producto == null) {
+        return res.json({ estado: 'NO ACTUALIZADO - ID NO existe' });
+    }
+    else {
+        productos.actualizar(req.params.id, req.body.title, req.body.price, req.body.thumbnail);
+        return res.json({ estado: 'ACTUALIZADO' });
+    }
 
 
+
+})
 
 
 
 router.delete('/:id', (req, res) => {
+    let id = req.params.id;
+    productos.eliminar(id);
     return res.json({ estado: 'BORRADO' });
 
 })
