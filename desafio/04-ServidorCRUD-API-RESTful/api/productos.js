@@ -12,7 +12,7 @@ class Productos {
                 thumbnail: thumbnail
             });
         } 
-        catch (error) {
+        catch (error) { 
             throw error;
         }
     }
