@@ -1,0 +1,11 @@
+{
+  "name": "04-servidorcrud",
+  "version": "1.0.0",
+  "description": "_Formato: link a un repositorio en Github y url de proyecto subido a glitch_ _Observación: no incluir la carpeta node_modules_",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
