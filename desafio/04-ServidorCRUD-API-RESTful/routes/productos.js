@@ -9,7 +9,7 @@ const Productos = require('../api/productos');
 const productos = new Productos();
 
 
-
+///
 router.get('/', (req, res) => {
     let listado = productos.getProductos();
     if (listado.length === 0) {
