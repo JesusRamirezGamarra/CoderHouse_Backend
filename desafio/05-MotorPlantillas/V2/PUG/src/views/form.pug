@@ -1,8 +1,9 @@
 extends layout
 
 block content
+  img.img-LOGO(src='./public/images/Logo.png' alt='Product image')
   a(href='/productos')
-    button(type='button' style='background-color: #9e473d') See All Products
+    button(type='button' style='background-color: #9e473d') All Products
   h2 Enter new Product
   form(action='/productos' method='POST')
     label Name

@@ -1,3 +1,4 @@
+<img src='./public/images/Logo.png' alt='Product image' />
 <a href='/'>
   <button type='button' style='background-color: #9e473d'>Back to Home</button>
 </a>
@@ -8,6 +9,7 @@
   <table class='table table-dark table-striped'>
     <thead>
       <tr>
+        <th scope='col' class='ps-4'>Id</th>
         <th scope='col' class='ps-4'>Name</th>
         <th scope='col' class='text-center'>Price</th>
         <th scope='col' class='text-center'>Image</th>
@@ -16,6 +18,7 @@
     <tbody>
       {{#each allProducts}}
         <tr>
+           <th scope='row' class='ps-4 align-middle'>{{this.id}}</th>
           <th scope='row' class='ps-4 align-middle'>{{this.title}}</th>
           <td class='text-center align-middle'>{{this.price}}</td>
           <td>

@@ -14,18 +14,20 @@
   <body>
     <div class="main">
       <div class="column">
-        <h1>Template Engines (EJS)</h1>
-
+        <h1>Template Engines </h1>
+        <h3>(EJS)</h3>
+        <img src="./public/images/Logo.png" alt="Product image"  />
         <a href="/">
           <button type="button" style="background-color: #9e473d">Back to Home</button>
         </a>
-
+       
         <h2 class="mb-4">Product View</h2>
 
         <% if(allProducts.length > 0){ %>
         <table class="table table-dark table-striped">
           <thead>
             <tr>
+              <th scope="col" class="ps-4">Id</th>
               <th scope="col" class="ps-4">Name</th>
               <th scope="col" class="text-center">Price</th>
               <th scope="col" class="text-center">Image</th>
@@ -34,6 +36,7 @@
           <tbody>
             <% for (const product of allProducts) {%>
             <tr>
+              <th scope="row" class="ps-4 align-middle"><%=product.id%></th>
               <th scope="row" class="ps-4 align-middle"><%=product.title%></th>
               <td class="text-center align-middle"><%=product.price%></td>
               <td>

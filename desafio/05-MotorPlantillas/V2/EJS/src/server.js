@@ -5,8 +5,9 @@ const productsRouter = require('./routes/products')     // Route for products
 const app = express()
 // Settings
 app.set('view engine', 'ejs')
-app.set('views', 'src/view')
+app.set('views', 'src/views')
 
+app.use("/public", express.static('public')); 
 app.use(express.static(path.join(__dirname, '../public')))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())

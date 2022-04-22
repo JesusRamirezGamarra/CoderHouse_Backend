@@ -1,6 +1,7 @@
 extends layout
 
 block content
+  img.img-LOGO(src='./public/images/Logo.png' alt='Product image')
   a(href='/')
     button(type='button' style='background-color: #9e473d') Back to Home
   h2.mb-4 Product View
@@ -9,12 +10,14 @@ block content
     table.table.table-dark.table-striped
       thead
         tr
+          th.ps-4(scope='col') Id
           th.ps-4(scope='col') Name
           th.text-center(scope='col') Price
           th.text-center(scope='col') Image
       tbody
         each product in allProducts
           tr
+            th.ps-4.align-middle(scope='row')= product.id 
             th.ps-4.align-middle(scope='row')= product.title
             td.text-center.align-middle= product.price
             td

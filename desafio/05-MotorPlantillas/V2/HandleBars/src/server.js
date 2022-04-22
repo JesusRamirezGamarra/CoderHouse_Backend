@@ -14,6 +14,7 @@ app.set('view engine', 'hbs')
 app.set('views', 'src/views')
 
 app.engine('.hbs', engine(handlebarsConfig))
+app.use("/public", express.static('public')); 
 app.use(express.static(path.join(__dirname, '../public')))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
