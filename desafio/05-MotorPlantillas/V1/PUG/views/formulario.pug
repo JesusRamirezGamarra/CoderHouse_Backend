@@ -1,0 +1,23 @@
+extends encabezado
+block partial 
+    body 
+        div(class="container mt-3")
+            div(class="jumbotron")
+                h1(style="color:blue;")="Ingrese producto"
+                br
+
+                form(action="/api/productos/guardar" method="post")
+                    div(class="form-group")
+                        label(for="title")
+                        b="Nombre"
+                        input(class="form-control" type="text" name="title")
+                        label(for="price")
+                        b="Precio"
+                        input(class="form-control" type="number" name="price")
+                        label(for="thumbnail")
+                        b="Foto URL"
+                        input(class="form-control" type="text" name="thumbnail")                      
+                        button(class="btn btn-success mt-3 mb-5")="Guardar"
+
+            h2(style="color:crimson;")="Vista de Productos"
+            block tabla

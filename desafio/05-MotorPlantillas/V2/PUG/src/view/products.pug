@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  a(href='/')
+    button(type='button' style='background-color: #9e473d') Back to Home
+  h2.mb-4 Product View
+
+  if allProducts.length > 0
+    table.table.table-dark.table-striped
+      thead
+        tr
+          th.ps-4(scope='col') Name
+          th.text-center(scope='col') Price
+          th.text-center(scope='col') Image
+      tbody
+        each product in allProducts
+          tr
+            th.ps-4.align-middle(scope='row')= product.title
+            td.text-center.align-middle= product.price
+            td
+              .image-container.text-center
+                img.img-thumbnail(src=product.thumbnail alt='Product image')
+  else          
+    .message
+      h2 There are no products
