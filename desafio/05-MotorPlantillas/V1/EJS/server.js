@@ -2,7 +2,6 @@ const path = require('path')
 const express = require('express');
 const products = require('./api/productos');
 const router = express.Router();
-const handlebars = require('express-handlebars').engine;
 
 // App Express
 const app = express();
@@ -12,21 +11,24 @@ app.use("/public", express.static('public'));
 app.use(express.static(path.join(__dirname, '../public')))
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use('/api', router);
 
-app.engine(
-    "hbs",
-    handlebars({
-        extname: ".hbs",
-        defaultLayout: '',
-        layoutsDir: ''
-    })
-);
-app.set('view engine', 'hbs');
-app.set("views", "./views/layouts");
+
+app.set('view engine', 'ejs');
+app.set("views", "./views");
+
 
 // Routes
 app.get('/', (req, res) => {
-    res.render('index')
+    const items = products.viewAll()
+    res.render('formulario', { items: items, mensaje: 'No hay productos' });
+});
+
+router.post('/productos/guardar', (req, res) => {
+
+    products.addProduct(req.body)
+
+    res.redirect('/');
 })
 
 app.get('/productos/vista', (req, res) => {
@@ -40,7 +42,7 @@ app.get('/productos/vista', (req, res) => {
     }
 })
 
-app.use('/api', router);
+// app.use('/api', router);
 
 router.get('/productos/listar', (req, res) => {
 
@@ -67,13 +69,6 @@ router.get('/productos/listar/:id', (req, res) => {
     }
 })
 
-router.post('/productos/guardar', (req, res) => {
-
-    products.addProduct(req.body)
-
-    res.redirect('/productos/vista');
-})
-
 router.put('/productos/actualizar/:id', (req, res) => {
     const item = products.updateProduct(req.params.id, req.body)
     if (item) {
@@ -96,6 +91,8 @@ router.delete('/productos/borrar/:id', (req, res) => {
         })
     }
 })
+
+
 
 //////////////////////////////////////////////////////////////////////////////////
 ////         SERVER ON PORT

@@ -14,6 +14,9 @@ Desafio : se encuentra en el directorio : /desafio y dentro de este directorio e
 
 ##### solucion 4 : https://jesusramirezgamarra.github.io/CoderHouse_Backend/desafio/04-ServidorCRUD-API-RESTful/public/index.html
 
-
+##### Solucion 5 : https://github.com/JesusRamirezGamarra/CoderHouse_Backend/desafio/05-MotorPlantillas/V2/
+* PUG
+* EJS
+* HandleBars
 
 
