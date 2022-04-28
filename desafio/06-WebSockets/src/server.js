@@ -34,25 +34,29 @@ io.on('connection', (socket) => {
   socket.emit('socketConnected')
 
   socket.on('productListRequest', async () => {
+    console.log('>>> productListRequest')
     const allProducts = await productsController.getAllProduct()
     socket.emit('updateProductList', allProducts)
-  })
-
-  socket.on('chatMessagesRequest', async () => {
-    const allMessages = await messagesController.getAllMessages()
-    socket.emit('updateChatRoom', allMessages)
   })
 
   socket.on('addNewProduct', async (newProduct) => {
+    console.log('>>> addNewProduct')
     await productsController.addNewProduct(newProduct)
     const allProducts = await productsController.getAllProduct()
-    socket.emit('updateProductList', allProducts)
+    io.sockets.emit('updateProductList', allProducts)
+  })
+
+  socket.on('chatMessagesRequest', async () => {
+    console.log('>>> chatMessagesRequest')
+    const allMessages = await messagesController.getAllMessages()
+    socket.emit('updateChatRoom', allMessages)
   })
 
   socket.on('addNewMessage', async (newMessage) => {
+    console.log('>>> addNewMessage')
     await messagesController.addNewMessage(newMessage)
     const allMessages = await messagesController.getAllMessages()
-    socket.emit('updateChatRoom', allMessages)
+    io.sockets.emit('updateChatRoom', allMessages)
   })
 })
 

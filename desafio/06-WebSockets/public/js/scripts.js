@@ -1,3 +1,18 @@
+class Usuario{
+  constructor(email,clave,nombre){
+      this.email=email ;
+      this.nombre=nombre;        
+  }
+}
+
+let oUsuarioSession
+if( sessionStorage.getItem('UsuarioschatForm')){     
+    oUsuarioSession = JSON.parse( sessionStorage.getItem('UsuarioschatForm') )
+}else{
+    oUsuarioSession = []
+    sessionStorage.setItem('UsuarioschatForm',JSON.stringify(oUsuarioSession))
+}
+
 const socket = io()
 
 $(function () {
@@ -6,7 +21,10 @@ $(function () {
     socket.emit('chatMessagesRequest')
   })
 
-  //----------* PRODUCT LIST SECTION *----------//
+  
+//////////////////////////////////////////////////////////////////////////////////
+////        PRODUCT LIST  
+//////////////////////////////////////////////////////////////////////////////////
   const productForm = $('#productForm')
   const productViewContainer = $('#productViewContainer')
 
@@ -33,7 +51,10 @@ $(function () {
     productViewContainer.empty().append(html)
   }
 
-  //----------* CHAT ROOM SECTION *----------//
+  
+//////////////////////////////////////////////////////////////////////////////////
+////        CHAT ROOM
+//////////////////////////////////////////////////////////////////////////////////
   const chatForm = $('#chatForm')
   const chatContainer = $('#chatContainer')
 
@@ -45,6 +66,9 @@ $(function () {
       messageText: chatForm[0][1].value,
     }
 
+    if(oUsuarioSession){
+      sessionStorage.setItem('UsuarioschatForm',JSON.stringify(new Usuario(newMessage.email)))
+    }
     socket.emit('addNewMessage', newMessage)
     chatForm.trigger('reset')
   })
@@ -57,5 +81,18 @@ $(function () {
     const compiledHbsTemplate = Handlebars.compile(layoutText)
     const html = compiledHbsTemplate({ allMessages })
     chatContainer.empty().append(html)
+
+
+    if(oUsuarioSession==''){     
+      chatForm[0][0].disabled = false;
+    }
+    else{
+      oUsuarioSession = JSON.parse( sessionStorage.getItem('UsuarioschatForm') )
+      chatForm[0][0].value = oUsuarioSession.email;
+      chatForm[0][0].disabled = true;
+    }
   }
+
+
+  
 })
