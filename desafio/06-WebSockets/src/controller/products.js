@@ -1,6 +1,7 @@
 //----------* REQUIRE'S *----------//
-const Controller = require('../classes/fileManagement')
+const Controller = require('../classes/fileCRUD')
 const productDB = new Controller('products')
+const imgNOFound = 'https://cdn4.iconfinder.com/data/icons/basic-ui-element-flat-style/512/Basic_UI_Elements_-_2.3_-_Flat_Style_-_36-02-64.png'
 
 //----------* PRODUCTS ROUTES *----------//
 const productsController = {
@@ -16,8 +17,8 @@ const productsController = {
   addNewProduct: async (product) => {
     try {
       const prevProducts = await productDB.getAll()
-      const noImage =
-        'https://cdn4.iconfinder.com/data/icons/basic-ui-element-flat-style/512/Basic_UI_Elements_-_2.3_-_Flat_Style_-_36-02-64.png'
+      const noImage = imgNOFound
+        
 
       const isValidURL = (imageURL) => {
         let url

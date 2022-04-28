@@ -2,7 +2,7 @@
   "name": "challenge-websockets",
   "version": "1.0.0",
   "description": "",
-  "main": "src/app.js",
+  "main": "src/server.js",
   "scripts": {
     "start": "node .",
     "dev": "nodemon .",
@@ -10,12 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LucasKoval/CH-Websockets.git"
+    "url": "https://github.com/JesusRamirezGamarra/CoderHouse_Backend"
   },
   "author": "Lucas Koval",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/LucasKoval/CH-Websockets/issues"
+    "url": "https://github.com/JesusRamirezGamarra/CoderHouse_Backend/issues"
   },
   "homepage": "https://github.com/LucasKoval/CH-Websockets#readme",
   "dependencies": {

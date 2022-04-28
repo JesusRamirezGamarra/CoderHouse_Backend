@@ -8,7 +8,7 @@ $(function () {
 
   //----------* PRODUCT LIST SECTION *----------//
   const productForm = $('#productForm')
-  const productContainer = $('#productContainer')
+  const productViewContainer = $('#productViewContainer')
 
   productForm.submit((event) => {
     event.preventDefault()
@@ -30,7 +30,7 @@ $(function () {
     const layoutText = await productLayout.text()
     const compiledHbsTemplate = Handlebars.compile(layoutText)
     const html = compiledHbsTemplate({ allProducts })
-    productContainer.empty().append(html)
+    productViewContainer.empty().append(html)
   }
 
   //----------* CHAT ROOM SECTION *----------//

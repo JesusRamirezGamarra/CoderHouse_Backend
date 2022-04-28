@@ -2,8 +2,8 @@
 const express = require('express')
 const { Server: HttpServer } = require('http')
 const { Server: IOServer } = require('socket.io')
-const productsController = require('./helpers/productsController')
-const messagesController = require('./helpers/messagesController')
+const productsController = require('./controller/products')
+const messagesController = require('./controller/chatMessages')
 
 //----------* EXPRESS() *----------//
 const app = express()
@@ -16,7 +16,9 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-//----------* ROUTES *----------//
+//////////////////////////////////////////////////////////////////////////////////
+////         ROUTES
+//////////////////////////////////////////////////////////////////////////////////
 app.use('/', (req, res) => {
   try {
     res.sendFile(process.cwd() + '/public/index.html')
@@ -25,7 +27,9 @@ app.use('/', (req, res) => {
   }
 })
 
-//----------* SOCKET IO *----------//
+//////////////////////////////////////////////////////////////////////////////////
+////         SOCKET IO 
+//////////////////////////////////////////////////////////////////////////////////
 io.on('connection', (socket) => {
   socket.emit('socketConnected')
 
@@ -52,9 +56,12 @@ io.on('connection', (socket) => {
   })
 })
 
-//----------* SERVER CONFIGURATION *----------//
-const PORT = 8085
+//////////////////////////////////////////////////////////////////////////////////
+////         SERVER ON PORT
+//////////////////////////////////////////////////////////////////////////////////
+const PORT = Math.floor(Math.random() * (8099 - 8000)) + 8000
 const server = httpServer.listen(PORT, () => {
   console.log(`Server running on: http://localhost:${server.address().port}/`)
 })
 server.on('error', (error) => console.log(`Server error: ${error}`))
+//////////////////////////////////////////////////////////////////////////////////

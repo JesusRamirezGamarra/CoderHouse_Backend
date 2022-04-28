@@ -1,9 +1,9 @@
 //----------* REQUIRE'S *----------//
-const Controller = require('../classes/fileManagement')
-const messagesDB = new Controller('messages')
+const Controller = require('../classes/fileCRUD')
+const messagesDB = new Controller('chatMessages')
 
 //----------* PRODUCTS ROUTES *----------//
-const messagesController = {
+const chatMessagesController = {
   getAllMessages: async () => {
     try {
       const allMessages = await messagesDB.getAll()
@@ -28,7 +28,7 @@ const messagesController = {
 
       const newMessage = {
         id: getNewId(),
-        email: message.email ? message.email : 'user@email.com',
+        email: message.email ? message.email : 'anonymous@mail.com',
         date: currentDate,
         messageText: message.messageText ? message.messageText : '(Empty message)',
       }
@@ -41,4 +41,4 @@ const messagesController = {
 }
 
 //----------* EXPORTS CONTROLLER *----------//
-module.exports = messagesController
+module.exports = chatMessagesController
