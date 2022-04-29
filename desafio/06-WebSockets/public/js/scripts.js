@@ -68,6 +68,7 @@ $(function () {
 
     if(oUsuarioSession){
       sessionStorage.setItem('UsuarioschatForm',JSON.stringify(new Usuario(newMessage.email)))
+      oUsuarioSession = JSON.parse( sessionStorage.getItem('UsuarioschatForm') )
     }
     socket.emit('addNewMessage', newMessage)
     chatForm.trigger('reset')
