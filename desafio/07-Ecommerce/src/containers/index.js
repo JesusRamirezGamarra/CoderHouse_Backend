@@ -155,7 +155,7 @@ class Contenedor {
     try {
       const carts = await this.getAll()
       const cart = await this.getById(id)
-      if(!cart)return `No encontramos el carrito! ='(`
+      if(!cart)return `No encontramos el carrito!`
       const index = carts.findIndex(cart=>cart.id == id)
       carts[index].productos = []
       await this.writeFile(carts)
