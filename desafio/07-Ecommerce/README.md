@@ -28,12 +28,12 @@ c. POST: '/' - Para incorporar productos al listado (disponible solo para admini
 http://localhost:8080/API/productos/
 https://cedar-acoustic-felidae.glitch.me/API/productos/
 
-Form-encode
-nombre : Squirtle N.º007
-descripcion : Cuando retrae su largo cuello en el caparazón, dispara agua a una presión increíble.
-foto : https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png
-precio : 90
-stock : 12
+    Form-encode
+    nombre : Squirtle N.º007
+    descripcion : Cuando retrae su largo cuello en el caparazón, dispara agua a una presión increíble.
+    foto : https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png
+    precio : 90
+    stock : 12
 
 ```
 d. PUT: '/:id' - Actualiza un producto por su id (disponible solo para administradores)
@@ -41,32 +41,46 @@ d. PUT: '/:id' - Actualiza un producto por su id (disponible solo para administr
 http://localhost:8080/API/productos/7
 https://cedar-acoustic-felidae.glitch.me/API/productos/7
 
-Form-encode
-nombre : Squirtle N.º007
-descripcion : Cuando retrae su largo cuello en el caparazón, dispara agua a una presión increíble.
-foto : https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png
-precio : 90
-stock : 11
-
+    Form-encode
+    nombre : Squirtle N.º007
+    descripcion : Cuando retrae su largo cuello en el caparazón, dispara agua a una presión increíble.
+    foto : https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png
+    precio : 90
+    stock : 11
 ```
 e. DELETE: '/:id' - Borra un producto por su id (disponible solo para administradores)
 ```
-http://localhost:8080/API/productos/7
-https://cedar-acoustic-felidae.glitch.me/API/productos/7
+    http://localhost:8080/API/productos/7
+    https://cedar-acoustic-felidae.glitch.me/API/productos/7
 ```
 
 #### 2. El router base '/api/carritos' implementará cinco rutas, disponibles para usuarios y administradores:
 
 a. POST: '/' - Crea un carrito y devuelve su id.
 ```
-http://localhost:8080/API/carritos/
-https://cedar-acoustic-felidae.glitch.me/API/carritos/
+    http://localhost:8080/API/carritos/
+    https://cedar-acoustic-felidae.glitch.me/API/carritos/
 
 ```
-b. POST: '/:id/productos/:id_prod' - Para incorporar productos al carrito por su id de producto
+b. POST: '/:id/productos/:id_prod' - Para incorporar productos al carrito por su id de producto 
+
 ```
+e.g Version v1 y v2
 http://localhost:8080/API/carritos/1/productos/1
 https://cedar-acoustic-felidae.glitch.me/API/carritos/1/productos/1
+
+e.g Version v3
+
+http://localhost:8080/API/carritos/1/productos
+https://cedar-acoustic-felidae.glitch.me/API/carritos/1/productos
+
+    Form-encode
+    nombre : Squirtle N.º007
+    descripcion : Cuando retrae su largo cuello en el caparazón, dispara agua a una presión increíble.
+    foto : https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png
+    precio : 90
+    cantidad : 1
+
 ```
 c. GET: '/:id/productos' - Me permite listar todos los productos guardados en el carrito
 ```

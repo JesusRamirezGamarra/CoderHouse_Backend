@@ -1,9 +1,8 @@
-//----------* REQUIRE'S *----------//
 const fileCRUD = require('../Classes/fileCRUD')
 const cartDB = new fileCRUD('carts')
 const productDB = new fileCRUD('products')
 
-//----------* CART CONTROLLER *----------//
+
 const cartController = {
   cartList: async (req, res) => {
     try {
@@ -135,5 +134,5 @@ const cartController = {
   },
 }
 
-//----------* EXPORTS CONTROLLER *----------//
+
 module.exports = cartController
