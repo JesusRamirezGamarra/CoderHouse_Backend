@@ -40,7 +40,6 @@ class fileCRUD {
       console.log(`ERROR: ${error}`)
     }
   }
-
   async addItem(object) {
     try {
       const allItems = await this.readFile()
@@ -84,7 +83,7 @@ class fileCRUD {
     }
   }
 
-  async addItemInto(containerId, object) {
+  async addItemInto(containerId, object, cantidad) {
     try {
       let allItems = await this.readFile()
       let itemFound = allItems.find((item) => item.id === Number(containerId))
@@ -92,7 +91,7 @@ class fileCRUD {
       allItems = allItems.map((item) => (item.id !== itemFound.id ? item : itemFound))
       await this.writeFile(allItems)
     } catch (error) {
-      console.log(`ERROR: ${error}`)
+      console.error(`ERROR: ${error}`)
     }
   }
 

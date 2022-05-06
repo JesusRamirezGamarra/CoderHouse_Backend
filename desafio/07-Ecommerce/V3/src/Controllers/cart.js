@@ -92,6 +92,33 @@ const cartController = {
     }
   },
 
+  
+  addProductToCartV2: async (req, res) => {
+    try {
+      const cartId = req.params.id
+      const prodId = req.body.id_prod
+      const cantidad =  req.body.cantidad ? req.body.cantidad : 1
+
+      const cartFound = await cartDB.getById(cartId)
+      const productFound = await productDB.getById(prodId)
+      productFound.cantidad = parseInt(cantidad)
+      if(productFound.stock < cantidad){
+        res.send({ error: 'Stock not found.' })
+      }
+      else if (!cartFound) {
+        res.send({ error: 'Cart not found.' })
+      } else if (!productFound) {
+        res.send({ error: 'Product not found.' })
+      } else {
+        await cartDB.addItemInto(cartFound.id, productFound )
+        const updatedCart = await cartDB.getById(cartId)
+        res.json(updatedCart)
+      }
+    } catch (error) {
+      console.error(`ERROR: ${error}`)
+    }
+  },
+
   deleteProductFromCart: async (req, res) => {
     try {
       const cartId = req.params.id
