@@ -1,7 +1,4 @@
-//----------* REQUIRE'S *----------//
 const fs = require('fs')
-
-//----------* fileCRUD CLASS *----------//
 class fileCRUD {
   constructor(fileName) {
     this.fileName = fileName
@@ -125,5 +122,4 @@ class fileCRUD {
   }
 }
 
-//----------* EXPORTS CLASS *----------//
 module.exports = fileCRUD

@@ -2,6 +2,7 @@
 const fileCRUD = require('../Classes/fileCRUD')
 const productDB = new fileCRUD('products')
 let isAdmin = true
+const imgNOFound = 'https://cdn4.iconfinder.com/data/icons/basic-ui-element-flat-style/512/Basic_UI_Elements_-_2.3_-_Flat_Style_-_36-02-64.png'
 
 //----------* PRODUCT CONTROLLER *----------//
 const productController = {
@@ -35,8 +36,7 @@ const productController = {
     {
       try {
         const allProducts = await productDB.getAll()
-        const noImage =
-          'https://cdn4.iconfinder.com/data/icons/basic-ui-element-flat-style/512/Basic_UI_Elements_-_2.3_-_Flat_Style_-_36-02-64.png'
+        const noImage =imgNOFound;
 
         const isValidURL = (imageURL) => {
           let url
