@@ -1,5 +1,11 @@
 # PRIMERA ENTREGA DEL PROYECTO FINAL
 
+
+## `APP URL (Glitch)`
+
+[https://cedar-acoustic-felidae.glitch.me/](https://cedar-acoustic-felidae.glitch.me/)
+
+
 ## Consigna: 
 Deberás entregar el estado de avance de tu aplicación eCommerce Backend, que implemente un servidor de aplicación basado en la plataforma Node.js y el módulo express. 
 El servidor implementará dos conjuntos de rutas agrupadas en routers, uno con la url base '/api/productos' y el otro con '/api/carrito'. El puerto de escucha será el 8080 para desarrollo y process.env.PORT para producción en glitch.com
@@ -8,18 +14,74 @@ El servidor implementará dos conjuntos de rutas agrupadas en routers, uno con l
 #### 1. El router base '/api/productos' implementará cinco funcionalidades:
 
 a. GET: '/' - Me permite listar todos los productos disponibles (disponible para todes)
+```
+http://localhost:8080/API/productos/
+https://cedar-acoustic-felidae.glitch.me/API/productos/
+```
 b. GET: '/:id' - Me permite listar un producto por su id (disponible para todes)
+```
+http://localhost:8080/API/productos/1
+https://cedar-acoustic-felidae.glitch.me/API/productos/1
+```
 c. POST: '/' - Para incorporar productos al listado (disponible solo para administradores)
+```
+http://localhost:8080/API/productos/
+https://cedar-acoustic-felidae.glitch.me/API/productos/
+
+Form-encode
+nombre : Squirtle N.º007
+descripcion : Cuando retrae su largo cuello en el caparazón, dispara agua a una presión increíble.
+foto : https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png
+precio : 90
+stock : 12
+
+```
 d. PUT: '/:id' - Actualiza un producto por su id (disponible solo para administradores)
+```
+http://localhost:8080/API/productos/7
+https://cedar-acoustic-felidae.glitch.me/API/productos/7
+
+Form-encode
+nombre : Squirtle N.º007
+descripcion : Cuando retrae su largo cuello en el caparazón, dispara agua a una presión increíble.
+foto : https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png
+precio : 90
+stock : 11
+
+```
 e. DELETE: '/:id' - Borra un producto por su id (disponible solo para administradores)
+http://localhost:8080/API/productos/7
+https://cedar-acoustic-felidae.glitch.me/API/productos/7
+
 
 #### 2. El router base '/api/carritos' implementará cinco rutas, disponibles para usuarios y administradores:
 
 a. POST: '/' - Crea un carrito y devuelve su id.
-b. POST: '/:id/productos' - Para incorporar productos al carrito por su id de producto
+```
+http://localhost:8080/API/carritos/
+https://cedar-acoustic-felidae.glitch.me/API/carritos/
+
+```
+b. POST: '/:id/productos/:id_prod' - Para incorporar productos al carrito por su id de producto
+```
+http://localhost:8080/API/carritos/1/productos/1
+https://cedar-acoustic-felidae.glitch.me/API/carritos/1/productos/1
+```
 c. GET: '/:id/productos' - Me permite listar todos los productos guardados en el carrito
+```
+http://localhost:8080/API/carritos/1/productos
+https://cedar-acoustic-felidae.glitch.me/API/carritos/1/productos
+```
 d. DELETE: '/:id/productos/:id_prod' - Eliminar un producto del carrito por su id de carrito y de producto
+```
+http://localhost:8080/API/carritos/1/productos/1
+https://cedar-acoustic-felidae.glitch.me/API/carritos/1/productos/1
+```
 e. DELETE: '/:id' - Vacía un carrito.
+```
+http://localhost:8080/API/carritos/1
+https://cedar-acoustic-felidae.glitch.me/API/carritos/1
+```
 
 #### 3. Crear una variable booleana administrador, cuyo valor configuraremos más adelante con el sistema de login. 
 
