@@ -50,9 +50,10 @@ stock : 11
 
 ```
 e. DELETE: '/:id' - Borra un producto por su id (disponible solo para administradores)
+```
 http://localhost:8080/API/productos/7
 https://cedar-acoustic-felidae.glitch.me/API/productos/7
-
+```
 
 #### 2. El router base '/api/carritos' implementará cinco rutas, disponibles para usuarios y administradores:
 
