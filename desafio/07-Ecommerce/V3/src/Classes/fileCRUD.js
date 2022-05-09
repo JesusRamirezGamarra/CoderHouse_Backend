@@ -83,7 +83,7 @@ class fileCRUD {
     }
   }
 
-  async addItemInto(containerId, object, cantidad) {
+  async addItemInto(containerId, object) {
     try {
       let allItems = await this.readFile()
       let itemFound = allItems.find((item) => item.id === Number(containerId))

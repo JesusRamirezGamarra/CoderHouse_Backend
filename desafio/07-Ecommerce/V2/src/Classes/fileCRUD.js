@@ -40,7 +40,6 @@ class fileCRUD {
       console.log(`ERROR: ${error}`)
     }
   }
-
   async addItem(object) {
     try {
       const allItems = await this.readFile()

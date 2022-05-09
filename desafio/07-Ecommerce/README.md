@@ -70,7 +70,6 @@ http://localhost:8080/API/carritos/1/productos/1
 https://cedar-acoustic-felidae.glitch.me/API/carritos/1/productos/1
 
 e.g Version v3
-
 http://localhost:8080/API/carritos/1/productos
 https://cedar-acoustic-felidae.glitch.me/API/carritos/1/productos
 

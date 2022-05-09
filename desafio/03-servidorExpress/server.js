@@ -4,9 +4,6 @@ const app = express()
 const oContenedor = new Contenedor('productos.txt');
 let contadorVisitas = 0
 
-
-
-
 // index
 app.get('/', (req, res) => {
     contadorVisitas++
@@ -81,7 +78,7 @@ app.get('/productoRandom', async (req, res) => {
 })
 
 // Server configuration
-const PORT = process.env.PORT || 8081
+const PORT = process.env.PORT || 8080
 const server = app.listen(PORT, () => {
     console.log(`Server running on: ${__dirname}${server.address().port}/`)
 })

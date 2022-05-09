@@ -10,8 +10,8 @@
 Para construir la tabla dinámica con los datos recibidos por websocket utilizar Handlebars en el frontend. 
 
 * Considerar usar archivos públicos para alojar la plantilla vacía, y obtenerla usando la función fetch( ). Recordar que fetch devuelve una promesa.
-
 ![alt text](https://github.com/JesusRamirezGamarra/CoderHouse_Backend/blob/main/desafio/06-WebSockets/images/ingreso-tabla.png)
+
 
 ## Consigna 2:  
 ### Añadiremos al proyecto un canal de chat entre los clientes y el servidor.

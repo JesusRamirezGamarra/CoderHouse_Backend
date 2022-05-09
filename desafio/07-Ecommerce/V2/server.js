@@ -35,7 +35,7 @@ app.all('*', (req, res) => {
 //////////////////////////////////////////////////////////////////////////////////
 ////         SERVER ON PORT
 //////////////////////////////////////////////////////////////////////////////////
-const PORT = process.env.PORT || 8085;
+const PORT = process.env.PORT || 8086;
 const server = app.listen(PORT, () => {
     console.log(`Server running on: http://localhost:${server.address().port}/`)
 })
