@@ -8,3 +8,7 @@ module.exports = {
     database: 'ecommerce',
   },
 }
+
+
+// If you want to use a MariaDB instance, you can use the mysql driver.
+// http://knexjs.org/
