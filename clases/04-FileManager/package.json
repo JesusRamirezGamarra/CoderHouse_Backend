@@ -1,12 +1,13 @@
 {
-  "name": "04-filemanager",
-  "version": "1.0.0",
-  "description": "",
-  "main": "ejemploArchivo-02.js",
-  "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+	"name": "papa",
+	"version": "1.0.0",
+	"main": "ejemploArchivo-02.js",
+	"type": "module",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "",
+	"license": "ISC",
+	"keywords": [],
+	"description": ""
 }

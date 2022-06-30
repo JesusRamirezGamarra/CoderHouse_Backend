@@ -1,4 +1,4 @@
-var p1 = Promise.resolve(30);
+var p1 =(30);
 var p2 = 1337;
 var p3 = new Promise((resolve, reject) => {
     setTimeout(resolve , 100, "foo");
