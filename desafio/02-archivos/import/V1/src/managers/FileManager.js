@@ -1,9 +1,9 @@
-const fs = require('fs');
-//import fs from 'fs';
+import fs from 'fs';
 
 export class Contenedor {
     constructor(nombreArchivo) {
         this.archivo = nombreArchivo
+        console.log(nombreArchivo);
     }
     async save(object) {   
         const data = await this.getAll();
@@ -33,26 +33,32 @@ export class Contenedor {
         await this.saveData(arrayVacio);
     }
 
-    async getData() {
+
+    //////////////////////////////// Metodos Factorizados.
+    getData= async()=> {
         try{
-            const data = await fs.promises.readFile(this.archivo, 'utf-8');
-            return JSON.parse(data)
+            if(fs.existsSync(path)){
+                const data = await fs.promises.readFile(path, 'utf-8');
+                return JSON.parse(data)
+            }else{
+                return [];
+            }
         }
         catch(e){
             console.warn(`Fix : ${e}`)
             return[];
         }
     }
-    async saveData(data) {
+    saveData= async(data)=> {
         try{
-            await fs.promises.writeFile(this.archivo, JSON.stringify(data, null, '\t'));
+            await fs.promises.writeFile(path, JSON.stringify(data, null, '\t'));
         }
         catch(e){
             console.warn(`Fix : ${e}`)
         }
     }
 
-    // Metodo para preguntar al tutor
+    //////////////////////////////// Metodo para preguntar al tutor x rendimiento 
     async save_FormaII(product) {   
         const productos = await this.getAll();
         let id;

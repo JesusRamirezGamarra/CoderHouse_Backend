@@ -1,12 +1,12 @@
 {
-  "name": "02-archivos",
+  "name": "v1",
   "version": "1.0.0",
-  "description": "Desafio 02 - Manejo de archivos",
+  "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Jesus Ramirez",
+  "keywords": [],
+  "author": "",
   "license": "ISC"
 }

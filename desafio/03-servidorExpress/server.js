@@ -1,8 +1,10 @@
 const express = require('express')
-const Contenedor = require('./Clase')
 const app = express()
-const oContenedor = new Contenedor('productos.txt');
 let contadorVisitas = 0
+
+const Contenedor = require('./Clase')
+const oContenedor = new Contenedor('productos.txt');
+
 
 // index
 app.get('/', (req, res) => {
