@@ -29,6 +29,7 @@ Consigna: Implementar programa que contenga una clase llamada Contenedor que rec
 - [X] Probar el módulo creando un contenedor de productos, que se guarde en el archivo: “productos.txt”
 - [X] Incluir un llamado de prueba a cada método, y mostrando por pantalla según corresponda para verificar el correcto funcionamiento del módulo construído. 
 - [X] El formato de cada producto será :
+
 ```JSON
 {
     title: {Nombre del producto},
@@ -36,6 +37,7 @@ Consigna: Implementar programa que contenga una clase llamada Contenedor que rec
     thumbnail : {url de la foto del producto}
 }
 ```
+
 <i class="icon-cog"></i>**Dependencias del proyecto:**
 
 -   ninguna.
