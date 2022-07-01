@@ -1,12 +1,10 @@
-//const fs = require('fs');
-import fs from 'fs';
+const fs = require('fs');
+//import fs from 'fs';
 
 export class Contenedor {
     constructor(nombreArchivo) {
         this.archivo = nombreArchivo
     }
-
-
     async save(object) {   
         const data = await this.getAll();
         if (data.length) {
@@ -16,34 +14,24 @@ export class Contenedor {
             const oProducto = await { ...object, id: 1 };
             data.push(oProducto);
         }
-
         return await this.saveData(data) 
     }
-
-    
     async getById (idNumber) {
         const data = await this.getAll();
         return data.find((element) => element.id == idNumber);
     }
-    
     async getAll() {
         return  await this.getData();
     }
-    
     async deleteById(idNumber) {
         const data = await this.getAll();
         const nuevoArray = data.filter( oProduto => oProduto.id != idNumber);
         await this.saveData(nuevoArray);
     }
-
     async deleteAll() {
         const arrayVacio = []
         await this.saveData(arrayVacio);
     }
-
-
-
-
 
     async getData() {
         try{
@@ -55,7 +43,6 @@ export class Contenedor {
             return[];
         }
     }
-
     async saveData(data) {
         try{
             await fs.promises.writeFile(this.archivo, JSON.stringify(data, null, '\t'));
@@ -64,8 +51,6 @@ export class Contenedor {
             console.warn(`Fix : ${e}`)
         }
     }
-
-
 
     // Metodo para preguntar al tutor
     async save_FormaII(product) {   

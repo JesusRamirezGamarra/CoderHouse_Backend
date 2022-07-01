@@ -35,7 +35,7 @@ Consigna: Implementar programa que contenga una clase llamada Contenedor que rec
     price: {precio},
     thumbnail : {url de la foto del producto}
 }
----
+```
 <i class="icon-cog"></i>**Dependencias del proyecto:**
 
 -   ninguna.
