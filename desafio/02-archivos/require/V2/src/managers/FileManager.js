@@ -20,6 +20,8 @@ class Contenedor {
         return data.find((element) => element.id == idNumber);
     }
     getAll= async()=> {
+        console.log(__dirname);
+        console.log(pathRoot);
         return  await this.getData();
     }
     deleteById= async(idNumber)=> {
