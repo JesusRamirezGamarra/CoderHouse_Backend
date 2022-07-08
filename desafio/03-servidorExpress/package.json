@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "description": "Desafio 03 - Servidor Express : CoderHouse",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
