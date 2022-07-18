@@ -29,7 +29,6 @@ app.use((err, req, res, next) => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-
 app.use('/api/productos', productsRouter);
 app.use(express.static('src/public'));
 

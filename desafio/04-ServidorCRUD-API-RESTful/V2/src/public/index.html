@@ -6,6 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Express Server - CODER Backend</title>
 <link rel="stylesheet" href="https://bootswatch.com/5/sketchy/bootstrap.min.css">
+<link href="/css/styles.css" rel="stylesheet" />
+
+
 </head>
 <body>
 <div class="page-header" style="display: flex; justify-content: center; align-items: center">
@@ -23,9 +26,10 @@
 <div style="display: flex; justify-content: center; align-items: center">
     <form action="../api/productos/" method="POST">
     <!-- <form action="http://localhost:8080/api/Productos/" method="POST"> -->
-        Nombre: <input type="text" name="title">
-        Precio: <input type="text" name="price">
-        Foto URL: <input type="text" name="thumbnail">
+        <label>Name</label>: 
+        <input type="text" name="title" placeholder='Nombre del Producto - example: Samsung A03 Core 6.5" 2GB RAM 32GB' required>
+        Precio: <input type="text" name="price" placeholder="Precio - example: 8.99" required>
+        Foto URL: <input type="text" name="thumbnail" placeholder="Imagen - example: https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" required>
         <button>Enviar</button>
     </form>
 
