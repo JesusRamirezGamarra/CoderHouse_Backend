@@ -1,6 +1,6 @@
 //const fs = require('fs');
 import fs from 'fs';
-const path = 'src/files/productos.txt';
+const path = 'src/files/productos.json';
 
 //class Contenedor {
     export class Contenedor {

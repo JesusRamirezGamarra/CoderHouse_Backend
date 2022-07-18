@@ -5,7 +5,7 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static('public'));
+app.use(express.static('src/public'));
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -22,7 +22,7 @@ app.use('/api/productos', router);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // pongo a escuchar el servidor en el puerto indicado
-const puerto = 8000;
+const puerto = 8080;
 
 const server = app.listen(puerto, () => {
     console.log(`servidor escuchando en http://localhost:${puerto}`);

@@ -5,7 +5,7 @@ const express = require('express');
 const router = express.Router();
 
 // instancio el controlador
-const Productos = require('../api/productos');
+const Productos = require('../api/FileManager');
 const productos = new Productos();
 
 

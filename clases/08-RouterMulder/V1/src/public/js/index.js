@@ -3,15 +3,23 @@ let result
 const handleSubmit = (evt,form,route) =>{
     evt.preventDefault();
     let formData = new FormData(form);
-    // let obj = {};
-    // formData.forEach((value,key)=>obj[key]=value);
+
+    //let obj = {};
+    //formData.forEach((value,key)=>obj[key]=value);
+
     // fetch(route,{
     //     method:"POST",
     //     body:JSON.stringify(obj),
+    //     //body:formData,
     //     headers:{
     //         "Content-Type":"application/json"
     //     }
-    // }).then(res=>res.json()).then(json=>result=json);
+    // })
+    // .then(res=>res.json())
+    // .then(json=>console.log(json))
+    // .then(json=>result=json);
+
+
     fetch(route,{
         method:"POST",
         body:formData
