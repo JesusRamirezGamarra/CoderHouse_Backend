@@ -1,4 +1,4 @@
-# Título del Proyecto : Desafio 04 - API RESTful
+# Título del Proyecto : Desafio 04 - API REST 
 _Formato: link a un repositorio en Github y url de proyecto subido a glitch_
 _Observación: no incluir la carpeta node_modules_
 
