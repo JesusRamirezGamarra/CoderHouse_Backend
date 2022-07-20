@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+    
+  }
+  
+  body {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+
+    background:#f7df1d;
+    padding: 0;
+    margin: 0;
+    align-content: center;
+    overflow-x: hidden; 
+    
+  }
+  
+  h1 {
+    padding-top: 0rem;
+    letter-spacing: 1px;
+
+  }
+  h2 {
+    padding-top: 0rem;
+    letter-spacing: 1px;    
+
+  }
+
+  h3 {
+    padding-top: 1rem;
+    letter-spacing: 1px;    
+    color: rgb(81, 23, 23); 
+    
+  }
+
+  /* label {
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-style: italic;
+  } */
+  
+  input {
+    width: 100%;
+    height: 38px;
+    box-shadow: none;
+    box-sizing: border-box;
+  }
+  input:focus {
+    outline: none;
+    border: 1px solid rgb(3, 52, 31);
+  }
+
+  input:focus {
+    background-color: lightblue;
+  }
+  
+
+  
+button {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 0 2rem;
+  border: none;
+  align-self: flex-end;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.main {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.column {
+  width: 80%;
+  max-width: 600px;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-self: baseline;
+}
+
+.message {
+  background-color: rgb(250, 216, 216);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  border: 1px solid rgb(97, 11, 11);
+}
+.message h2 {
+  color: rgb(97, 11, 11);
+  padding: 0;
+  margin: 0;
+}
+
+.image-container img {
+  width: 56px;
+}
+
+.containerTable {
+  width: 100%;
+  /* max-width: 600px; */
+  /* display: flex; */
+  justify-content: center; 
+  align-items: center;
+  text-decoration: underline overline;
+}
+
+pre{
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  margin-top: 20px;
+  color:#FFFFFF;
+  overflow: auto;
+  width: auto;
+  padding: 20px 20px 10px 20px;
+  /* background-color: #000000; */
+  background-color: #1d2bf7;
+  max-height: 600px;
+  justify-content: center; 
+  vertical-align: middle;
+  align-items: center;
+  /* min-height: 16px; */
+  
+}
+
+code{
+  padding: 0px 0px 0px 0px;
+  vertical-align: middle;
+}

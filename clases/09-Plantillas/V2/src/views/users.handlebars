@@ -1,0 +1,12 @@
+{{#each users }}
+    <div>
+        <p>{{this.name}}</p>
+        <p>{{this.age}}</p>
+    </div>
+{{/each}}
+
+{{else}}
+    <h1>No hay Usuario Disponibles</h1>
+{{/if}}
+
+<script src="./js/users.js"></script>
