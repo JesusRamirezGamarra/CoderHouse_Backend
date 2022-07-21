@@ -8,6 +8,12 @@
   </p>
 </p>
 
+## Demo
+---
+![alt text](https://github.com/JesusRamirezGamarra/CoderHouse_ReactJS/blob/Desafio-07/public/images/BFFs.gif)
+
+---
+
 # Título del Proyecto : Desafio 04 - Server Express : API RESTful With Mulder 
 _Formato: link a un repositorio en Github y url de proyecto subido a glitch_
 _Observación: no incluir la carpeta node_modules_
@@ -51,7 +57,9 @@ _Cada ítem almacenado dispondrá de un id numérico proporcionado por el backen
 
 _Se utilizo:_
 ```
-_npm i express_
-_npm install moment_
-_nodemon index.js_
+_npm install cors_
+_npm install axios_
+_npm install express_
+_npm install multer_
+
 ```
