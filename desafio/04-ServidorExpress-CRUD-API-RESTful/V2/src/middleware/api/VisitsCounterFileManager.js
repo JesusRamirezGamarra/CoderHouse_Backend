@@ -1,13 +1,13 @@
 //const fs = require('fs');
 import fs from 'fs';
 //const path = 'src/files/productos.json';
-import __dirname from '../../utils.js';
+import {__dirname} from '../../utils.js';
 
 //class Contenedor {
     export class Contenedor {
         constructor(nombreArchivo) { 
             this.path = __dirname + '/database/files/' + nombreArchivo;
-            console.log('path : ' , nombreArchivo);
+            console.log('Contenedor path : ' , nombreArchivo);
         }
 
         save= async(object)  =>{   

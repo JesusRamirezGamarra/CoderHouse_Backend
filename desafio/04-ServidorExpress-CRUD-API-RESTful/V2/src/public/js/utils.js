@@ -54,6 +54,47 @@ form_R.addEventListener('submit', async (e) => {
     // CargarTabla();
 })
 
+const form_R_Upload = document.querySelector('#form_R_Upload');
+form_R_Upload.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    let formData = {}
+    new FormData(form_R_Upload).forEach( (value, key) =>formData[key] = value)
+    console.log('formData : ',formData) ;
+    document.getElementById('code-form_R_Form').innerHTML = `${JSON.stringify(formData)}`;
+    const res =  await fetch('http://localhost:8080/api/productos/Upload', {
+        method: 'POST',
+        body: formData,
+        // headers: {
+        //     'Content-Type': 'multipart/form-data'
+        // }
+        // headers: new HttpHeaders({
+        //     // 'Content-Type': undefined,
+        //     'Accept': '*/*',
+        //     'Authorization': 
+        //     "Bearer "+(JSON.parse(sessionStorage.getItem('token')).token),
+        //     'Access-Control-Allow-Origin': this.apiURL,
+        //     'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
+        //     'Access-Control-Allow-Headers': 'origin,X-Requested-With,content-type,accept',
+        //     'Access-Control-Allow-Credentials': 'true' 
+    
+        //   })
+    })
+    .then(res =>{
+        if(res.status === 200){
+            return res.json();
+        }
+        else{
+            return new Error(`Error: ${res.status}`)
+        }
+    })
+    .then(data => {
+        console.log( 'data: ',data )
+        document.getElementById('code-form_R_Method').innerHTML = `${JSON.stringify(data)}`;
+    })
+    .catch(err => console.log( 'error: ',err) )
+    // CargarTabla();
+})
+
 
 // Buscar Producto
 // GET '/api/productos/:id' -> devuelve un producto según su id. 
@@ -165,6 +206,7 @@ const CargarTabla = async () => {
         "lengthMenu": [ [15, 50, 100, -1], [15, 50, 100, "All"] ],
         "pagingType": "simple",
         scrollY: 400,
+        destroy: true,
         scrollCollapse: true,
         order: [[ 0, 'asc' ], [3, 'desc' ]],
         ajax: {

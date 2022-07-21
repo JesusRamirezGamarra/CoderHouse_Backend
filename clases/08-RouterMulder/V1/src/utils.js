@@ -21,3 +21,8 @@ const uploader = multer({storage:storage})
 
 
 export default uploader;
+
+
+
+
+

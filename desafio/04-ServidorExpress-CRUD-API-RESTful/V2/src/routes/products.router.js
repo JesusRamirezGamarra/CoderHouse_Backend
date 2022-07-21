@@ -15,7 +15,8 @@ const router = Router();
 import {Productos} from '../middleware/api/ProductsMemoryManager.js';
 const productos = new Productos();
 
-
+import {uploader} from '../utils.js';
+const productosUpload = [];
 
 
 router.get("/list", function (req, res) {
@@ -81,6 +82,34 @@ router.post('/', (req, res) => {
     productos.guardar(req.body.title, req.body.price, req.body.thumbnail);
     return res.json([{ "estado": "GUARDADO" }]);
 })
+
+router.post('/Upload',uploader.single('thumbnail'), (req, res) => {
+    console.log('req.headers : ',req.headers);
+    console.log('req.file : ',req.file);
+    console.log('req.body : ',req.body);
+    let prod = req.body;
+    prod.image = req.file.path;
+    prod.filename = req.file.filename;
+
+    console.log('req.title : ',prod.title);
+    console.log('req.price : ',prod.price);
+    console.log('req.image : ',prod.image);
+    console.log('req.image : ',prod.filename);
+    // console.log('prod.image : ',prod.image);
+    // console.log('req.image : ',prod.image);
+    // console.log('req.file.originalname : ',prod.file.originalname);
+    productos.guardar(prod.title, prod.price, prod.filename);
+
+    // console.log('Upload Productos Form : ', prod);
+    if(!prod.title) return res.status(400).send({status:"error",error:"Invalid input title"})
+    if(!prod.price) return res.status(400).send({status:"error",error:"Invalid input price"})
+    if(!prod.image) return res.status(400).send({status:"error",error:"Invalid input image"})
+    productosUpload.push(prod);
+    console.log('Upload Productos productosUpload : ', productosUpload);
+
+    return res.json([{ "estado": "GUARDADO" }]);
+})
+
 
 
 router.put('/:id', (req, res) => {

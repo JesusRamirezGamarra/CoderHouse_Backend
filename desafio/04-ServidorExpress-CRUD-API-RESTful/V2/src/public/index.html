@@ -42,28 +42,65 @@ GET '/api/productosProgressBar' -> devuelve # de productos. -->
 <!-- Agregar Producto
 POST '/api/productos' -> recibe y agrega un producto, y lo devuelve con su id asignado. -->
 <hr>
-<div class="page-header" style="display: flex; justify-content: center; align-items: center">
-    <figure>
-        <blockquote class="blockquote">
-            <p class="mb-0">Agregar Producto</p>
-        </blockquote>
-        <figcaption class="blockquote-footer">
-            POST '/api/productos' -> <cite title="Source Title">recibe y agrega un producto, y lo devuelve con su id asignado.
-            </cite>
-        </figcaption>
-    </figure>        
+<div class="row">
+    <div class="col-sm-6">
+        <div class="page-header" style="display: flex; justify-content: center; align-items: center">
+            <figure>
+                <blockquote class="blockquote">
+                    <p class="mb-0">Agregar Producto</p>
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                    POST '/api/productos' -> <cite title="Source Title">recibe y agrega un producto, y lo devuelve con su id asignado.
+                    </cite>
+                </figcaption>
+                <p class="mb-0">SIN MULDER</p>
+            </figure>        
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="page-header" style="display: flex; justify-content: center; align-items: center">
+            <figure>
+                <blockquote class="blockquote">
+                    <p class="mb-0">Agregar Producto</p>
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                    POST '/api/productos/Upload' -> <cite title="Source Title">recibe y agrega un producto, y lo devuelve con su id asignado.
+                    </cite>
+                </figcaption>
+                <p class="mb-0">CON MULDER</p>
+            </figure>        
+        </div>
+    </div>
 </div>
-<div style="display: flex; justify-content: center; align-items: center">
-    <!-- action="../api/productos/" method="POST"  -->
-    <form id="form_R">           
-        <label for="title">Name</label>: 
-        <input type="text" name="title" placeholder='Nombre del Producto - example: Samsung A03 Core 6.5" 2GB RAM 32GB' required>
-        <label for="price">Precio</label>: 
-        <input type="number" name="price" placeholder="Precio - example: 8.99"  min="0" step="0.01" required>
-        <label for="thumbnail">Foto URL</label>: 
-        <input type="text" name="thumbnail" placeholder="Imagen - example: https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" required>
-        <button class="btn btn-lg btn-primary">Agregar</button>
-    </form>
+<div class="row">
+    <div class="col-sm-6">
+        <div style="display: flex; justify-content: center; align-items: center">
+            <!-- action="../api/productos/" method="POST"  -->
+            <form id="form_R">           
+                <label for="title">Name</label>: 
+                <input type="text" name="title" placeholder='Nombre del Producto - example: Samsung A03 Core 6.5" 2GB RAM 32GB' required>
+                <label for="price">Precio</label>: 
+                <input type="number" name="price" placeholder="Precio - example: 8.99"  min="0" step="0.01" required>
+                <label for="thumbnail">Foto URL</label>: 
+                <input type="text" name="thumbnail" placeholder="Imagen - example: https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" required>
+                <button class="btn btn-lg btn-primary">Agregar</button>
+            </form>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div style="display: flex; justify-content: center; align-items: center">
+            <!-- action="../api/productos/" method="POST"  -->
+            <form id="form_R_Upload">           
+                <label for="title">Name</label>: 
+                <input type="text" name="title" placeholder='Nombre del Producto - example: Samsung A03 Core 6.5" 2GB RAM 32GB' required>
+                <label for="price">Precio</label>: 
+                <input type="number" name="price" placeholder="Precio - example: 8.99"  min="0" step="0.01" required>
+                <label for="thumbnail">Foto URL</label>: 
+                <input type="file" name="thumbnail" placeholder="Imagen - example: googlelogo_color_272x92dp.png" required>
+                <button class="btn btn-lg btn-primary">Agregar</button>
+            </form>
+        </div>
+    </div>    
 </div>
 
 <div class="page-header" style="display: flex; justify-content: center; align-items: center">

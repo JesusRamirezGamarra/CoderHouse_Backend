@@ -1,16 +1,5 @@
-//const express = require('express');
-// const router = require('./routes/productos');
-// const productos = require('./api/productos');
-
-
-// import path from 'path';
-// import { fileURLToPath } from 'url';
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
-
-
 import cors from 'cors';
-import __dirname from './utils.js'
+import {__dirname} from './utils.js'
 import express from 'express';
 import productsRouter from './routes/products.router.js';
 import visitsRouter from './routes/visits.router.js';
@@ -32,7 +21,8 @@ server.on('error', error => {
 });
 
 //creo una instancia de contendor
-const contenedor = new Contenedor(__dirname + '/database/files/visitsCounter.json');
+const contenedor = new Contenedor('visitsCounter.json');
+//const contenedor = new Contenedor(__dirname + '/database/files/visitsCounter.json');
 // const contenedor = new Contenedor('/home/jesus/Proyecto/Backend/desafio/04-ServidorExpress-CRUD-API-RESTful/V2/src/database/files/visitsCounter.json');
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -59,7 +49,7 @@ const middlewareVisitsCounter = async( req, res, next ) => {
         app.locals.visits = (++app.locals.visits || 1) ;
         await contenedor.save([{visitas:app.locals.visits}]);
         console.log('visitasJSON : ',[{visitas:app.locals.visits}]) ;
-        console.log('__dirname : ',__dirname);
+        console.log('middlewareVisitsCounter __dirname : ',__dirname);
     }
 
     next();
