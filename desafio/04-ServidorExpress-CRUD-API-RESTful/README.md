@@ -10,7 +10,7 @@
 
 ## Demo
 ---
-![alt text](https://github.com/JesusRamirezGamarra/CoderHouse_ReactJS/blob/Desafio-07/public/images/BFFs.gif)
+![alt text](https://github.com/JesusRamirezGamarra/CoderHouse_Backend/blob/main/desafio/04-ServidorExpress-CRUD-API-RESTful/V2/src/public/img/BFFs_API_RESTfulV2.gif)
 
 ---
 
