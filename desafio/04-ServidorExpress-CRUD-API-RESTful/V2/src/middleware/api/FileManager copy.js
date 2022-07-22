@@ -64,6 +64,28 @@ import fs from 'fs';
                 console.warn(`Fix : ${e}`)
             }
         }
+
+        update = async(id, title, price, thumbnail) =>{
+            const data = await this.getAll();
+            console.log('data: ',data)
+            console.log('id: ',id)
+            let item = data.find(producto => producto.id == id);
+            
+            
+            console.log(item)
+            if (item) {
+                item.title = title;
+                item.price = price;
+                item.thumbnail = thumbnail;
+            }        
+            let itemidex = data.findIndex(producto => parseInt(producto.id) === parseInt(item.id));
+            console.log(itemidex)
+            data.splice(itemidex, 1, item);
+            console.log('NEW data: ',data)
+            await this.deleteAll();
+            await this.save(data);
+        }
+    
     
         //////////////////////////////// Metodo para preguntar al tutor x rendimiento 
         save_FormaII=async(product)=> {   

@@ -7,7 +7,7 @@ import {__dirname} from '../../utils.js';
     export class Contenedor {
         constructor(nombreArchivo) { 
             this.path = __dirname + '/database/files/' + nombreArchivo;
-            console.log('Contenedor path : ' , nombreArchivo);
+            // console.log('Contenedor path : ' , nombreArchivo);
         }
 
         save= async(object)  =>{   

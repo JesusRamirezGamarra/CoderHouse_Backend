@@ -33,12 +33,26 @@ export class Productos {
     }
 
     actualizar(id, title, price, thumbnail) {
-        const producto = this.productos.find(producto => producto.id == id);
-        if (producto) {
-            producto.title = title;
-            producto.price = price;
-            producto.thumbnail = thumbnail;
-        }
+        let item = this.productos.find(producto => producto.id == id)
+        if (item) {
+            item.title = title;
+            item.price = price;
+            item.thumbnail = thumbnail;
+        }        
+        let itemIndex = this.productos.findIndex(producto => parseInt(producto.id) === parseInt(item.id));
+        console.log(itemIndex)
+        this.productos.splice(itemIndex, 1, item);
+        // console.log('NEW data: ',data)
+        // this.productos = data;
+        // await this.deleteAll();
+        // await this.save(data);
+
+        // const producto = this.productos.find(producto => producto.id == id);
+        // if (producto) {
+        //     producto.title = title;
+        //     producto.price = price;
+        //     producto.thumbnail = thumbnail;
+        // }
     }
 
     eliminar (id){
