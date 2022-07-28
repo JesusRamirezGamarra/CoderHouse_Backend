@@ -5,7 +5,7 @@ function sumar(num1, num2) {
 let res = sumar(2,3);
 
 
-const restar = (num1, num2) =>  num1 + num2;     // Return implicito
+const restar = (num1, num2) =>  num1 - num2;     // Return implicito
 const elevarAlCuadrardo = base => base **2;
 
 class Cliente{
