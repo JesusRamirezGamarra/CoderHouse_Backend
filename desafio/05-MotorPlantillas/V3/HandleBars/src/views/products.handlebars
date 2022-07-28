@@ -1,0 +1,37 @@
+<img src='./images/Logo.png' alt='Product image' />
+<a href='/'>
+  <button type='button' style='background-color: #9e473d'>Back to Home</button>
+</a>
+
+<h2 class='mb-4'>Product View</h2>
+
+{{#if allProducts}}
+  <table class='table table-dark table-striped'>
+    <thead>
+      <tr>
+        <th scope='col' class='ps-4'>Id</th>
+        <th scope='col' class='ps-4'>Name</th>
+        <th scope='col' class='text-center'>Price</th>
+        <th scope='col' class='text-center'>Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each allProducts}}
+        <tr>
+          <th scope='row' class='ps-4 align-middle'>{{this.id}}</th>
+          <th scope='row' class='ps-4 align-middle'>{{this.title}}</th>
+          <td class='text-center align-middle'>{{this.price}}</td>
+          <td>
+            <div class='image-container text-center'>
+              <img src={{this.thumbnail}} alt='Product image' class='img-thumbnail' />
+            </div>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <div class='message'>
+    <h2>There are no products</h2>
+  </div>
+{{/if}}

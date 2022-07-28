@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  img.img-LOGO(src='./images/Logo.png' alt='Product image')
+  a(href='/productos')
+    button(type='button' style='background-color: #9e473d') All Products
+  h2 Enter new Product
+  form(action='/productos' method='POST')
+    label Name
+    input(type='text' name='title' placeholder='example: Samsung A03 Core 6.5" 2GB RAM 32GB' required='')
+    label Price
+    input(type='number' name='price' placeholder='example: 899' required='')
+    label Image URL
+    input(type='text' name='thumbnail' placeholder='example: https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png' required='')
+    button(type='submit') Add Product
