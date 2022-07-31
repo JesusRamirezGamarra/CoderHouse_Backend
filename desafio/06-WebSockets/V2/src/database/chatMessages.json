@@ -1,0 +1,20 @@
+[
+	{
+		"id": 1,
+		"email": "email@gmail.com",
+		"date": "4/27/2022, 9:08:53 PM",
+		"messageText": "Escribeme"
+	},
+	{
+		"id": 2,
+		"email": "jessurg18@hotmail.com",
+		"date": "7/30/2022, 1:26:07 PM",
+		"messageText": "Veremos!! "
+	},
+	{
+		"id": 3,
+		"email": "jessurg18@hotmail.com",
+		"date": "7/30/2022, 1:38:10 PM",
+		"messageText": "Como van"
+	}
+]

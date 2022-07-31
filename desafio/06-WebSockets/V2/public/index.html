@@ -1,0 +1,73 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/icon/favicon.ico" />
+    <title>CH - WebSockets</title>
+    <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet" />
+    <link rel="stylesheet" href="https://bootswatch.com/5/sketchy/bootstrap.min.css">
+    <link href="/css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="column">
+        <h1>WebSockets</h1>
+        <div class="row">
+          <div class="col-sm-6">        
+              <div class="container">
+                <h2>Enter new Product</h2>
+                <hr>
+                <div style="display: flex; justify-content: center; align-items: center"></div>
+                  <form id="productForm">
+                    <label>Name</label>
+                    <input type="text" name="title" placeholder="example: Samsung A03 Core 6.5 2GB RAM 32GB" required />
+
+                    <label>Price</label>
+                    <input type="number" name="price" placeholder="example: 899" required />
+
+                    <label>Image URL</label>
+                    <input type="text" name="thumbnail" placeholder="example: https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" />
+
+                    <button type="submit">Add Product</button>
+                  </form>
+              </div>
+              <div class="container">
+                <h2 class="mb-4">Product View</h2>
+                <hr>
+                <div id="productViewContainer"></div>
+              </div>
+          </div>
+          <div class="col-sm-6">              
+            <div class="chat-container">
+              
+              <h2>Chat Room</h2>
+              <hr>
+              <form id="chatForm">
+                <label for="email">User - Email</label>
+                <input type="email" name="email" placeholder="example@email.com" required />
+
+                <div id="chatContainer" class="chatRoomMessages"></div>
+
+                <textarea
+                  id="textareaMessage"
+                  name="messageText"
+                  placeholder="Enter a message..."
+                  required
+                ></textarea>
+
+                <div class="button-container"><button type="submit" class="send">Send</button></div>
+              </form>
+            </div>
+          </div>
+        </div>          
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/scripts.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" ></script>
+    
+  </body>
+</html>
