@@ -35,3 +35,31 @@ Para construir la tabla dinámica con los datos recibidos por websocket utilizar
 * Los mensajes deben persistir en el servidor en un archivo (ver segundo entregable).
 
 ![alt text](https://github.com/JesusRamirezGamarra/CoderHouse_Backend/blob/main/desafio/06-WebSockets/images/Ingreso-chat.png)
+
+
+
+>> Opcional:
+_Utilizar bootstrap para maquetar la vista creada por dicho motor de plantillas y el formulario de ingreso de productos._
+
+_Se utilizo:_
+```
+_npm install express_
+_npm install express-handlebars_
+```
+
+_glitch:_
+Version 2 :
+```
+Live site
+https://fresh-sixth-houseboat.glitch.me
+Code
+https://glitch.com/edit/#!/fresh-sixth-houseboat
+```
+
+Version 3 :
+```
+Live site
+https://river-great-duckling.glitch.me
+Code
+https://glitch.com/edit/#!/river-great-duckling
+```
