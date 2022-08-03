@@ -14,7 +14,8 @@ if( sessionStorage.getItem('UsuarioschatForm')){
 }
 
 const socket = io()
-
+//https://www.codegrepper.com/code-examples/javascript/document+ready+without+jquery
+// “document ready without jquery”
 $(function () {
   socket.on('socketConnected', () => {
     socket.emit('productListRequest')
@@ -22,78 +23,75 @@ $(function () {
   })
 
   
-//////////////////////////////////////////////////////////////////////////////////
-////        PRODUCT LIST  
-//////////////////////////////////////////////////////////////////////////////////
-  const productForm = $('#productForm')
-  const productViewContainer = $('#productViewContainer')
+    //////////////////////////////////////////////////////////////////////////////////
+    ////        PRODUCT LIST  
+    //////////////////////////////////////////////////////////////////////////////////
+      const productForm = $('#productForm')
+      const productViewContainer = $('#productViewContainer')
 
-  productForm.submit((event) => {
-    event.preventDefault()
+      productForm.submit((event) => {
+        event.preventDefault()
 
-    const newProduct = {
-      title: productForm[0][0].value,
-      price: productForm[0][1].value,
-      thumbnail: productForm[0][2].value,
-    }
+        const newProduct = {
+          title: productForm[0][0].value,
+          price: productForm[0][1].value,
+          thumbnail: productForm[0][2].value,
+        }
 
-    socket.emit('addNewProduct', newProduct)
-    productForm.trigger('reset')
-  })
+        socket.emit('addNewProduct', newProduct)
+        productForm.trigger('reset')
+      })
 
-  socket.on('updateProductList', productListHandler)
+      socket.on('updateProductList', productListHandler)
 
-  async function productListHandler(allProducts) {
-    const productLayout = await fetch('layouts/productView.hbs')
-    const layoutText = await productLayout.text()
-    const compiledHbsTemplate = Handlebars.compile(layoutText)
-    const html = compiledHbsTemplate({ allProducts })
-    productViewContainer.empty().append(html)
-  }
+      async function productListHandler(allProducts) {
+        const productLayout = await fetch('layouts/productView.hbs')
+        const layoutText = await productLayout.text()
+        const compiledHbsTemplate = Handlebars.compile(layoutText)
+        const html = compiledHbsTemplate({ allProducts })
+        productViewContainer.empty().append(html)
+      }
 
-  
-//////////////////////////////////////////////////////////////////////////////////
-////        CHAT ROOM
-//////////////////////////////////////////////////////////////////////////////////
-  const chatForm = $('#chatForm')
-  const chatContainer = $('#chatContainer')
+      
+    //////////////////////////////////////////////////////////////////////////////////
+    ////        CHAT ROOM
+    //////////////////////////////////////////////////////////////////////////////////
+      const chatForm = $('#chatForm')
+      const chatContainer = $('#chatContainer')
 
-  chatForm.submit((event) => {
-    event.preventDefault()
+      chatForm.submit((event) => {
+        event.preventDefault()
 
-    const newMessage = {
-      email: chatForm[0][0].value,
-      messageText: chatForm[0][1].value,
-    }
+        const newMessage = {
+          email: chatForm[0][0].value,
+          messageText: chatForm[0][1].value,
+        }
 
-    if(oUsuarioSession){
-      sessionStorage.setItem('UsuarioschatForm',JSON.stringify(new Usuario(newMessage.email)))
-      oUsuarioSession = JSON.parse( sessionStorage.getItem('UsuarioschatForm') )
-    }
-    socket.emit('addNewMessage', newMessage)
-    chatForm.trigger('reset')
-  })
+        if(oUsuarioSession){
+          sessionStorage.setItem('UsuarioschatForm',JSON.stringify(new Usuario(newMessage.email)))
+          oUsuarioSession = JSON.parse( sessionStorage.getItem('UsuarioschatForm') )
+        }
+        socket.emit('addNewMessage', newMessage)
+        chatForm.trigger('reset')
+      })
 
-  socket.on('updateChatRoom', chatRoomHandler)
+      socket.on('updateChatRoom', chatRoomHandler)
 
-  async function chatRoomHandler(allMessages) {
-    const chatLayout = await fetch('layouts/chatRoom.hbs')
-    const layoutText = await chatLayout.text()
-    const compiledHbsTemplate = Handlebars.compile(layoutText)
-    const html = compiledHbsTemplate({ allMessages })
-    chatContainer.empty().append(html)
-
-
-    if(oUsuarioSession==''){     
-      chatForm[0][0].disabled = false;
-    }
-    else{
-      oUsuarioSession = JSON.parse( sessionStorage.getItem('UsuarioschatForm') )
-      chatForm[0][0].value = oUsuarioSession.email;
-      chatForm[0][0].disabled = true;
-    }
-  }
+      async function chatRoomHandler(allMessages) {
+        const chatLayout = await fetch('layouts/chatRoom.hbs')
+        const layoutText = await chatLayout.text()
+        const compiledHbsTemplate = Handlebars.compile(layoutText)
+        const html = compiledHbsTemplate({ allMessages })
+        chatContainer.empty().append(html)
 
 
-  
+        if(oUsuarioSession==''){     
+          chatForm[0][0].disabled = false;
+        }
+        else{
+          oUsuarioSession = JSON.parse( sessionStorage.getItem('UsuarioschatForm') )
+          chatForm[0][0].value = oUsuarioSession.email;
+          chatForm[0][0].disabled = true;
+        }
+      }
 })
