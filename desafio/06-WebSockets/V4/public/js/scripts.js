@@ -219,6 +219,27 @@ $(function () {
       var notification = alertify.notify(`disconnect :  ${data.email} `, 'error', 5, function(){  console.log(`disconnect : ${data.email} `); });
     }
 
+
+
+
+
+    //////////////////////////////////////////////////////////////////////////////////
+    ////        error
+    //////////////////////////////////////////////////////////////////////////////////
+
+    socket.on('error', errorHandler)
+
+    async function errorHandler(data) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Vuelve a intentarlo',
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        footer: '<a href="">Revisa la informacion ingresada antes de continuar</a>'
+        })
+    }
+
 })
 
 

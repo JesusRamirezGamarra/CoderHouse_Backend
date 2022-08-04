@@ -66,12 +66,6 @@ app.use('/', (req, res) => {
 ////////////////////////////////////////////////////////////////////////////////
 io.on('connection', async (socket) => {
   socket.emit('socketConnected')
-  //console.log('socket : ' ,socket)
-  // console.log('socket : ', socket.handshake)
-  // console.log(socket.handshake.query['transport'])
-  // console.log('transport : ', socket.handshake.query.transport);
-  // console.log('email : ', socket.handshake.query.email);
-  // console.log(`hostServer: ${hostServer}`);    
   const email = socket.handshake.query.email;
   console.log(`email : ${email}`);
   socket.broadcast.emit('newConnection',{ email: email});
@@ -84,36 +78,32 @@ io.on('connection', async (socket) => {
 
     socket.on('addNewProduct', async (newProduct) => {
       console.log('>>> addNewProduct')
-      // console.log('addNewProduct : ', newProduct.data)
-      // console.log(`url.hostname`,url.hostname)
-      // console.log(`req.headers.host : `,req.headers.host )
-      // await productsRouter.addNewProduct(newProduct)
-      // const allProducts = await productsRouter.getAllProduct()
-      // io.sockets.emit('updateProductList', allProducts)
-
       const FileName = `${Date.now()}-${newProduct.filename}`;
-      // console.log(`FileName : `, FileName )
       const file = ___dirname + `/public/img/${FileName}`;
+          // const splitted = newProduct.data.split(';base64,');
+          // const format = splitted[0].split('/')[1];
+          // console.log(`format : ${format}`)      
       console.log(`file : ${file}`)
 
-      // console.log(`file : ${file}`)
-      let newProductWithOutImage = {
-        title: newProduct.title, 
-        price: newProduct.price, 
-        thumbnail: `${host}/img/${FileName}`
+      if (newProduct.title.length > 25  ){
+        socket.emit('error', 'Title must be less than 25 characters')
       }
-  
+      else if (newProduct.price > 0 && newProduct.price <= 100000){
+        socket.emit('error', 'Price must be between 0 and 100000')
+      }else{
 
-      fs.writeFileSync(file, new Buffer(newProduct.data.split(';base64,')[1], 'base64'))  
+        let newProductWithOutImage = {
+          title: newProduct.title, 
+          price: newProduct.price, 
+          thumbnail: `${host}/img/${FileName}`
+        }
+        
 
-
-      // console.log(`newProductWithOutImage : ${newProductWithOutImage}`);
-      await productsRouter.addNewProduct(newProductWithOutImage)
-    
-      const allProducts = await productsRouter.getAllProduct()
-      io.sockets.emit('updateProductList', allProducts)
-      
-
+        fs.writeFileSync(file, new Buffer(newProduct.data.split(';base64,')[1], 'base64'))  
+        await productsRouter.addNewProduct(newProductWithOutImage)
+        const allProducts = await productsRouter.getAllProduct()
+        io.sockets.emit('updateProductList', allProducts)
+      }
     })
 
     
