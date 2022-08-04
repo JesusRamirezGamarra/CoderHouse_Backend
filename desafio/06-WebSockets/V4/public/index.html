@@ -64,13 +64,16 @@
                 <div style="display: flex; justify-content: center; align-items: center"></div>
                   <form id="productForm">
                     <label>Name</label>
-                    <input type="text" name="title" placeholder="example: Samsung A03 Core 6.5 2GB RAM 32GB" required />
+                    <input type="text" name="title" placeholder="example: Samsung A03 Core 6.5 2GB RAM 32GB" maxlength="25" required />
 
                     <label>Price</label>
                     <input type="number" name="price" placeholder="example: 899" min="0" max="100000" step="1" required />
 
-                    <label>Image URL</label>
-                    <input type="text" name="thumbnail" placeholder="example: https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" />
+                    <!-- <label>Image URL</label>
+                    <input type="text" name="thumbnail" placeholder="example: https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" /> -->
+                    <label for="image">Image</label>
+                    <input type="file" id="thumbnail" name="thumbnail" accept="image/gif, image/jpg, image/jpeg, image/png" class="form-control" >
+
 
                     <button type="submit" class="btn btn-outline-primary">Add Product</button>
                   </form>

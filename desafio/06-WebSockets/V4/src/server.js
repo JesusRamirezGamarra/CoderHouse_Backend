@@ -11,7 +11,8 @@ import { Server } from 'socket.io';
 import {__dirname,___dirname} from './utils.js';
 import productsRouter from './routes/products.router.js';
 import chatMessagesRouter from './routes/chatMessages.router.js';
-
+import fs from 'fs';
+//import url from 'node:url';//https://nodejs.org/api/url.html#url_new_url_input_base
 
 //----------* EXPRESS() *----------//
 const app = express();
@@ -45,13 +46,15 @@ app.use(express.json())
 
 
 
-
+const host =`http://localhost:${PORT}`;
 
 //////////////////////////////////////////////////////////////////////////////////
 ////         ROUTES
 //////////////////////////////////////////////////////////////////////////////////
 app.use('/', (req, res) => {
   try {
+    // hostServer = new URL(`${req.protocol}://${req.get('host')}${req.originalUrl}`);
+    // console.log(`hostServer: ${hostServer}`);    
     res.sendFile(process.cwd() + '/public/index.html')
   } catch (error) {
     console.log(`ERROR: ${error}`)
@@ -68,6 +71,7 @@ io.on('connection', async (socket) => {
   // console.log(socket.handshake.query['transport'])
   // console.log('transport : ', socket.handshake.query.transport);
   // console.log('email : ', socket.handshake.query.email);
+  // console.log(`hostServer: ${hostServer}`);    
   const email = socket.handshake.query.email;
   console.log(`email : ${email}`);
   socket.broadcast.emit('newConnection',{ email: email});
@@ -80,9 +84,36 @@ io.on('connection', async (socket) => {
 
     socket.on('addNewProduct', async (newProduct) => {
       console.log('>>> addNewProduct')
-      await productsRouter.addNewProduct(newProduct)
+      // console.log('addNewProduct : ', newProduct.data)
+      // console.log(`url.hostname`,url.hostname)
+      // console.log(`req.headers.host : `,req.headers.host )
+      // await productsRouter.addNewProduct(newProduct)
+      // const allProducts = await productsRouter.getAllProduct()
+      // io.sockets.emit('updateProductList', allProducts)
+
+      const FileName = `${Date.now()}-${newProduct.filename}`;
+      // console.log(`FileName : `, FileName )
+      const file = ___dirname + `/public/img/${FileName}`;
+      console.log(`file : ${file}`)
+
+      // console.log(`file : ${file}`)
+      let newProductWithOutImage = {
+        title: newProduct.title, 
+        price: newProduct.price, 
+        thumbnail: `${host}/img/${FileName}`
+      }
+  
+
+      fs.writeFileSync(file, new Buffer(newProduct.data.split(';base64,')[1], 'base64'))  
+
+
+      // console.log(`newProductWithOutImage : ${newProductWithOutImage}`);
+      await productsRouter.addNewProduct(newProductWithOutImage)
+    
       const allProducts = await productsRouter.getAllProduct()
       io.sockets.emit('updateProductList', allProducts)
+      
+
     })
 
     

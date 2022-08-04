@@ -118,11 +118,23 @@ $(function () {
         const newProduct = {
           title: productForm[0][0].value,
           price: productForm[0][1].value,
-          thumbnail: productForm[0][2].value,
+          //thumbnail: productForm[0][2].value,
         }
 
-        socket.emit('addNewProduct', newProduct)
-        productForm.trigger('reset')
+        //socket.emit('addNewProduct', newProduct)
+        const ourFile = document.getElementById('thumbnail').files[0];
+        const reader = new FileReader();
+        reader.onloadend = function() {
+            socket.emit("addNewProduct", {
+              data:reader.result, 
+              filename: ourFile.name, 
+              title: newProduct.title,
+              price: newProduct.price//,
+              //thumbnail: newProduct.thumbnail
+            });
+        }
+        reader.readAsDataURL(ourFile);
+        productForm.trigger('reset');
       })
 
       socket.on('updateProductList', productListHandler)
