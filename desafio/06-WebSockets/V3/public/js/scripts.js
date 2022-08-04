@@ -101,12 +101,12 @@ function CerrarSeccionButton() {
 //https://www.codegrepper.com/code-examples/javascript/document+ready+without+jquery
 // “document ready without jquery”
 $(function () {
+
   socket.on('socketConnected', () => {
     socket.emit('productListRequest')
     socket.emit('chatMessagesRequest')
   })
-
-  
+    
     //////////////////////////////////////////////////////////////////////////////////
     ////        PRODUCT LIST  
     //////////////////////////////////////////////////////////////////////////////////
