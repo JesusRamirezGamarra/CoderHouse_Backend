@@ -1,0 +1,20 @@
+[
+	{
+		"title": "Pioneer xdj 1000 mk2",
+		"price": "500.000",
+		"image": "compacteras.1000.jpg",
+		"id": 1
+	},
+	{
+		"title": "Sennheiser hd-25",
+		"price": "200.000",
+		"image": "auris.sennheiser.jpg",
+		"id": 2
+	},
+	{
+		"title": "JBL 305 mk2",
+		"price": "100.000",
+		"image": "monitores.jbl.jpg",
+		"id": 3
+	}
+]

@@ -1,0 +1,83 @@
+{{!-- FORMULARIO --}}
+<div class="form-container">
+    <h1>BIENVENIDO</h1>
+    <hr>
+    <div>
+        <h2>Agregar producto</h2>
+        <form id="form-addProduct">
+            <label>Title</label>
+            <input type="text" placeholder="Escribir el nombre del producto" name="title">
+            <label>Price</label>
+            <input type="number" placeholder="Escribir el precio del producto" name="price">
+            <label>Thumbnail</label>
+            <input type="file" name="filePost">
+            <input type="submit" value="Agregar" class="btn btn-primary">
+        </form>
+    </div>
+    <div>
+        <h2>Borrar producto por id</h2>
+        <form id="form-deleteProduct">
+            <input id="input-deleteProduct" type="number" placeholder="Ingresar el id del producto">
+            <input type="submit" value="Borrar" class="btn btn-primary">
+        </form>
+    </div>
+</div>
+{{!-- LISTA DE PRODUCTOS --}}
+<div class="products-container">
+    <h2>Lista de Productos</h2>
+    <hr>
+    <div class="list-container" id="list-container">
+        {{#if hasProducts}}
+            <div id="table-container" class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Foto</th>
+                        </tr>
+                    </thead>
+                    <tbody id="list-products">
+                        {{#each products}}
+                            <tr>
+                                <td class="product-title">{{this.title}}</td>
+                                <td>${{this.price}}</td>
+                                <td><img src="./img/{{this.image}}" class="img-fluid img-product" alt="imagen"></td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        {{else}}
+            <p>No hay productos disponibles</p>
+        {{/if}}
+    </div>
+</div>
+
+{{!-- CENTRO DE MENSAJES --}}
+<div class="chat-container">
+    <h2>Centro de mensajes</h2>
+    <hr>
+    <form id="form-chat">
+        <label for="email">Usuario</label>
+        <input id="user-chat" type="email" name="email" placeholder="ejemplo@email.com" required>
+        <br/>
+        <div id="chat-box" class="chat-box">
+            {{#each messages}}
+                <div class="message">
+                        <span style="color:blue">{{this.user}}</span>
+                        <span style="color:black">&nbsp[</span>
+                        <span style="color:red">{{this.time}}</span>
+                        <span style="color:black">]:&nbsp</span>
+                        <span style="color:green">{{this.message}}<span>
+                    </div>
+            {{/each}}
+        </div>
+        <textarea id="chat-message" class="chat-message" placeholder="Escribir mensaje..." required></textarea>
+        <button type="submit" id="btn-send" class="btn btn-primary btn-send">Enviar</button>
+    </form>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+<script src="js/products.js"></script>
+<script src="js/chat.js"></script>

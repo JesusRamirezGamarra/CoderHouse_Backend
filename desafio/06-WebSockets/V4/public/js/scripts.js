@@ -97,6 +97,19 @@ function CerrarSeccionButton() {
 }
 
 
+let MotorPlantilla ='HBS'
+
+function MotorPlantillasButton() {
+  MotorPlantilla = document.querySelector('input[name="optradio"]:checked').value;
+  // socket.emit('productListRequest')
+  socket.emit('chatMessagesRequest')
+
+
+
+}
+
+
+
 
 //https://www.codegrepper.com/code-examples/javascript/document+ready+without+jquery
 // “document ready without jquery”
@@ -140,11 +153,53 @@ $(function () {
       socket.on('updateProductList', productListHandler)
 
       async function productListHandler(allProducts) {
-        const productLayout = await fetch('layouts/productView.hbs')
-        const layoutText = await productLayout.text()
-        const compiledHbsTemplate = Handlebars.compile(layoutText)
-        const html = compiledHbsTemplate({ allProducts })
-        productViewContainer.empty().append(html)
+        let productLayout =''
+        let layoutText=''
+        let html=''
+        let compiledTemplate = ''
+
+
+        switch (MotorPlantilla) {
+          case 'HBS':
+              productLayout = await fetch('layouts/productView.hbs')
+              layoutText = await productLayout.text()
+              compiledTemplate = Handlebars.compile(layoutText)
+              html = compiledTemplate({ allProducts })
+              productViewContainer.empty().append(html)
+
+              document.getElementById('Logo-MotorPlantillas').innerHTML = `<img src="./img/motorPlantillas/Logo-HBS.png" alt="HBS" />`;
+            break;
+          case 'EJS':
+              // const ejs = require('ejs');
+              productLayout = await fetch('layouts/productView.ejs')
+              layoutText = await productLayout.text()
+              compiledTemplate = ejs.compile(layoutText)
+              html = compiledTemplate({ allProducts })
+              productViewContainer.empty().append(html)      
+
+              document.getElementById('Logo-MotorPlantillas').innerHTML = `<img src="./img/motorPlantillas/Logo-EJS.png" alt="EJS" />`;              
+            break;
+          case 'PUG':
+              const pug = require('pug');
+              productLayout = await fetch('layouts/productView.pug')
+              layoutText = await productLayout.text()
+              compiledTemplate = pug.compile(layoutText)
+              html = compiledTemplate({ allProducts })
+              productViewContainer.empty().append(html)      
+
+              document.getElementById('Logo-MotorPlantillas').innerHTML = `<img src="./img/motorPlantillas/Logo-PUG.png" alt="PUG" />`;
+            break;
+          default:
+            productLayout = await fetch('layouts/productView.hbs')
+            layoutText = await productLayout.text()
+            compiledTemplate = Handlebars.compile(layoutText)
+            html = compiledTemplate({ allProducts })
+            productViewContainer.empty().append(html)
+
+            document.getElementById('Logo-MotorPlantillas').innerHTML = `<img src="./img/motorPlantillas/Logo-HBS.png" alt="HBS" />`;
+            break;
+        }
+
       }
 
       
@@ -165,14 +220,53 @@ $(function () {
 
       socket.on('updateChatRoom', chatRoomHandler)
 
+      
+      
       async function chatRoomHandler(allMessages) {
-        const chatLayout = await fetch('layouts/chatRoom.hbs')
-        const layoutText = await chatLayout.text()
-        const compiledHbsTemplate = Handlebars.compile(layoutText)
-        const html = compiledHbsTemplate({ allMessages })
-        chatContainer.empty().append(html)
+        let chatLayout =''
+        let layoutText=''
+        let html=''
+        let compiledTemplate = ''
+        switch (MotorPlantilla) {
+          case 'HBS':
+              chatLayout = await fetch('layouts/chatRoom.hbs')
+              layoutText = await chatLayout.text()
+              compiledTemplate = Handlebars.compile(layoutText)
+              html = compiledTemplate({ allMessages })
+              chatContainer.empty().append(html)
 
+              document.getElementById('Logo-MotorPlantillas').innerHTML = `<img src="./img/motorPlantillas/Logo-HBS.png" alt="HBS" />`;
+            break;
+          case 'EJS':
+              // const ejs = require('ejs');
+              chatLayout = await fetch('layouts/chatRoom.ejs')
+              layoutText = await chatLayout.text()
+              compiledTemplate = ejs.compile(layoutText)
+              html = compiledTemplate({ allMessages })
+              chatContainer.empty().append(html)      
 
+              document.getElementById('Logo-MotorPlantillas').innerHTML = `<img src="./img/motorPlantillas/Logo-EJS.png" alt="EJS" />`;              
+            break;
+          case 'PUG':
+              const pug = require('pug');
+              chatLayout = await fetch('layouts/chatRoom.pug')
+              layoutText = await chatLayout.text()
+              compiledTemplate = pug.compile(layoutText)
+              html = compiledTemplate({ allMessages })
+              chatContainer.empty().append(html)      
+
+              document.getElementById('Logo-MotorPlantillas').innerHTML = `<img src="./img/motorPlantillas/Logo-PUG.png" alt="PUG" />`;
+            break;
+          default:
+            chatLayout = await fetch('layouts/chatRoom.hbs')
+            layoutText = await chatLayout.text()
+            compiledTemplate = Handlebars.compile(layoutText)
+            html = compiledTemplate({ allMessages })
+            chatContainer.empty().append(html)
+
+            document.getElementById('Logo-MotorPlantillas').innerHTML = `<img src="./img/motorPlantillas/Logo-HBS.png" alt="HBS" />`;
+            break;
+        }
       }
 
     //////////////////////////////////////////////////////////////////////////////////
@@ -230,6 +324,9 @@ $(function () {
     socket.on('error', errorHandler)
 
     async function errorHandler(data) {
+
+      const error = data.error
+
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
