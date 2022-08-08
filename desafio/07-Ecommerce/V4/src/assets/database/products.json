@@ -1,13 +1,13 @@
 [
 	{
 		"id": 1,
-		"timestamp": 1659969072110,
+		"timestamp": 1659991432087,
 		"name": "Bulbasaur N.º001",
 		"description": "Este Pokémon nace con una semilla en el lomo, que brota con el paso del tiempo.",
 		"code": "15fa3dd3-7c95-4e7f-a90f-ba3a32e3473d",
 		"thumbnail": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
 		"price": 100,
-		"stock": 9982
+		"stock": 9979
 	},
 	{
 		"id": 2,
@@ -21,13 +21,13 @@
 	},
 	{
 		"id": 3,
-		"timestamp": 1659963028651,
+		"timestamp": 1659991416442,
 		"name": "Venusaur N.º003",
 		"description": "La planta florece cuando absorbe energía solar, lo cual le obliga a buscar siempre la luz del sol.",
 		"code": "35fa3dd3-7c95-4e7f-a90f-ba3a32e3473d",
 		"thumbnail": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png",
 		"price": 130,
-		"stock": 71
+		"stock": 69
 	},
 	{
 		"id": 4,

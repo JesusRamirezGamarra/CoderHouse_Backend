@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "7764cbfb-c491-49e2-aa6b-4565a512c16b",
+		"name": "CoderHouse_Backend_Ecommerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20414208"
+	},
+	"item": [
+		{
+			"name": "Router: /api/produtcs/",
+			"item": [
+				{
+					"name": "a. GET: '/:pid?' - Me permite listar 1 Producto disponibles ó un producto por su id (disponible para usuarios y administradores)",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "a. GET: '/:pid?' - Me permite listar todos los productos disponibles ó un producto por su id (disponible para usuarios y administradores)",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "b. POST: '/' - Para incorporar productos al listado (disponible para administradores)",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "c. PUT: '/:pid' - Actualiza un producto por su id (disponible para administradores)",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "d. DELETE: '/:pid' - Borra un producto por su id (disponible para administradores)",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Router: /api/carts/",
+			"item": [
+				{
+					"name": "a. POST: '/' - Crea un carrito y devuelve su id.",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "b. DELETE: '/:cid' - Vacía un carrito y lo elimina. (SI ELIMINA EL CARRITO)",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "c. GET: '/:cid/products' - Me permite listar todos los productos guardados en el carrito (MUESTRAS LOS PRODUCTOS, NO SOLO SUS IDs)",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "d. POST: '/:cid/products/pid' - Para incorporar productos al carrito por su id de producto",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "e. DELETE: '/:cid/products/:pid' - Eliminar un producto del carrito por su id de carrito y de producto",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

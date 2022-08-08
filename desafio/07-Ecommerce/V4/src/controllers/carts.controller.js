@@ -64,11 +64,9 @@ export const cartsController = {
 
       const cartFound = await cartDB.getById(cId)
       if(!cartFound){
-        return res.status(422).json({ description: 'Cart not found.' })
+        return res.status(422).json({ description: `Cart ${pId} not found.` })
       }
-
       const productFound = await productDB.getById(pId)
-      console.log(`productFound : `,productFound)     
       if(!productFound){
         return res.status(422).json({ description: `Product ${pId} not found.` })
       }
@@ -118,7 +116,38 @@ export const cartsController = {
   },
 
 
+  deleteProductToCartById: async (req, res) => {
+    try {
+      const cartId = parseInt( req.params.cid )
+      const prodId = parseInt( req.params.pid )
 
+      const cartFound = await cartDB.getById(cartId)
+      if(!cartFound){
+        return res.status(422).json({ description: `Cart ${pId} not found.` })
+      }
+
+      const productFound = await productDB.getById(prodId)
+      if(!productFound){
+        return res.status(422).json({ description: `Product ${pId} not found.` })
+      }
+
+
+
+      
+      // if (!cartFound) {
+      //   res.send({ error: 'Cart not found.' })
+      // } else if (!productFound) {
+      //   res.send({ error: 'Product not found.' })
+      // } else {
+      //   await cartDB.removeItemFrom(cartFound.id, productFound.id)
+      //   const updatedCart = await cartDB.getById(cartId)
+      //   res.json(updatedCart)
+      // }
+    } catch (error) {
+      console.warn({class:`cartsController`,method:`deleteProductToCartById: async (req, res)`,description: error})
+      res.status(500).json({description: `Internal Server Error,please contact administrator `})
+    }
+  },
 
 
 
@@ -192,30 +221,6 @@ export const cartsController = {
     }
   },
 
-
-  deleteProductFromCart: async (req, res) => {
-    try {
-      const cartId = req.params.id
-      const prodId = req.params.id_prod
-
-      const cartFound = await cartDB.getById(cartId)
-      const productFound = await productDB.getById(prodId)
-
-      console.log('deleteProductFromCart')
-
-      if (!cartFound) {
-        res.send({ error: 'Cart not found.' })
-      } else if (!productFound) {
-        res.send({ error: 'Product not found.' })
-      } else {
-        await cartDB.removeItemFrom(cartFound.id, productFound.id)
-        const updatedCart = await cartDB.getById(cartId)
-        res.json(updatedCart)
-      }
-    } catch (error) {
-      console.log(`ERROR: ${error}`)
-    }
-  },
 
   emptyCartById: async (req, res) => {
     try {
