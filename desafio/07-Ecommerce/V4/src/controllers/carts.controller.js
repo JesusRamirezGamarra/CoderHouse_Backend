@@ -68,7 +68,7 @@ export const cartsController = {
       }
 
       const productFound = await productDB.getById(pId)
-
+      console.log(`productFound : `,productFound)     
       if(!productFound){
         return res.status(422).json({ description: `Product ${pId} not found.` })
       }
@@ -86,12 +86,12 @@ export const cartsController = {
       const ProductItemInCarts = productsInCartsFound.find(item=> item.id === parseInt(pId))
 
       if(!ProductItemInCarts){//insert new product
-        // const newProduct = {
-        //   id: pId,
-        //   quantity: pquantity,
-        // }
-        // cartFound.products.push(newProduct)
-        // await cartDB.updateItem(cartFound)
+        const newProduct = {
+          id: pId,
+          quantity: pquantity,
+        }
+        cartFound.products.push(newProduct)
+        await cartDB.updateById(cartFound)
         return res.status(200).json({description:`Product ${pId} added to cart ${cId} successfully.`,data:cartFound})
         
       }
@@ -101,46 +101,15 @@ export const cartsController = {
         stock = stock - pquantity
         itemRest.timestamp = Date.now()
         console.log(`stock : `,stock)
-        productDB.updateById({...itemRest,stock})
-
-        
-        console.log(`cartFound : `,cartFound)
-
+        await productDB.updateById({...itemRest,stock})
+        //console.log(`cartFound : `,cartFound)
         cartFound.timestamp = Date.now()
-//        cartFound.products.id[pId].quantity += pquantity
-        
-        // console.log(`productFound : `,productFound)     
-        // console.log(`productInCartsFound : `,productsInCartsFound)
-        // console.log(`ProductItemInCarts : `,ProductItemInCarts)
+        cartFound.products = cartFound.products.map( item => item.id !== pId ? item : {...item, quantity: item.quantity + pquantity} )
+        await cartDB.updateById(cartFound)
+        //console.log(`Update cartFound.products : `,cartFound.products)
 
-        console.log(`Update cartFound : `,cartFound)
-
-        // cartFound.products.map(item=>(item.id !== object.id ? item : object))
-
-        // let {id, quantity } = ProductItemInCarts
-        // quantity = quantity + pquantity
-        // cartDB.updateById({id, quantity})
-
-        res.status(200).json({description: `(${pquantity}) unid(s) of (${productFound.id}) - ${productFound.name} added successfully in Cart , your cart has ${cartFound.products.length} products.`,data:cartFound})
-
-        //ProductItemInCarts.quantity += quantity
-        //await cartDB.updateItem(cartFound)
-        //return res.status(200).json({description:`+Product ${pId} added to cart ${cId} successfully.`,data:cartFound})
+        return res.status(200).json({description: `(${pquantity}) unid(s) of (${productFound.id}) - ${productFound.name} added successfully in Cart.`,data:cartFound})
       }
-            // await productDB.updateStockByIdd({id:pId,stock:quantity})
-        //await cartDB.addItemInto(cartFound.id, productFound )
-        // const updatedCart = await cartDB.getById(cId)
-        // res.json(updatedCart)
-
-
-
-              // else {
-      //   const productItem = productFound.find(item=> item.id == parseInt(pId))
-      //   if(!productItem){
-      //     console.log(`productItem : `,productItem)    
-      //     res.status(422).json({ description: `Product : ${pId} not found.` })
-      //   }
-      // }
 
     }catch (error) {
       console.warn({class:`cartsController`,method:`addProductToCart: async (req, res)`,description: error})

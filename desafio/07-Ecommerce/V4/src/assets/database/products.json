@@ -1,13 +1,13 @@
 [
 	{
 		"id": 1,
-		"timestamp": 1659739618951,
+		"timestamp": 1659969072110,
 		"name": "Bulbasaur N.º001",
 		"description": "Este Pokémon nace con una semilla en el lomo, que brota con el paso del tiempo.",
 		"code": "15fa3dd3-7c95-4e7f-a90f-ba3a32e3473d",
 		"thumbnail": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
 		"price": 100,
-		"stock": 89
+		"stock": 9982
 	},
 	{
 		"id": 2,
@@ -17,7 +17,7 @@
 		"code": "25fa3dd3-7c95-4e7f-a90f-ba3a32e3473d",
 		"thumbnail": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png",
 		"price": 125,
-		"stock": 10
+		"stock": 1000
 	},
 	{
 		"id": 3,
@@ -31,13 +31,13 @@
 	},
 	{
 		"id": 4,
-		"timestamp": 1659739618951,
+		"timestamp": 1659969194518,
 		"name": "Charmander N.º004",
 		"description": "Prefiere las cosas calientes. Dicen que cuando llueve le sale vapor de la punta de la cola.",
 		"code": "45fa3dd3-7c95-4e7f-a90f-ba3a32e3473d",
 		"thumbnail": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png",
 		"price": 150,
-		"stock": 53
+		"stock": 49
 	},
 	{
 		"id": 5,
