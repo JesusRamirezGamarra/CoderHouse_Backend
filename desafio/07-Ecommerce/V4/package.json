@@ -1,0 +1,28 @@
+{
+  "name": "challenge-ecommerce",
+  "version": "1.0.1",
+  "description": "",
+  "main": "src/server.js",
+  "type": "module",
+  "engines": {
+    "node":"14.x"
+  },  
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon .",
+    "start": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JesusRamirezGamarra/CoderHouse_Backend"
+  },
+  "author": "Jesus Ramirez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JesusRamirezGamarra/CoderHouse_Backend/issues"
+  },
+  "homepage": "https://github.com/JesusRamirezGamarra/CoderHouse_Backend",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
