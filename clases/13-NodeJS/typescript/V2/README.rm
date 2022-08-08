@@ -1,0 +1,7 @@
+  "scripts": {
+    "initconfig": "tsc --init",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+
+  
