@@ -48,9 +48,11 @@ http://localhost:8080/API/products/13
         "isAdmin":true
 ```
 d. DELETE: '/:pid' - Borra un producto por su id (disponible para administradores)
-    BODY x-www-Form-urlencoded
+
 ```
-    http://localhost:8080/API/products/13
+http://localhost:8080/API/products/13
+
+    BODY x-www-Form-urlencoded
         "isAdmin":true
     
 ```
@@ -74,17 +76,18 @@ c. GET: '/:cid/products' - Me permite listar todos los productos guardados en el
 ```
 http://localhost:8080/API/carts/2/products
 ```
-d. POST: '/:cid/products/pid' - Para incorporar productos al carrito por su id de producto
+d. POST: '/:cid/products' - Para incorporar productos al carrito por su id de producto
 ```
-http://localhost:8080/API/carts/2/products/1
+http://localhost:8080/API/carts/2/products
 
     BODY x-www-Form-urlencoded
-        "quantity":10,
+        "pid":1
+        "quantity":10
 
 ```
 e. DELETE: '/:cid/products/:pid' - Eliminar un producto del carrito por su id de carrito y de producto
 ```
-
+http://localhost:8080/API/carts/2/products/1
 ```
 
 #### 3. Crear una variable booleana administrador, cuyo valor configuraremos más adelante con el sistema de login.

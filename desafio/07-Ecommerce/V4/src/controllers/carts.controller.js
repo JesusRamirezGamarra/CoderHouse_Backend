@@ -58,7 +58,7 @@ export const cartsController = {
   addProductToCart: async (req, res) => {
     try {
       const cId = parseInt(req.params.cid)
-      const pId = parseInt(req.params.pid)
+      const pId = parseInt(req.body.pid) // Se confirma por el profesor que va por FORM-DATA BODY
       const pquantity =  req.body.quantity ? parseInt(req.body.quantity) : 1
 
 
@@ -118,31 +118,27 @@ export const cartsController = {
 
   deleteProductToCartById: async (req, res) => {
     try {
-      const cartId = parseInt( req.params.cid )
-      const prodId = parseInt( req.params.pid )
+      const cId = parseInt( req.params.cid )
+      const pId = parseInt( req.params.pid )
 
-      const cartFound = await cartDB.getById(cartId)
+      const cartFound = await cartDB.getById(cId)
       if(!cartFound){
-        return res.status(422).json({ description: `Cart ${pId} not found.` })
+        return res.status(422).json({ description: `Cart ${cId} not found.` })
       }
 
-      const productFound = await productDB.getById(prodId)
+      const productFound = await productDB.getById(pId)
       if(!productFound){
         return res.status(422).json({ description: `Product ${pId} not found.` })
       }
+      else{
+        cartFound.timestamp = Date.now()
+        cartFound.products = cartFound.products.filter( item => item.id !== pId )
+        //cartFound.products = cartFound.products.map ( item => {if(item.id !== pId)return item })
+        //cartFound.products = cartFound.products.map ( item => (item.id !== pId) ? item : '' )
+        await cartDB.updateById(cartFound)
+        return res.status(200).json({description: `Producto : (${productFound.id}) - ${productFound.name} was removed from your cart.`,data:cartFound})
+      }
 
-
-
-      
-      // if (!cartFound) {
-      //   res.send({ error: 'Cart not found.' })
-      // } else if (!productFound) {
-      //   res.send({ error: 'Product not found.' })
-      // } else {
-      //   await cartDB.removeItemFrom(cartFound.id, productFound.id)
-      //   const updatedCart = await cartDB.getById(cartId)
-      //   res.json(updatedCart)
-      // }
     } catch (error) {
       console.warn({class:`cartsController`,method:`deleteProductToCartById: async (req, res)`,description: error})
       res.status(500).json({description: `Internal Server Error,please contact administrator `})

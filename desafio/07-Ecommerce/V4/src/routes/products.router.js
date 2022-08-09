@@ -18,7 +18,9 @@ router.post('/', async (req,res)=>{
     }
     else{
         console.warn({method:`router.post('/', async (req,res)`,description: 'Unauthorized'})
-        res.status(401).json({class: `productsRouter`,description: `User not Access, please login as admin`})
+        // {error : -1, descripcion: ruta 'x' método 'y' no autorizada }
+        res.status(401).json({error : -1, descripcion: `Route '${req.originalUrl}' method '${req.method}' not autorized.`})
+        //res.status(401).json({class: `productsRouter`,description: `User not Access, please login as admin`})
     }
 })
 router.put('/:pid', async (req,res)=>{
@@ -27,7 +29,8 @@ router.put('/:pid', async (req,res)=>{
     }
     else{
         console.warn({method:`router.post('/', async (req,res)`,description: 'Unauthorized'})
-        res.status(401).json({class:`productsRouter`,description: `User not Access, please login as admin`})
+        res.status(401).json({error : -1, descripcion: `Route '${req.originalUrl}' method '${req.method}' not autorized.`})
+        // res.status(401).json({class:`productsRouter`,description: `User not Access, please login as admin`})
     }
 })
 
@@ -37,7 +40,8 @@ router.delete('/:pid',async(req,res)=>{
     }
     else{
         console.warn({method:`router.delete('/', async (req,res)`,description: 'Unauthorized'})
-        res.status(401).json({class:`productsRouter`,description: `User not Access, please login as admin`})
+        res.status(401).json({error : -1, descripcion: `Route '${req.originalUrl}' method '${req.method}' not autorized.`})
+        // res.status(401).json({class:`productsRouter`,description: `User not Access, please login as admin`})
     }
 })
 

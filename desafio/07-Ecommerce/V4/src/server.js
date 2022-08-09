@@ -32,7 +32,9 @@ app.use('/api/products', productRouter)
 
 
 app.all('*', (req, res) => {
-    res.status(404).json({class:`server`,description: `Route '${req.originalUrl}' method '${req.method}' not implemented.`})
+   // { error : -2, descripcion: ruta 'x' método 'y' no implementada}
+    res.status(400).json({ error : -2, descripcion: `Route '${req.originalUrl}' method '${req.method}' not implemented.`})
+    //res.status(404).json({class:`server`,description: `Route '${req.originalUrl}' method '${req.method}' not implemented.`})
 })
 
 //////////////////////////////////////////////////////////////////////////////////
