@@ -4,11 +4,11 @@
 ## `APP URL (Glitch)`
 
 Server : 
-[https://clammy-lapis-emperor.glitch.me/](https://clammy-lapis-emperor.glitch.me/)
+[https://iris-unexpected-wall.glitch.me/](https://iris-unexpected-wall.glitch.me/)
 Products :
-[https://clammy-lapis-emperor.glitch.me/api/products/](https://clammy-lapis-emperor.glitch.me/api/products/)
+[https://iris-unexpected-wall.glitch.me/api/products/](https://iris-unexpected-wall.glitch.me/api/products/)
 Carts :
-[https://clammy-lapis-emperor.glitch.me/api/carts/](https://clammy-lapis-emperor.glitch.me/api/carts/)
+[https://iris-unexpected-wall.glitch.me/api/carts/](https://iris-unexpected-wall.glitch.me/api/carts/)
 
 
 ## Consigna: 
@@ -21,13 +21,13 @@ a. GET: '/:pid?' - Me permite listar todos los productos disponibles ó un produ
 
 ```
 http://localhost:8080/API/products/
-https://clammy-lapis-emperor.glitch.me/api/products/
+https://iris-unexpected-wall.glitch.me/api/products/
 
 ```
 b. POST: '/' - Para incorporar productos al listado (disponible para administradores)
 ```
 http://localhost:8080/API/products/
-https://clammy-lapis-emperor.glitch.me/api/products/
+https://iris-unexpected-wall.glitch.me/api/products/
 
     BODY x-www-Form-urlencoded
         "name":"Weedle N.º013",
@@ -42,7 +42,7 @@ https://clammy-lapis-emperor.glitch.me/api/products/
 c. PUT: '/:pid' - Actualiza un producto por su id (disponible para administradores)
 ```
 http://localhost:8080/API/products/13
-https://clammy-lapis-emperor.glitch.me/api/products/13
+https://iris-unexpected-wall.glitch.me/api/products/13
 
     BODY x-www-Form-urlencoded
         "name":"Weedle N.º013",
@@ -57,7 +57,7 @@ d. DELETE: '/:pid' - Borra un producto por su id (disponible para administradore
 
 ```
 http://localhost:8080/API/products/13
-https://clammy-lapis-emperor.glitch.me/api/products/13
+https://iris-unexpected-wall.glitch.me/api/products/13
 
     BODY x-www-Form-urlencoded
         "isAdmin":true
@@ -69,7 +69,7 @@ https://clammy-lapis-emperor.glitch.me/api/products/13
 a. POST: '/' - Crea un carrito y devuelve su id.
 ```
 http://localhost:8080/API/carts/
-https://clammy-lapis-emperor.glitch.me/api/carts/
+https://iris-unexpected-wall.glitch.me/api/carts/
 
 ```
 
@@ -77,19 +77,19 @@ b. DELETE: '/:cid' - Vacía un carrito y lo elimina. (SI ELIMINA EL CARRITO)
 
 ```
 http://localhost:8080/API/carts/1
-https://clammy-lapis-emperor.glitch.me/api/carts/1
+https://iris-unexpected-wall.glitch.me/api/carts/1
 
 ```
 
 c. GET: '/:cid/products' - Me permite listar todos los productos guardados en el carrito (MUESTRAS LOS PRODUCTOS, NO SOLO SUS IDs)
 ```
 http://localhost:8080/API/carts/2/products
-https://clammy-lapis-emperor.glitch.me/api/carts/2/products
+https://iris-unexpected-wall.glitch.me/api/carts/2/products
 ```
 d. POST: '/:cid/products' - Para incorporar productos al carrito por su id de producto
 ```
 http://localhost:8080/API/carts/2/products
-https://clammy-lapis-emperor.glitch.me/api/carts/2/products
+https://iris-unexpected-wall.glitch.me/api/carts/2/products
 
     BODY x-www-Form-urlencoded
         "pid":1
@@ -99,7 +99,7 @@ https://clammy-lapis-emperor.glitch.me/api/carts/2/products
 e. DELETE: '/:cid/products/:pid' - Eliminar un producto del carrito por su id de carrito y de producto
 ```
 http://localhost:8080/API/carts/2/products/1
-https://clammy-lapis-emperor.glitch.me/api/carts/2/products/1
+https://iris-unexpected-wall.glitch.me/api/carts/2/products/1
 ```
 
 #### 3. Crear una variable booleana administrador, cuyo valor configuraremos más adelante con el sistema de login.
