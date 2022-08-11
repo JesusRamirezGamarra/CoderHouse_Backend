@@ -21,13 +21,13 @@
 	},
 	{
 		"id": 3,
-		"timestamp": 1660004780952,
+		"timestamp": 1660221769891,
 		"name": "Venusaur N.º003",
 		"description": "La planta florece cuando absorbe energía solar, lo cual le obliga a buscar siempre la luz del sol.",
 		"code": "35fa3dd3-7c95-4e7f-a90f-ba3a32e3473d",
 		"thumbnail": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png",
 		"price": 130,
-		"stock": 68
+		"stock": 67
 	},
 	{
 		"id": 4,

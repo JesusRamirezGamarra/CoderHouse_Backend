@@ -963,7 +963,7 @@
 					]
 				},
 				{
-					"name": "d. POST: '/:cid/products' - Para incorporar productos al carrito por su id de producto",
+					"name": "d.1 POST: '/:cid/products' - Para incorporar productos al carrito por su id de producto",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -978,7 +978,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/API/carts/2/products/3",
+							"raw": "http://localhost:8080/API/carts/2/products/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -989,7 +989,7 @@
 								"carts",
 								"2",
 								"products",
-								"3"
+								""
 							]
 						}
 					},
@@ -1062,6 +1062,39 @@
 							"body": "{\n    \"description\": \"(1) unid(s) of (3) - Venusaur N.º003 added successfully in Cart.\",\n    \"data\": {\n        \"id\": 2,\n        \"timestamp\": 1660004780960,\n        \"products\": [\n            {\n                \"id\": 1,\n                \"quantity\": 17\n            },\n            {\n                \"id\": 2,\n                \"quantity\": 4\n            },\n            {\n                \"id\": 3,\n                \"quantity\": 5\n            },\n            {\n                \"id\": 4,\n                \"quantity\": 7\n            }\n        ]\n    }\n}"
 						}
 					]
+				},
+				{
+					"name": "d.2 POST: '/:cid/products/:pid' - Para incorporar productos al carrito por su id de producto Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "quantity",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/API/carts/2/products/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"API",
+								"carts",
+								"2",
+								"products",
+								"3"
+							]
+						}
+					},
+					"response": []
 				},
 				{
 					"name": "e. DELETE: '/:cid/products/:pid' - Eliminar un producto del carrito por su id de carrito y de producto",
@@ -1940,7 +1973,7 @@
 					]
 				},
 				{
-					"name": "d. POST: '/:cid/products' - Para incorporar productos al carrito por su id de producto",
+					"name": "d.1 POST: '/:cid/products' - Para incorporar productos al carrito por su id de producto",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -1977,7 +2010,7 @@
 					},
 					"response": [
 						{
-							"name": "d. POST: '/:cid/products/pid' - Para incorporar productos al carrito por su id de producto",
+							"name": "d.1 POST: '/:cid/products' - Para incorporar productos al carrito por su id de producto",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
@@ -2018,7 +2051,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Tue, 09 Aug 2022 05:39:17 GMT"
+									"value": "Thu, 11 Aug 2022 12:44:28 GMT"
 								},
 								{
 									"key": "Content-Type",
@@ -2038,11 +2071,120 @@
 								},
 								{
 									"key": "etag",
-									"value": "W/\"ce-Q92Kngalf4gVF41mmDH64EVv0C8\""
+									"value": "W/\"ce-gf87TwFnEFjHRDv8q+Hp2KreYWY\""
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"description\": \"(1) unid(s) of (1) - Bulbasaur N.º001 added successfully in Cart.\",\n    \"data\": {\n        \"id\": 2,\n        \"timestamp\": 1660023557833,\n        \"products\": [\n            {\n                \"id\": 1,\n                \"quantity\": 20\n            },\n            {\n                \"id\": 2,\n                \"quantity\": 4\n            },\n            {\n                \"id\": 4,\n                \"quantity\": 7\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"description\": \"(1) unid(s) of (1) - Bulbasaur N.º001 added successfully in Cart.\",\n    \"data\": {\n        \"id\": 2,\n        \"timestamp\": 1660221868576,\n        \"products\": [\n            {\n                \"id\": 1,\n                \"quantity\": 23\n            },\n            {\n                \"id\": 2,\n                \"quantity\": 4\n            },\n            {\n                \"id\": 4,\n                \"quantity\": 7\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "d.2 POST: '/:cid/products/:pid' - Para incorporar productos al carrito por su id de producto Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "pid",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://iris-unexpected-wall.glitch.me/API/carts/2/products/1",
+							"protocol": "https",
+							"host": [
+								"iris-unexpected-wall",
+								"glitch",
+								"me"
+							],
+							"path": [
+								"API",
+								"carts",
+								"2",
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "d.2 POST: '/:cid/products/:pid' - Para incorporar productos al carrito por su id de producto Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "pid",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "quantity",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://iris-unexpected-wall.glitch.me/API/carts/2/products/1",
+									"protocol": "https",
+									"host": [
+										"iris-unexpected-wall",
+										"glitch",
+										"me"
+									],
+									"path": [
+										"API",
+										"carts",
+										"2",
+										"products",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 11 Aug 2022 12:45:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "206"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"ce-5pk7AddOHoj65hpBtAACf5WtqZE\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"description\": \"(1) unid(s) of (1) - Bulbasaur N.º001 added successfully in Cart.\",\n    \"data\": {\n        \"id\": 2,\n        \"timestamp\": 1660221917278,\n        \"products\": [\n            {\n                \"id\": 1,\n                \"quantity\": 25\n            },\n            {\n                \"id\": 2,\n                \"quantity\": 4\n            },\n            {\n                \"id\": 4,\n                \"quantity\": 7\n            }\n        ]\n    }\n}"
 						}
 					]
 				},

@@ -86,13 +86,22 @@ c. GET: '/:cid/products' - Me permite listar todos los productos guardados en el
 http://localhost:8080/API/carts/2/products
 https://iris-unexpected-wall.glitch.me/api/carts/2/products
 ```
-d. POST: '/:cid/products' - Para incorporar productos al carrito por su id de producto
+d.1 POST: '/:cid/products' - Para incorporar productos al carrito por su id de producto
 ```
 http://localhost:8080/API/carts/2/products
 https://iris-unexpected-wall.glitch.me/api/carts/2/products
 
     BODY x-www-Form-urlencoded
         "pid":1
+        "quantity":10
+
+```
+d.2 POST: '/:cid/products/;pid' - Para incorporar productos al carrito por su id de producto
+```
+http://localhost:8080/API/carts/2/products
+https://iris-unexpected-wall.glitch.me/api/carts/2/products
+
+    BODY x-www-Form-urlencoded
         "quantity":10
 
 ```

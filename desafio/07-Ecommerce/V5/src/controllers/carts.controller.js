@@ -138,6 +138,67 @@ export const cartsController = {
   },
 
 
+  addProductToCartV2: async (req, res) => {
+    try {
+      const cId = parseInt(req.params.cid)
+      const pId = parseInt(req.params.pid) // Se confirma por el Tutor que va por Param
+      const pquantity =  req.body.quantity ? parseInt(req.body.quantity) : 1
+
+
+      const cartFound = await cartDB.getById(cId)
+      if(!cartFound){
+        return res.status(422).json({ description: `Cart ${pId} not found.` })
+      }
+      const productFound = await productDB.getById(pId)
+      if(!productFound){
+        return res.status(422).json({ description: `Product ${pId} not found.` })
+      }
+      else if(pquantity<1){
+        return res.status(422).json({ description: 'Quantity must be greater than 0.' })
+      }
+      else if (productFound.stock == 0 ){
+        return res.status(422).json({ description: `Product stock not found.` })
+      }
+      else if(productFound.stock < pquantity){
+        return res.status(422).json({ description: 'insufficient stock.' })
+      } 
+      
+      const productsInCartsFound = cartFound.products
+      const ProductItemInCarts = productsInCartsFound.find(item=> item.id === parseInt(pId))
+
+      if(!ProductItemInCarts){//insert new product
+        const newProduct = {
+          id: pId,
+          quantity: pquantity,
+        }
+        cartFound.products.push(newProduct)
+        await cartDB.updateById(cartFound)
+        return res.status(200).json({description:`Product ${pId} added to cart ${cId} successfully.`,data:cartFound})
+        
+      }
+      else {//Update quantity
+
+        let { stock, ...itemRest } = productFound;
+        stock = stock - pquantity
+        itemRest.timestamp = Date.now()
+        console.log(`stock : `,stock)
+        await productDB.updateById({...itemRest,stock})
+        //console.log(`cartFound : `,cartFound)
+        cartFound.timestamp = Date.now()
+        cartFound.products = cartFound.products.map( item => item.id !== pId ? item : {...item, quantity: item.quantity + pquantity} )
+        await cartDB.updateById(cartFound)
+        //console.log(`Update cartFound.products : `,cartFound.products)
+
+        return res.status(200).json({description: `(${pquantity}) unid(s) of (${productFound.id}) - ${productFound.name} added successfully in Cart.`,data:cartFound})
+      }
+
+    }catch (error) {
+      console.warn({class:`cartsController`,method:`addProductToCart: async (req, res)`,description: error})
+      res.status(500).json({description: `Internal Server Error,please contact administrator `})
+    }
+  },
+
+
   deleteProductToCartById: async (req, res) => {
     try {
       const cId = parseInt( req.params.cid )
