@@ -1,4 +1,14 @@
-# Nuestra Primera Base de Datos
+<p align="center">
+  <p align="center">    
+    <img src="https://github.com/JesusRamirezGamarra/CoderHouse_ReactJS/blob/Desafio-07/public/images/Logo_Negro.png" alt="BFFs" height="250">    
+  </p>
+  <p align="center">
+       CoderHouse - Backend
+  </p>
+</p>
+
+
+# WEBSOCKETS WITH SQL DATABASES
 
 ## Consigna : Tomando como base las clases Contenedor en memoria y en archivos. 
 

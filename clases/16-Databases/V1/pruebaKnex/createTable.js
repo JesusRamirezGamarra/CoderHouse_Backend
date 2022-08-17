@@ -25,11 +25,69 @@ const database = knex(options);
 //             })
 //         }
 //     }
-// }).catch(error => console.log(error));
+// })
+// .catch(error => console.log(error));
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// database.schema.createTable('cars', table => {
+//     table.increments('id');
+//     table.primary('id');
+//     table.string('model',30);
+//     table.string('brand',30);
+//     table.string('color',25);
+//     table.float('price');
+//     table.integer('year');
+// })
+// .then(()=> console.log('Table created successfully'))
+// .catch(error => console.log(error))
+// .finally(()=> database.destroy());
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const cars = [
+    {model:'316i',  brand:"bmw" ,color:"Black" , price:2000, year:2019},
+    {model:'320',   brand:"bmw" ,color:"Black" , price:3000, year:2018},
+    {model:'321',   brand:"bmw" ,color:"Black" , price:4000, year:2021},
+    {model:'X3' ,   brand:"bmw" ,color:"Black" , price:5000, year:2022}
+]
 
 
 
-database.schema.createTable('cars', table => {
+database.schema.hasTable('cars')
+.then( (exists) => {
+    console.log({exists:exists})
+    if (!exists) {  
+        database.schema.createTable('cars', table => {
+            table.increments('id');
+            table.primary('id');
+            table.string('model',30);
+            table.string('brand',30);
+            table.string('color',25);
+            table.float('price');
+            table.integer('year');
+        })
+    }
+})
+// .then(result => console.log(result))
+.then(()=> console.log('Table created successfully'))
+// .then(()=> database.destroy())
+// .then(()=> database('cars').insert(cars))
+// .then(()=> console.log('Insert Table successfully'))
+// .then(()=> database.destroy())
+.catch(error => console.log(error))
+.finally(()=> database.destroy());
+
+
+database('cars').insert(cars)
+.then(result => console.log(result))
+.catch(error => console.log(error))
+.finally(()=> database.destroy());
+
+
+database('cars').schema.createtabkeIfNotExists('cars', table => {
     table.increments('id');
     table.primary('id');
     table.string('model',30);
@@ -37,11 +95,4 @@ database.schema.createTable('cars', table => {
     table.string('color',25);
     table.float('price');
     table.integer('year');
-})
-.then(()=> cosole.log('Table created successfully'))
-.catch(error => console.log(error))
-.finally(()=> database.destroy());
-
-console.log('Funciona');
-
-
+}

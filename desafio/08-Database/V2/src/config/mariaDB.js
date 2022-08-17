@@ -1,11 +1,7 @@
 
 export const mariaDBOptions = {
-    client:'mdb',
+    client:'mysql',
     connection:{
-        // host:'127.0.0.1',
-        // user:'root',
-        // password:'',
-        // database:'base_knex'
         host:"p3nlmysql19plsk.secureserver.net",
         user:"rootCoderHouse",
         password:"1i4G@3ge",
@@ -16,3 +12,8 @@ export const mariaDBOptions = {
 }
 
 export default mariaDBOptions;
+
+
+// http://knexjs.org/
+// If you want to use CockroachDB or Redshift instance, you can use the pg driver.
+// If you want to use a MariaDB instance, you can use the mysql driver.

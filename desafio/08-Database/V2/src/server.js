@@ -19,9 +19,10 @@ const app = express();
 //////////////////////////////////////////////////////////////////////////////////
 const PORT =   process.env.PORT || 8080;
 const server = app.listen(PORT, () => {
+  productsRouter.createProductsTable();
   console.log(`Server running on: http://localhost:${server.address().port}/`)
 })
-server.on('error', (error) => console.log(`Server error: ${error}`))
+server.on('error', (error) => console.log({'Server Error': error}))
 //////////////////////////////////////////////////////////////////////////////////
 const io = new Server(server);
 
@@ -49,7 +50,7 @@ const host =`http://localhost:${PORT}`;
 app.use('*', (req, res) => {
     if( req.url.includes('/css/') || req.url.includes('/js/') && 
         req.url.includes('/img/') || req.url.includes('/ico/')){
-        console.log('visits statics : ') ;
+        console.log({Description:'visits statics'}) ;
     }else{
       res.render('error404');
     }
@@ -59,7 +60,7 @@ app.use('/', (req, res) => {
   try { 
     res.sendFile(process.cwd() + '/public/index.html')
   } catch (error) {
-    console.log(`ERROR: ${error}`)
+    console.log({'Server Error': error})
   }
 })
 
@@ -69,12 +70,15 @@ app.use('/', (req, res) => {
 io.on('connection', async (socket) => {
   socket.emit('socketConnected')
   const email = socket.handshake.query.email;
-  console.log(`email : ${email}`);
   socket.broadcast.emit('newConnection',{ email: email});
 
     socket.on('productListRequest', async () => {
       console.log('>>> productListRequest')
       const allProducts = await productsRouter.getAllProduct()
+      console.log('allProducts.length :',allProducts.length )
+      if(allProducts.length == 0)
+        await productsRouter.createInitialProducts()
+      
       socket.emit('updateProductList', allProducts)
     })
 
@@ -82,12 +86,7 @@ io.on('connection', async (socket) => {
       console.log('>>> addNewProduct')
       const FileName = `${Date.now()}-${newProduct.filename}`;
       const file = ___dirname + `/public/img/${FileName}`;
-          // const splitted = newProduct.data.split(';base64,');
-          // const format = splitted[0].split('/')[1];
-          // console.log(`format : ${format}`)      
-          // console.log(`file : ${file}`)
-          // console.log('newProduct.title.length ' , newProduct.title.length )
-          // console.log('newProduct.price ' , newProduct.price )
+
       
       if (newProduct.title.length > 25  ){
         socket.emit('error', {error : 'Title must be less than 25 characters' })
@@ -112,6 +111,7 @@ io.on('connection', async (socket) => {
 
     socket.on('chatMessagesRequest', async () => {
       console.log('>>> chatMessagesRequest')
+      await chatMessagesRouter.createMessagesTable()
       const allMessages = await chatMessagesRouter.getAllMessages()
       socket.emit('updateChatRoom', allMessages)
     })

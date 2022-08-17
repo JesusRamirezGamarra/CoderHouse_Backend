@@ -10,7 +10,8 @@ class SqlClient {
   createTable() {
     console.error('createTable : ',this.items);
     try {
-      this.knex.schema.hasTable(this.items).then(async (exists) => {
+      this.knex.schema.hasTable(this.items)
+      .then(async (exists) => {
         if (!exists) {
           if (this.items === 'products') {
             await this.knex.schema.createTable(this.items, (table) => {

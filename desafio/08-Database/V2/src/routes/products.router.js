@@ -3,29 +3,45 @@
 // const database = new Contenedor('products');
 import KnexContainer from '../middleware/api/knexContainer.js';
 import config from '../config/mariaDB.js';
-const sqlClient = new KnexContainer(config, 'products')
+let database = new KnexContainer(config, 'products')
 const imgNOFound = 'https://cdn4.iconfinder.com/data/icons/basic-ui-element-flat-style/512/Basic_UI_Elements_-_2.3_-_Flat_Style_-_36-02-64.png'
 
 //----------* PRODUCTS ROUTES *----------//
 const productsRouter = {
-  createProductsTable: async () => {
+  createProductsTable: async() => {
     try {
-      await sqlClient.createTable()
+        database = new KnexContainer(config, 'products')
+        await database.createTable()
     } catch (error) {
-      console.log(`ERROR: ${error}`)
+      console.log({Server: error})
     }
   }, 
+  createInitialProducts: async() => {
+    try {
+        database = new KnexContainer(config, 'products')
+        await database.createInitialProducts()     
+    } catch (error) {
+      console.log({Server: error})
+    }
+  }, 
+
+
   getAllProduct: async () => {
     try {
+      database = new KnexContainer(config, 'products')      
       const allProducts = await database.getAll()
-      return allProducts.sort((a, b) => (a.id > b.id ? -1 : 1)) // Generamos un ordenamiento descendente por id.
+      if(typeof allProducts !== 'undefined')
+        return allProducts.sort((a, b) => (a.id > b.id ? -1 : 1)) // Generamos un ordenamiento descendente por id.
+      else 
+        return []
     } catch (error) {
-      console.log(`ERROR: ${error}`)
+      console.log({Server: error})
     }
   },
 
   addNewProduct: async (product) => {
     try {
+      database = new KnexContainer(config, 'products')            
       const prevProducts = await database.getAll()
       const noImage = imgNOFound
         
@@ -57,7 +73,7 @@ const productsRouter = {
 
       await database.save(newProduct)
     } catch (error) {
-      console.log(`ERROR: ${error}`)
+      console.log({Server: error})
     }
   },
 }

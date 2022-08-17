@@ -47,9 +47,6 @@ io.on('connection', (socket) => {
     socket.emit('updateProductList', allProducts)
   })
 
-
-  
-
   socket.on('chatMessagesRequest', async () => {
     console.log('>>> chatMessagesRequest')
     await messagesController.createMessagesTable()
