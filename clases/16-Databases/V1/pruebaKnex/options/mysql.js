@@ -1,11 +1,14 @@
 const options = {
     client:'mysql',
     connection:{
-        host:'127.0.0.1',        
-        user:'root',
-        password:'',
+        // host:'127.0.0.1',        
+        // user:'root',
+        // password:'',
+        host:"p3nlmysql19plsk.secureserver.net",
+        user:"rootCoderHouse",
+        password:"1i4G@3ge",
         port:'3306',
-        database:'base_knex',
+        database:'RamirezGamarra_knex',
         ssl: false
 
     }
@@ -18,5 +21,12 @@ const options = {
 
 export default options
 
+
 //user:'coderhouse@localhost',
         //host:'localhost',
+
+
+//server :  p3nlmysql19plsk.secureserver.net
+//Password : 1i4G@3ge
+//User :    rootCoderHouse
+//database :    RamirezGamarra_knex

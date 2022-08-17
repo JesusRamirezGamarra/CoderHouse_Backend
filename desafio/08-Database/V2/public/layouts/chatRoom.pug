@@ -1,0 +1,10 @@
+ul
+    each Messages in allMessages
+        li
+            span(class='userEmail')=Messages.email
+            span(class='messageDate')=' [ '+Messages.date+' ]:'
+            span(class='userMessage')=Messages.messageText
+    else
+        li
+            strong
+                There are no messages.

@@ -1,0 +1,16 @@
+<% typeof allMessages != 'undefined' ? allMessages : [] %> 
+<ul>
+    <% if (allMessages.length>0) { %>
+        <% allMessages.forEach(Messages => { %>
+            <li>
+                <span class="userEmail"><%= Messages.email %></span>
+                <span class="messageDate"> [ <%= Messages.date %> ] :</span>
+                <span class="userMessage"><%= Messages.messageText %></span>
+            </li>
+        <% }) %>
+    <% } else { %>
+        <li>
+            There are no messages.
+        </li>
+    <% } %>
+</ul>

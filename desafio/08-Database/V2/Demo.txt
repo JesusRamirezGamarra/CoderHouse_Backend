@@ -1,0 +1,32 @@
+
+
+
+
+http://localhost:8080/
+
+
+
+
+El router base '/api/productos' implementará cinco funcionalidades:
+a. GET: '/' - Me permite listar todos los productos disponibles (disponible para todes)
+    http://localhost:8080/api/productos/
+b. GET: '/:id' - Me permite listar un producto por su id (disponible para todes)
+    
+c. POST: '/' - Para incorporar productos al listado (disponible solo para administradores)
+d. PUT: '/:id' - Actualiza un producto por su id (disponible solo para administradores)
+e. DELETE: '/:id' - Borra un producto por su id (disponible solo para administradores)
+
+
+El router base '/api/carritos' implementará cinco rutas, disponibles para usuarios y administradores:
+
+a. POST: '/' - Crea un carrito y devuelve su id.
+    http://localhost:8080/api/carritos
+b. POST: '/:id/productos' - Para incorporar productos al carrito por su id de producto
+    http://localhost:8080/api/carritos/2/productos
+c. GET: '/:id/productos' - Me permite listar todos los productos guardados en el carrito
+    http://localhost:8080/api/carritos/2/productos
+d. DELETE: '/:id/productos/:id_prod' - Eliminar un producto del carrito por su id de carrito y de producto
+    http://localhost:8080/api/carritos/1/productos/1
+e. DELETE: '/:id' - Vacía un carrito.
+    http://localhost:8080/api/carritos/1/productos/1
+    

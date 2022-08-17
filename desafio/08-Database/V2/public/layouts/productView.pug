@@ -1,0 +1,25 @@
+if allProducts.length > 0
+    table(class='table table-dark table-striped')
+        thead
+            tr
+                th(scope='col' class='ps-4')='id'
+                th(scope='col' class='ps-4')='Name'
+                td(scope='col' class='text-center')='Price'
+                td(scope='col' class='text-center')='Image'
+        tbody
+            each Products in allProducts
+                tr
+                    th
+                        span(scope='row' class='ps-4 align-middle')=Products.id
+                    th
+                        span(scope='row' class='ps-4 align-middle')=Products.title
+                    td
+                        span(class='text-center align-middle')=Products.price
+                    
+                    td
+                        div(class='image-container text-center')
+                            img(src=Products.thumbnail alt='Product image' class='img-thumbnail')
+else
+    div(class='message')
+        h2
+            There are no messages.
