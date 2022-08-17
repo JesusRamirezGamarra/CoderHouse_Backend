@@ -1,13 +1,20 @@
 //----------* REQUIRE'S *----------//
-// const Controller = require('../classes/fileCRUD')
-// const productDB = new Controller('products')
-
-import {Contenedor} from '../middleware/api/FileManager.js';
-const database = new Contenedor('products');
+// import {Contenedor} from '../middleware/api/FileManager.js';
+// const database = new Contenedor('products');
+import KnexContainer from '../middleware/api/knexContainer.js';
+import config from '../config/mariaDB.js';
+const sqlClient = new KnexContainer(config, 'products')
 const imgNOFound = 'https://cdn4.iconfinder.com/data/icons/basic-ui-element-flat-style/512/Basic_UI_Elements_-_2.3_-_Flat_Style_-_36-02-64.png'
 
 //----------* PRODUCTS ROUTES *----------//
 const productsRouter = {
+  createProductsTable: async () => {
+    try {
+      await sqlClient.createTable()
+    } catch (error) {
+      console.log(`ERROR: ${error}`)
+    }
+  }, 
   getAllProduct: async () => {
     try {
       const allProducts = await database.getAll()
@@ -56,6 +63,5 @@ const productsRouter = {
 }
 
 //----------* EXPORTS CONTROLLER *----------//
-//module.exports = productsController
 export default productsRouter;
 

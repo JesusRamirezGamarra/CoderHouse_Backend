@@ -1,5 +1,5 @@
 {
-  "name": "challenge-websockets",
+  "name": "challenge-websockets-with-database",
   "version": "1.0.0",
   "description": "",
   "main": "src/server.js",
@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/JesusRamirezGamarra/CoderHouse_Backend/issues"
   },
-  "homepage": "https://github.com/LucasKoval/CH-Websockets#readme",
+  "homepage": "https://github.com/JesusRamirezGamarra/CoderHouse_Backend#readme",
   "dependencies": {
     "express": "^4.17.3",
     "knex": "^2.0.0",

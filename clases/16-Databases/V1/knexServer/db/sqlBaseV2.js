@@ -16,6 +16,23 @@ const mysqloptions = {
     }
 }
 
+const mariaDBoptions = {
+    client:'mdb',
+    connection:{
+        // host:'127.0.0.1',
+        // user:'root',
+        // password:'',
+        // database:'base_knex'
+        host:"p3nlmysql19plsk.secureserver.net",
+        user:"rootCoderHouse",
+        password:"1i4G@3ge",
+        port:'3306',
+        database:'RamirezGamarra_knex',
+        ssl: false        
+    }
+}
+
+
 const sqliteOptions ={
     client:'sqlite3',
     connection:{
@@ -24,7 +41,7 @@ const sqliteOptions ={
     useNullAsDefault:true
 }
 
-let db = knex(sqliteOptions)
+let db = knex(mariaDBoptions)
 try{
     let exists = await db.schema.hasTable('pets');
     if(exists){

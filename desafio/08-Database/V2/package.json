@@ -1,5 +1,5 @@
 {
-  "name": "challenge-websockets",
+  "name": "challenge-websockets-with-database",
   "version": "1.0.1",
   "description": "",
   "main": "src/server.js",

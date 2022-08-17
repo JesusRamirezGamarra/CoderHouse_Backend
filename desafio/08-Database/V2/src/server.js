@@ -1,12 +1,5 @@
 //----------* REQUIRE'S *----------//
-// const express = require('express')
-// const { Server: HttpServer } = require('http')
-// const { Server: IOServer } = require('socket.io')
-// const productsController = require('./controller/products')
-// const messagesController = require('./controller/chatMessages')
 import express from 'express';
-// import { Server: HttpServer } from 'http';
-// import { Server: IOServer} from 'socket.io';
 import { Server } from 'socket.io';
 import {__dirname,___dirname} from './utils.js';
 import productsRouter from './routes/products.router.js';
@@ -35,7 +28,6 @@ const io = new Server(server);
 
 
 
-
 //----------* MIDDLEWARES *----------//
 app.set('views', 'src/views')
 // app.use(express.static('public'))
@@ -46,8 +38,6 @@ app.use(express.json())
 app.engine('handlebars', handlebars.engine());
 app.set('views', __dirname+'/views');
 app.set('view engine', 'handlebars');
-
-
 
 
 
@@ -66,9 +56,7 @@ app.use('*', (req, res) => {
 })
 
 app.use('/', (req, res) => {
-  try {
-    // hostServer = new URL(`${req.protocol}://${req.get('host')}${req.originalUrl}`);
-    // console.log(`hostServer: ${hostServer}`);    
+  try { 
     res.sendFile(process.cwd() + '/public/index.html')
   } catch (error) {
     console.log(`ERROR: ${error}`)
