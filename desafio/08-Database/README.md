@@ -23,3 +23,16 @@ Desarrollar también un script que utilizando knex cree las tablas necesarias pa
 ## >> Notas:
 Definir una carpeta DB para almacenar la base datos SQLite3 llamada ecommerce
 
+_Se utilizo:_
+```
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "ejs": "^3.1.8",
+    "pug": "^3.0.2"
+    "socket.io": "^4.5.1",
+    "knex": "^2.2.0",
+    "mariadb": "^3.0.1",
+    "mssql": "^9.0.0",
+    "mysql": "^2.18.1",
+    "sqlite3": "^5.0.11"    
+```

@@ -56,21 +56,21 @@ const productsRouter = {
         return url.protocol === 'http:' || url.protocol === 'https:'
       }
 
-      const getNewId = () => {
-        let lastID = 0
-        if (prevProducts.length) {
-          lastID = prevProducts[prevProducts.length - 1].id
-        }
-        return lastID + 1
-      }
+      // const getNewId = () => {
+      //   let lastID = 0
+      //   if (prevProducts.length) {
+      //     lastID = prevProducts[prevProducts.length - 1].id
+      //   }
+      //   return lastID + 1
+      // }
 
       const newProduct = {
-        id: getNewId(),
+        // id: getNewId(),
         title: product.title ? product.title : 'No Title',
         price: product.price ? product.price : 0,
         thumbnail: isValidURL(product.thumbnail) ? product.thumbnail : noImage,
       }
-
+      database = new KnexContainer(config, 'products')         
       await database.save(newProduct)
     } catch (error) {
       console.log({Server: error})

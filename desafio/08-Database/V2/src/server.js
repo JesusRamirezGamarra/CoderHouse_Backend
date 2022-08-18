@@ -20,13 +20,12 @@ const app = express();
 const PORT =   process.env.PORT || 8080;
 const server = app.listen(PORT, () => {
   productsRouter.createProductsTable();
+  chatMessagesRouter.createMessagesTable()
   console.log(`Server running on: http://localhost:${server.address().port}/`)
 })
 server.on('error', (error) => console.log({'Server Error': error}))
 //////////////////////////////////////////////////////////////////////////////////
 const io = new Server(server);
-
-
 
 
 //----------* MIDDLEWARES *----------//
@@ -39,8 +38,6 @@ app.use(express.json())
 app.engine('handlebars', handlebars.engine());
 app.set('views', __dirname+'/views');
 app.set('view engine', 'handlebars');
-
-
 
 const host =`http://localhost:${PORT}`;
 
@@ -111,7 +108,7 @@ io.on('connection', async (socket) => {
 
     socket.on('chatMessagesRequest', async () => {
       console.log('>>> chatMessagesRequest')
-      await chatMessagesRouter.createMessagesTable()
+
       const allMessages = await chatMessagesRouter.getAllMessages()
       socket.emit('updateChatRoom', allMessages)
     })

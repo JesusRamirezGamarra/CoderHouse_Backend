@@ -15,7 +15,7 @@ export class SqlClient {
           // console.log({exists:exists})
           if (!exists) {
             if (this.items === 'products') {
-              message = `Table ${this.items} created successfully with initial products`;
+              message = `Table products created successfully with initial products`;
               console.log({Method:'createTable()',Description:message})
               await this.knex.schema.createTable(this.items, (table) => {
                 table.increments('id').primary()
@@ -26,7 +26,7 @@ export class SqlClient {
               
             } 
             else {
-              message = `Table ${this.items} created successfully`;
+              message = `Table messages created successfully`;
               console.log({Method:'createTable()',Description:message})
               await this.knex.schema.createTable(this.items, (table) => {
                 table.increments('id').primary()
@@ -50,15 +50,6 @@ export class SqlClient {
     }
 
     createInitialProducts = async() => {
-    //   console.log(initialProducts)
-    // const initialProducts = [
-    //     {
-    //       title:"Boxes, customers, inventory",
-    //       price:99,
-    //       thumbnail:"https://cdn4.iconfinder.com/data/icons/pretty_office_3/256/inventory-maintenance.png"
-    //     }
-    // ]
-
       try {
         this.knex.insert(initialProducts).into('products')
           .then(()=> console.log({Method:'createInitialProducts()',Description:`Table ${this.items} insert successfully`}))
