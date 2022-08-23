@@ -39,7 +39,6 @@ export const productsController = {
 
       try {
         const allProducts = await productDB.getAll()
-        const noImage =imgNOFound;
         
         const itemProduct = allProducts.find(item => item.code == req.body.code) 
 
@@ -51,7 +50,7 @@ export const productsController = {
             name: req.body.name ? req.body.name : 'No name',
             description: req.body.description ? req.body.description : 'No description',
             code: req.body.code ? req.body.code : crypto.randomUUID(),
-            thumbnail: isValidURL(req.body.thumbnail) ? req.body.thumbnail : noImage,
+            thumbnail: isValidURL(req.body.thumbnail) ? req.body.thumbnail : imgNOFound,
             price: req.body.price ? parseInt( req.body.price ) : 0,
             stock: req.body.stock ? parseInt( req.body.stock ) : 0,
           }
@@ -87,7 +86,7 @@ export const productsController = {
             name: req.body.name ? req.body.name : productFound.name,
             description: req.body.description ? req.body.description : productFound.description,
             code: req.body.code ? req.body.code : productFound.code,
-            thumbnail: isValidURL(req.body.thumbnail) ? req.body.thumbnail : noImage,
+            thumbnail: isValidURL(req.body.thumbnail) ? req.body.thumbnail : imgNOFound,
             price: req.body.price ? parseInt( req.body.price ) : productFound.price,
             stock: req.body.stock ? parseInt( req.body.stock ) : productFound.stock,
           }

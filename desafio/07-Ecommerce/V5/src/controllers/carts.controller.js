@@ -12,7 +12,7 @@ export const cartsController = {
       const newCart = {
         id: await cartDB.getNewId(),
         timestamp:Date.now(),
-        productos: [],
+        products: [],
       }
       await cartDB.addItem(newCart)
       res.status(200).json({description:`new cart successfully created with id=${newCart.id}`,data:newCart})
@@ -45,8 +45,6 @@ export const cartsController = {
       let cartFound = await cartDB.getById(cartId)
       const productFound  = await productDB.getAll()
 
-
-
       if (!cartFound) {
         return res.status(422).json({ description: 'Cart not found.' })
       } else if (!cartFound.products ) {
@@ -76,7 +74,6 @@ export const cartsController = {
         res.status(500).json({description: `Internal Server Error,please contact administrator `})
     }
   },
-
   addProductToCart: async (req, res) => {
     try {
       const cId = parseInt(req.params.cid)
@@ -136,8 +133,6 @@ export const cartsController = {
       res.status(500).json({description: `Internal Server Error,please contact administrator `})
     }
   },
-
-
   addProductToCartV2: async (req, res) => {
     try {
       const cId = parseInt(req.params.cid)
@@ -197,8 +192,6 @@ export const cartsController = {
       res.status(500).json({description: `Internal Server Error,please contact administrator `})
     }
   },
-
-
   deleteProductToCartById: async (req, res) => {
     try {
       const cId = parseInt( req.params.cid )
@@ -230,93 +223,89 @@ export const cartsController = {
 
 
 
+  // getCartById: async (req, res) => {
+  //   try {
+  //     console.log('getCartById')
+  //     const cartId = req.params.id
+  //     const cartFound = await cartDB.getById(cartId)
+
+  //     if (!cartFound) {
+  //       res.send({ error: 'Cart not found.' })
+  //     } else {
+  //       res.json(cartFound)
+  //     }
+  //   } catch (error) {
+  //     console.log(`ERROR: ${error}`)
+  //   }
+  // },
+
+  // getcartList: async (req, res) => {
+  //   try {
+  //     const allCarts = await cartDB.getAll()
+  //     res.json(allCarts)
+  //   } catch (error) {
+  //     console.log(`ERROR: ${error}`)
+  //   }
+  // },
 
 
 
+  // cartProductList: async (req, res) => {
+  //   try {
 
-  getCartById: async (req, res) => {
-    try {
-      console.log('getCartById')
-      const cartId = req.params.id
-      const cartFound = await cartDB.getById(cartId)
+  //     const cartId = req.params.id
+  //     const cartFound = await cartDB.getById(cartId)
 
-      if (!cartFound) {
-        res.send({ error: 'Cart not found.' })
-      } else {
-        res.json(cartFound)
-      }
-    } catch (error) {
-      console.log(`ERROR: ${error}`)
-    }
-  },
-
-  getcartList: async (req, res) => {
-    try {
-      const allCarts = await cartDB.getAll()
-      res.json(allCarts)
-    } catch (error) {
-      console.log(`ERROR: ${error}`)
-    }
-  },
+  //     if (!cartFound) {
+  //       res.send({ error: 'Cart not found.' })
+  //     } else {
+  //       res.json(cartFound.productos)
+  //     }
+  //   } catch (error) {
+  //     console.log(`ERROR: ${error}`)
+  //   }
+  // },
 
 
+  // addProductToCartV0: async (req, res) => {
+  //   try {
+  //     const cartId = req.params.id
+  //     const prodId = req.params.id_prod
 
-  cartProductList: async (req, res) => {
-    try {
+  //     const cartFound = await cartDB.getById(cartId)
+  //     const productFound = await productDB.getById(prodId)
 
-      const cartId = req.params.id
-      const cartFound = await cartDB.getById(cartId)
-
-      if (!cartFound) {
-        res.send({ error: 'Cart not found.' })
-      } else {
-        res.json(cartFound.productos)
-      }
-    } catch (error) {
-      console.log(`ERROR: ${error}`)
-    }
-  },
-
-
-  addProductToCartV0: async (req, res) => {
-    try {
-      const cartId = req.params.id
-      const prodId = req.params.id_prod
-
-      const cartFound = await cartDB.getById(cartId)
-      const productFound = await productDB.getById(prodId)
-
-      if (!cartFound) {
-        res.send({ error: 'Cart not found.' })
-      } else if (!productFound) {
-        res.send({ error: 'Product not found.' })
-      } else {
-        await cartDB.addItemInto(cartFound.id, productFound)
-        const updatedCart = await cartDB.getById(cartId)
-        res.json(updatedCart)
-      }
-    } catch (error) {
-      console.log(`ERROR: ${error}`)
-    }
-  },
+  //     if (!cartFound) {
+  //       res.send({ error: 'Cart not found.' })
+  //     } else if (!productFound) {
+  //       res.send({ error: 'Product not found.' })
+  //     } else {
+  //       await cartDB.addItemInto(cartFound.id, productFound)
+  //       const updatedCart = await cartDB.getById(cartId)
+  //       res.json(updatedCart)
+  //     }
+  //   } catch (error) {
+  //     console.log(`ERROR: ${error}`)
+  //   }
+  // },
 
 
-  emptyCartById: async (req, res) => {
-    try {
-      const cartId = req.params.id
-      const cartFound = await cartDB.getById(cartId)
+  // emptyCartById: async (req, res) => {
+  //   try {
+  //     const cartId = req.params.id
+  //     const cartFound = await cartDB.getById(cartId)
 
-      if (!cartFound) {
-        res.send({ error: 'Cart not found.' })
-      } else {
-        await cartDB.emptyContainer(cartId)
-        const updatedCart = await cartDB.getById(cartId)
-        res.json(updatedCart)
-      }
-    } catch (error) {
-      console.log(`ERROR: ${error}`)
-    }
-  },
+  //     if (!cartFound) {
+  //       res.send({ error: 'Cart not found.' })
+  //     } else {
+  //       await cartDB.emptyContainer(cartId)
+  //       const updatedCart = await cartDB.getById(cartId)
+  //       res.json(updatedCart)
+  //     }
+  //   } catch (error) {
+  //     console.log(`ERROR: ${error}`)
+  //   }
+  // },
 
 }
 
