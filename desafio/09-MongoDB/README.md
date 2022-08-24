@@ -82,6 +82,15 @@ db.Products.insertMany([
 db.Products.find()
 
 ```
+<p align="center">
+  <p align="center">    
+    <img src="https://github.com/JesusRamirezGamarra/CoderHouse_Backend/blob/main/desafio/09-MongoDB/Public/img/InsertProducts.png" alt="Insert Products Collections" height="350">    
+  </p>
+  <p align="center">
+      Insert registros sobre la collection Products 
+  </p>
+</p>
+
 
 Insert 10 registros sobre la collection Messages :
 
@@ -113,11 +122,9 @@ db.Messages.find();
     <img src="https://github.com/JesusRamirezGamarra/CoderHouse_Backend/blob/main/desafio/09-MongoDB/Public/img/InsertMessages.png" alt="Insert Messages Collections" height="350">    
   </p>
   <p align="center">
-       CoderHouse - Backend
+      Insert registros sobre la collection Messages 
   </p>
 </p>
-
-
 
 
 2. Vamos a tener una colección de productos, donde hay que poner valores al campo precio entre los 100 y 5000 pesos (eligiendo valores intermedios, ej: 120, 580, 900, 1280, 1700, 2300, 2860, 3350, 4320, 4990).
