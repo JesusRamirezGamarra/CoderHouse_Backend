@@ -505,6 +505,16 @@ db.Messages.countDocuments();
     ]);
     db.Products.find()
     ```
+
+<p align="center">
+  <p align="center">    
+    <img src="https://github.com/JesusRamirezGamarra/CoderHouse_Backend/blob/main/desafio/09-MongoDB/Public/img/InsertManyProducts.png" alt="Insert 1 Product Collections" with="150">    
+  </p>
+  <p align="center">
+      Insert 1 Registro sobre la collection Products 
+  </p>
+</p>
+
 #### - b. Realizar una consulta por nombre de producto específico:
 #####   - [I]   Listar los productos con precio menor a 1000 pesos.
         ```
@@ -512,25 +522,63 @@ db.Messages.countDocuments();
         use(database);
         db.Products.find({price:{$lt:1000}})
         ```
+
+
+<p align="center">
+  <p align="center">    
+    <img src="https://github.com/JesusRamirezGamarra/CoderHouse_Backend/blob/main/desafio/09-MongoDB/Public/img/ListarMenor.png" alt="Listar Product Menor a 1000 Collections" with="150">    
+  </p>
+  <p align="center">
+      Listar Product(s) con Price < 1000
+  </p>
+</p>
+
 #####   - [II]  Listar los productos con precio entre los 1000 a 3000 pesos.
         ```
         const database = 'eCommerce';
         use(database);
         // Se considera numeros entre ]1000,3000[ , el entre no incluye a los valores es intervalo Abierto.
         db.Products.find({price:{$gt:1000,$lt:3000}})
-        ```        
+        ```      
+<p align="center">
+  <p align="center">    
+    <img src="https://github.com/JesusRamirezGamarra/CoderHouse_Backend/blob/main/desafio/09-MongoDB/Public/img/ListarEntre.png" alt="Listar Product Entre rango de price Collections" with="150">    
+  </p>
+  <p align="center">
+      Listar Product(s) con Price > 1000 y < 3000
+  </p>
+</p>
+
+
 #####   - [III] Listar los productos con precio mayor a 3000 pesos.
         ```
         const database = 'eCommerce';
         use(database);
         db.Products.find({price:{$gt:3000}})
         ```
+<p align="center">
+  <p align="center">    
+    <img src="https://github.com/JesusRamirezGamarra/CoderHouse_Backend/blob/main/desafio/09-MongoDB/Public/img/ListarMayor.png" alt="Listar Product Mayor a 3000 Collections" with="150">    
+  </p>
+  <p align="center">
+      Listar Product(s) con Price > 3000
+  </p>
+</p>
+
 #####   - [IV]  Realizar una consulta que traiga sólo el nombre del tercer producto más barato.
         ```
         const database = 'eCommerce';
         use(database);
         db.Products.find({},{name:1,price:1,_id:0}).sort({price:1}).skip(2).limit(1)
         ```
+<p align="center">
+  <p align="center">    
+    <img src="https://github.com/JesusRamirezGamarra/CoderHouse_Backend/blob/main/desafio/09-MongoDB/Public/img/Listar3erMayor.png" alt="  Listar 3er Producto con Price mas barato Collections" with="150">    
+  </p>
+  <p align="center">
+      Listar 3er Producto con Price mas barato
+  </p>
+</p>
 
 #### - c. Hacer una actualización sobre todos los productos, agregando el campo stock a todos ellos con un valor de 100.
     ```
@@ -539,6 +587,15 @@ db.Messages.countDocuments();
     db.Products.updateMany({ stock: {$exists:true} },{$set: { stock: 100 }});
     db.Products.find();
     ```    
+<p align="center">
+  <p align="center">    
+    <img src="https://github.com/JesusRamirezGamarra/CoderHouse_Backend/blob/main/desafio/09-MongoDB/Public/img/UpdateAllProducts.png" alt="Update stock in Products Collections" with="150">    
+  </p>
+  <p align="center">
+     Update Products con Stock  a 100
+  </p>
+</p>
+
 #### - d. Cambiar el stock a cero de los productos con precios mayores a 4000 pesos. 
     ```
     const database = 'eCommerce';
@@ -546,6 +603,15 @@ db.Messages.countDocuments();
     db.Products.updateMany({ price: {$gt:4000} },{$set: { stock: 0 }});
     db.Products.find();
     ```
+<p align="center">
+  <p align="center">    
+    <img src="https://github.com/JesusRamirezGamarra/CoderHouse_Backend/blob/main/desafio/09-MongoDB/Public/img/UpdateManyProducts.png" alt="Update stock in Products Collections" with="150">    
+  </p>
+  <p align="center">
+     Update Products con Price > 4000
+  </p>
+</p>
+
 #### - e. Borrar los productos con precio menor a 1000 pesos.
     ```
     const database = 'eCommerce';
@@ -553,6 +619,14 @@ db.Messages.countDocuments();
     db.Products.deleteMany({ price: {$lt:1000} });
     db.Products.find();
     ```
+<p align="center">
+  <p align="center">    
+    <img src="https://github.com/JesusRamirezGamarra/CoderHouse_Backend/blob/main/desafio/09-MongoDB/Public/img/DeleteProducts.png" alt="Delete Documento con price menor a 1000 in Products Collections" with="150">    
+  </p>
+  <p align="center">
+     Delete Products con Price < 1000
+  </p>
+</p>
 
 ### Sinstaxis :
 ```
