@@ -127,7 +127,7 @@ db.Messages.find();
 </p>
 
 
-2. Vamos a tener una colección de productos, donde hay que poner valores al campo precio entre los 100 y 5000 pesos (eligiendo valores intermedios, ej: 120, 580, 900, 1280, 1700, 2300, 2860, 3350, 4320, 4990).
+### 2. Vamos a tener una colección de productos, donde hay que poner valores al campo precio entre los 100 y 5000 pesos (eligiendo valores intermedios, ej: 120, 580, 900, 1280, 1700, 2300, 2860, 3350, 4320, 4990).
 
 Update Price in Collection Products
 ```
@@ -159,7 +159,7 @@ db.Products.find();
 </p>
 
 
-3. Listar todos los documentos en cada colección.
+### 3. Listar todos los documentos en cada colección.
 
 Listar Collection Messages
 ```
@@ -456,7 +456,7 @@ Result :
 ]
 ```
 
-4. Mostrar la cantidad de documentos almacenados en cada una de ellas.
+### 4. Mostrar la cantidad de documentos almacenados en cada una de ellas.
 
 Nro de documentos en Collection Products 
 ```
@@ -474,11 +474,31 @@ db.Messages.countDocuments();
 ```
 
 
-5. Realizar un CRUD sobre la colección de productos:
+### 5. Realizar un CRUD sobre la colección de productos:
     - a. Agregar un producto más en la colección de productos.
+    ```
+    const database = 'eCommerce';
+    use(database);
+    // Insert a few documents into the sales collection.
+    db.Products.insertMany([
+      { '__id': 11,'timestamp':new Date('2021-08-19T08:00:00Z'),'tipo':'Insecto', 'name': 'Metapod N.º011',   'description': 'Como en este estado solo puede endurecer su coraza, permanece inmóvil a la espera de evolucionar.', 'code': '11fa3dd3-7c95-4e7f-a90f-ba3a32e3473d', 'thumbnail': 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/011.png', 'price': 180,  'stock': 93   },
+    ]);
+    db.Products.find()
+    ```
     - b. Realizar una consulta por nombre de producto específico:
         - [I]   Listar los productos con precio menor a 1000 pesos.
+        ```
+        const database = 'eCommerce';
+        use(database);
+        db.Products.find({price:{$lt:1000}})
+        ```
         - [II]  Listar los productos con precio entre los 1000 a 3000 pesos.
+        ```
+        const database = 'eCommerce';
+        use(database);
+        // Se considera numeros entre ]1000,3000[ , el entre no incluye a los valores es intervalo Abierto.
+        db.Products.find({price:{$gt:1000,$lt:3000}})
+        ```        
         - [III] Listar los productos con precio mayor a 3000 pesos.
         - [IV]  Realizar una consulta que traiga sólo el nombre del tercer producto más barato.
     - c. Hacer una actualización sobre todos los productos, agregando el campo stock a todos ellos con un valor de 100.
