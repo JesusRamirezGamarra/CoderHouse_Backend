@@ -84,7 +84,7 @@ db.Products.find()
 ```
 <p align="center">
   <p align="center">    
-    <img src="https://github.com/JesusRamirezGamarra/CoderHouse_Backend/blob/main/desafio/09-MongoDB/Public/img/InsertProducts.png" alt="Insert Products Collections" height="350">    
+    <img src="https://github.com/JesusRamirezGamarra/CoderHouse_Backend/blob/main/desafio/09-MongoDB/Public/img/InsertProducts.png" alt="Insert Products Collections" with="150">    
   </p>
   <p align="center">
       Insert registros sobre la collection Products 
@@ -119,7 +119,7 @@ db.Messages.find();
 ```
 <p align="center">
   <p align="center">    
-    <img src="https://github.com/JesusRamirezGamarra/CoderHouse_Backend/blob/main/desafio/09-MongoDB/Public/img/InsertMessages.png" alt="Insert Messages Collections" height="350">    
+    <img src="https://github.com/JesusRamirezGamarra/CoderHouse_Backend/blob/main/desafio/09-MongoDB/Public/img/InsertMessages.png" alt="Insert Messages Collections" with="150">    
   </p>
   <p align="center">
       Insert registros sobre la collection Messages 
