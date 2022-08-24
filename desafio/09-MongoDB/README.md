@@ -110,7 +110,7 @@ db.Messages.find();
 ```
 <p align="center">
   <p align="center">    
-    <img src="https://github.com/JesusRamirezGamarra/CoderHouse_Backend/blob/main/desafio/09-MongoDB/Public/img/InsertMessages.png" alt="Insert Messages Collections" height="250">    
+    <img src="https://github.com/JesusRamirezGamarra/CoderHouse_Backend/blob/main/desafio/09-MongoDB/Public/img/InsertMessages.png" alt="Insert Messages Collections" height="350">    
   </p>
   <p align="center">
        CoderHouse - Backend
