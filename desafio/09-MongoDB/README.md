@@ -121,7 +121,7 @@ db.Messages.find();
   <p align="center">    
     <img src="https://github.com/JesusRamirezGamarra/CoderHouse_Backend/blob/main/desafio/09-MongoDB/Public/img/InsertMessages.png" alt="Insert Messages Collections" with="150">    
   </p>
-  <p align="center">
+  <p align="center" style="font-style: italic;">
       Insert registros sobre la collection Messages 
   </p>
 </p>
