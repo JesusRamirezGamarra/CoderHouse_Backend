@@ -6,9 +6,5 @@
 // Select the database to use.
 const database = 'eCommerce';
 use(database);
-
-
 db.Products.updateMany({ price: {$gt:4000} },{$set: { stock: 0 }});
-
 db.Products.find();
-// db.Messages.find();

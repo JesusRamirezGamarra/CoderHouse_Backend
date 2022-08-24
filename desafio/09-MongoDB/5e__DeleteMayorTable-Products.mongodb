@@ -6,9 +6,5 @@
 // Select the database to use.
 const database = 'eCommerce';
 use(database);
-
-
 db.Products.deleteMany({ price: {$lt:1000} });
-
 db.Products.find();
-// db.Messages.find();

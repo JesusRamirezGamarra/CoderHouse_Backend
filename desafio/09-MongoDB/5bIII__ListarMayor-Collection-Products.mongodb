@@ -6,6 +6,4 @@
 // Select the database to use.
 const database = 'eCommerce';
 use(database);
-
-
 db.Products.find({price:{$gt:3000}})

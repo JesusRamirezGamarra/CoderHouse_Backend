@@ -465,6 +465,17 @@ use(database);
 db.Products.countDocuments();
 ```
 
+<p align="center">
+  <p align="center">    
+    <img src="https://github.com/JesusRamirezGamarra/CoderHouse_Backend/blob/main/desafio/09-MongoDB/Public/img/CountProducts.png" alt="Insert Messages Collections" with="150">    
+  </p>
+  <p align="center" >
+      Nro de documentos en Collection Products 
+  </p>
+</p>
+
+
+
 Nro de documentos en Collection Messages 
 ```
 const database = 'eCommerce';
@@ -472,6 +483,15 @@ use(database);
 db.Messages.countDocuments();
 
 ```
+
+<p align="center">
+  <p align="center">    
+    <img src="https://github.com/JesusRamirezGamarra/CoderHouse_Backend/blob/main/desafio/09-MongoDB/Public/img/CountMessages.png" alt="Insert Messages Collections" with="150">    
+  </p>
+  <p align="center" >
+      Nro de documentos en Collection Messages 
+  </p>
+</p>
 
 
 ### 5. Realizar un CRUD sobre la colección de productos:
@@ -500,11 +520,39 @@ db.Messages.countDocuments();
         db.Products.find({price:{$gt:1000,$lt:3000}})
         ```        
         - [III] Listar los productos con precio mayor a 3000 pesos.
+        ```
+        const database = 'eCommerce';
+        use(database);
+        db.Products.find({price:{$gt:3000}})
+        ```
         - [IV]  Realizar una consulta que traiga sólo el nombre del tercer producto más barato.
-    - c. Hacer una actualización sobre todos los productos, agregando el campo stock a todos ellos con un valor de 100.
-    - d. Cambiar el stock a cero de los productos con precios mayores a 4000 pesos. 
-    - e. Borrar los productos con precio menor a 1000 pesos.
+        ```
+        const database = 'eCommerce';
+        use(database);
+        db.Products.find({},{name:1,price:1,_id:0}).sort({price:1}).skip(2).limit(1)
+        ```
 
+    - c. Hacer una actualización sobre todos los productos, agregando el campo stock a todos ellos con un valor de 100.
+    ```
+    const database = 'eCommerce';
+    use(database);
+    db.Products.updateMany({ stock: {$exists:true} },{$set: { stock: 100 }});
+    db.Products.find();
+    ```    
+    - d. Cambiar el stock a cero de los productos con precios mayores a 4000 pesos. 
+    ```
+    const database = 'eCommerce';
+    use(database);
+    db.Products.updateMany({ price: {$gt:4000} },{$set: { stock: 0 }});
+    db.Products.find();
+    ```
+    - e. Borrar los productos con precio menor a 1000 pesos.
+    ```
+    const database = 'eCommerce';
+    use(database);
+    db.Products.deleteMany({ price: {$lt:1000} });
+    db.Products.find();
+    ```
 
   ```
 $and : Realiza operación AND -> sintaxis: {$and: [ {},{} ] }
