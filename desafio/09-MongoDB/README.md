@@ -506,26 +506,26 @@ db.Messages.countDocuments();
     db.Products.find()
     ```
 #### - b. Realizar una consulta por nombre de producto específico:
-        - [I]   Listar los productos con precio menor a 1000 pesos.
+#####   - [I]   Listar los productos con precio menor a 1000 pesos.
         ```
         const database = 'eCommerce';
         use(database);
         db.Products.find({price:{$lt:1000}})
         ```
-        - [II]  Listar los productos con precio entre los 1000 a 3000 pesos.
+#####   - [II]  Listar los productos con precio entre los 1000 a 3000 pesos.
         ```
         const database = 'eCommerce';
         use(database);
         // Se considera numeros entre ]1000,3000[ , el entre no incluye a los valores es intervalo Abierto.
         db.Products.find({price:{$gt:1000,$lt:3000}})
         ```        
-        - [III] Listar los productos con precio mayor a 3000 pesos.
+#####   - [III] Listar los productos con precio mayor a 3000 pesos.
         ```
         const database = 'eCommerce';
         use(database);
         db.Products.find({price:{$gt:3000}})
         ```
-        - [IV]  Realizar una consulta que traiga sólo el nombre del tercer producto más barato.
+#####   - [IV]  Realizar una consulta que traiga sólo el nombre del tercer producto más barato.
         ```
         const database = 'eCommerce';
         use(database);
@@ -554,7 +554,8 @@ db.Messages.countDocuments();
     db.Products.find();
     ```
 
-  ```
+### Sinstaxis :
+```
 $and : Realiza operación AND -> sintaxis: {$and: [ {},{} ] }
 $or : Realiza operación OR -> sintaxis: {$or: [ {},{} ] }
 $lt : Coincide con valores que son menores que un valor especificado.
