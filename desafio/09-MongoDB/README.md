@@ -13,6 +13,25 @@
 ## Consigna: Utilizando Mongo Shell, crear una base de datos llamada ecommerce que contenga dos colecciones: mensajes y productos.
 
 1. Agregar 10 documentos con valores distintos a las colecciones mensajes y productos. El formato de los documentos debe estar en correspondencia con el que venimos utilizando en el entregable con base de datos MariaDB. 
+```
+// MongoDB Playground
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+const database = 'eCommerce';
+const collectionMessages = 'Messages';
+// Create a new database.
+use(database);
+// Create a new collection.
+//db.createCollection(collection);
+// The prototype form to create a regular collection:
+db.createCollection( collectionMessages,
+  {
+    email: String,
+    date: Timestamp,
+    messageText: String
+  }
+)
+
+```
 2. Vamos a tener una colección de productos, donde hay que poner valores al campo precio entre los 100 y 5000 pesos (eligiendo valores intermedios, ej: 120, 580, 900, 1280, 1700, 2300, 2860, 3350, 4320, 4990).
 3. Listar todos los documentos en cada colección.
 4. Mostrar la cantidad de documentos almacenados en cada una de ellas.
