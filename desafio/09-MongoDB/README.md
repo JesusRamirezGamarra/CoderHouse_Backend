@@ -19,7 +19,7 @@
 5. Realizar un CRUD sobre la colección de productos:
     - a. Agregar un producto más en la colección de productos.
     - b. Realizar una consulta por nombre de producto específico:
-        [x] I.   Listar los productos con precio menor a 1000 pesos.
+        - [I.] I.   Listar los productos con precio menor a 1000 pesos.
         [x] II.  Listar los productos con precio entre los 1000 a 3000 pesos.
         [x] III. Listar los productos con precio mayor a 3000 pesos.
         [x] IV.  Realizar una consulta que traiga sólo el nombre del tercer producto más barato.
