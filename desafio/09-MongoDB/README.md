@@ -532,21 +532,21 @@ db.Messages.countDocuments();
         db.Products.find({},{name:1,price:1,_id:0}).sort({price:1}).skip(2).limit(1)
         ```
 
-    - c. Hacer una actualización sobre todos los productos, agregando el campo stock a todos ellos con un valor de 100.
+#### - c. Hacer una actualización sobre todos los productos, agregando el campo stock a todos ellos con un valor de 100.
     ```
     const database = 'eCommerce';
     use(database);
     db.Products.updateMany({ stock: {$exists:true} },{$set: { stock: 100 }});
     db.Products.find();
     ```    
-    - d. Cambiar el stock a cero de los productos con precios mayores a 4000 pesos. 
+#### - d. Cambiar el stock a cero de los productos con precios mayores a 4000 pesos. 
     ```
     const database = 'eCommerce';
     use(database);
     db.Products.updateMany({ price: {$gt:4000} },{$set: { stock: 0 }});
     db.Products.find();
     ```
-    - e. Borrar los productos con precio menor a 1000 pesos.
+#### - e. Borrar los productos con precio menor a 1000 pesos.
     ```
     const database = 'eCommerce';
     use(database);
