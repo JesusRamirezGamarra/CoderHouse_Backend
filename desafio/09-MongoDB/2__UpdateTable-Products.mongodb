@@ -1,0 +1,23 @@
+// MongoDB Playground
+// To disable this template go to Settings | MongoDB | Use Default Template For Playground.
+// Make sure you are connected to enable completions and to be able to run a playground.
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+// Select the database to use.
+const database = 'eCommerce';
+use(database);
+
+
+db.Products.updateMany({ __id: 1 },{$set: { "price": 120 }});
+db.Products.updateMany({ __id: 2 },{$set: { "price": 580 }});
+db.Products.updateMany({ __id: 3 },{$set: { "price": 900 }});
+db.Products.updateMany({ __id: 4 },{$set: { "price": 1280 }});
+db.Products.updateMany({ __id: 5 },{$set: { "price": 1700 }});
+db.Products.updateMany({ __id: 6 },{$set: { "price": 2300 }});
+db.Products.updateMany({ __id: 7 },{$set: { "price": 2860 }});
+db.Products.updateMany({ __id: 8 },{$set: { "price": 3350 }});
+db.Products.updateMany({ __id: 9 },{$set: { "price": 4320 }});
+db.Products.updateMany({ __id: 10},{$set: { "price": 4990 }});
+
+db.Products.find();
+// db.Messages.find();

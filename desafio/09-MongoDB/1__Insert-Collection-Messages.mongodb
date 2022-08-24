@@ -1,0 +1,28 @@
+// MongoDB Playground
+// To disable this template go to Settings | MongoDB | Use Default Template For Playground.
+// Make sure you are connected to enable completions and to be able to run a playground.
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+// Select the database to use.
+const database = 'eCommerce';
+use(database);
+
+// The drop() command destroys all data from a collection.
+// Make sure you run it against the correct database and collection.
+db.Messages.drop();
+
+// Insert a few documents into the sales collection.
+db.Messages.insertMany([
+  { '__id': 1, 'email':'jessurg18@hotmail.com','date':new Date('2021-08-03T08:00:00Z'),messageText:'Hola como estas !!!'},
+  { '__id': 2, 'email':'LUCIOJESUSRAMIREZGAMARRA@GMAIL.COM','date':new Date('2021-08-04T08:00:00Z'),messageText:'Bien Gracias y tu Como estas !!! Que tal todo ?'},
+  { '__id': 3, 'email':'anonymous@mail.com','date':new Date('2021-08-05T08:00:00Z'),messageText:'Hey.... por aca todo bien!'},
+  { '__id': 4, 'email':'jessurg18@hotmail.com','date':new Date('2021-08-06T08:00:00Z'),messageText:'Alguna novedad del Curso de Backend va q va...'},
+  { '__id': 5, 'email':'anonymous@mail.com','date':new Date('2021-08-07T08:00:00Z'),messageText:'Bueno ... avanzando el desafio'},
+  { '__id': 6, 'email':'anonymous@mail.com','date':new Date('2021-08-08T08:00:00Z'),messageText:'Hasta ahora todo tranquilo'},
+  { '__id': 7, 'email':'jessurg18@hotmail.com','date':new Date('2021-08-09T08:00:00Z'),messageText:'Comprendo ... eso es muy bueno'},
+  { '__id': 8, 'email':'anonymous@mail.com','date':new Date('2021-08-10T08:00:00Z'),messageText:'Sin embargo aun no termino pero me falta poco.'},
+  { '__id': 9, 'email':'LUCIOJESUSRAMIREZGAMARRA@GMAIL.COM','date':new Date('2021-08-11T08:00:00Z'),messageText:'Yo aun no empiezo jejeje, espero hacerlo mas tarde'},
+  { '__id': 10,'email':'LUCIOJESUSRAMIREZGAMARRA@GMAIL.COM','date':new Date('2021-08-12T08:00:00Z'),messageText:'Con fe acabo hoy mismo.'},
+]);
+
+db.Messages.find();
