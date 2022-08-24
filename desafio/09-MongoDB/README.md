@@ -17,8 +17,8 @@
 3. Listar todos los documentos en cada colección.
 4. Mostrar la cantidad de documentos almacenados en cada una de ellas.
 5. Realizar un CRUD sobre la colección de productos:
-    a. Agregar un producto más en la colección de productos.
-    b. Realizar una consulta por nombre de producto específico:
+    - a. Agregar un producto más en la colección de productos.
+    - b. Realizar una consulta por nombre de producto específico:
     I.   Listar los productos con precio menor a 1000 pesos.
     II.  Listar los productos con precio entre los 1000 a 3000 pesos.
     III. Listar los productos con precio mayor a 3000 pesos.
