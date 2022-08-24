@@ -495,7 +495,7 @@ db.Messages.countDocuments();
 
 
 ### 5. Realizar un CRUD sobre la colección de productos:
-    - a. Agregar un producto más en la colección de productos.
+#### - a. Agregar un producto más en la colección de productos.
     ```
     const database = 'eCommerce';
     use(database);
@@ -505,7 +505,7 @@ db.Messages.countDocuments();
     ]);
     db.Products.find()
     ```
-    - b. Realizar una consulta por nombre de producto específico:
+#### - b. Realizar una consulta por nombre de producto específico:
         - [I]   Listar los productos con precio menor a 1000 pesos.
         ```
         const database = 'eCommerce';
