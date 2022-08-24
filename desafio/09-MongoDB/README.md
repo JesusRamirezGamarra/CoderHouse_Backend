@@ -57,6 +57,67 @@ db.createCollection( collectionMessages,
 ```
 
 
+Insert 10 registros sobre la collection Products :
+```
+// MongoDB Playground
+// Select the database to use.
+const database = 'eCommerce';
+use(database);
+// The drop() command destroys all data from a collection.
+// Make sure you run it against the correct database and collection.
+db.Products.drop();
+// Insert a few documents into the sales collection.
+db.Products.insertMany([
+  { '__id': 1, 'timestamp':new Date('2021-08-23T08:00:00Z'),'tipo':'Planta',  'name': 'Bulbasaur N.º001',  'description': 'Este Pokémon nace con una semilla en el lomo, que brota con el paso del tiempo.',  'code': '15fa3dd3-7c95-4e7f-a90f-ba3a32e3473d', 'thumbnail': 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png', 'price': 150,  'stock': 2   },
+  { '__id': 2, 'timestamp':new Date('2021-08-20T08:00:00Z'),'tipo':'Planta',  'name': 'Ivysaur N.º002',    'description': 'Cuando le crece bastante el bulbo del lomo, pierde la capacidad de erguirse sobre las patas traseras.', 'code': '25fa3dd3-7c95-4e7f-a90f-ba3a32e3473d', 'thumbnail': 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png', 'price': 200,  'stock': 1   },
+  { '__id': 3, 'timestamp':new Date('2021-08-22T08:00:00Z'),'tipo':'Planta',  'name': 'Venusaur N.º003',   'description': 'La planta florece cuando absorbe energía solar, lo cual le obliga a buscar siempre la luz del sol.', 'code': '35fa3dd3-7c95-4e7f-a90f-ba3a32e3473d', 'thumbnail': 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png', 'price': 59.9,   'stock': 10  },
+  { '__id': 4, 'timestamp':new Date('2021-08-23T08:00:00Z'),'tipo':'Fuego',   'name': 'Charmander N.º004', 'description': 'Prefiere las cosas calientes. Dicen que cuando llueve le sale vapor de la punta de la cola.', 'code': '45fa3dd3-7c95-4e7f-a90f-ba3a32e3473d', 'thumbnail': 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png', 'price': 50,   'stock': 20  },
+  { '__id': 5, 'timestamp':new Date('2021-08-20T08:00:00Z'),'tipo':'Fuego',   'name': 'Charmeleon N.º005', 'description': 'Este Pokémon de naturaleza agresiva ataca en combate con su cola llameante y hace trizas al rival con sus afiladas garras.', 'code': '55fa3dd3-7c95-4e7f-a90f-ba3a32e3473d', 'thumbnail': 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/005.png', 'price': 150,  'stock': 47   },
+  { '__id': 6, 'timestamp':new Date('2021-08-22T08:00:00Z'),'tipo':'Fuego',   'name': 'Charizard N.º006',  'description': 'Escupe un fuego tan caliente que funde las rocas. Causa incendios forestales sin querer.', 'code': '65fa3dd3-7c95-4e7f-a90f-ba3a32e3473d', 'thumbnail': 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png', 'price': 375, 'stock': 53   },
+  { '__id': 7, 'timestamp':new Date('2021-08-22T08:00:00Z'),'tipo':'Agua',    'name': 'Squirtle N.º007',   'description': 'Cuando retrae su largo cuello en el caparazón, dispara agua a una presión increíble.', 'code': '75fa3dd3-7c95-4e7f-a90f-ba3a32e3473d', 'thumbnail': 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png', 'price': 110, 'stock': 53  },
+  { '__id': 8, 'timestamp':new Date('2021-08-20T08:00:00Z'),'tipo':'Agua',    'name': 'Wartortle N.º008',  'description': 'Se lo considera un símbolo de longevidad. Los ejemplares más ancianos tienen musgo sobre el caparazón.', 'code': '85fa3dd3-7c95-4e7f-a90f-ba3a32e3473d', 'thumbnail': 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/008.png', 'price': 150,  'stock': 53   },
+  { '__id': 9, 'timestamp':new Date('2021-08-22T08:00:00Z'),'tipo':'Agua',    'name': 'Blastoise N.º009',  'description': 'Para acabar con su enemigo, lo aplasta con el peso de su cuerpo. En momentos de apuro, se esconde en el caparazón.', 'code': '95fa3dd3-7c95-4e7f-a90f-ba3a32e3473d', 'thumbnail': 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/009.png', 'price': 250.9, 'stock': 93  },
+  { '__id': 10,'timestamp':new Date('2021-08-19T08:00:00Z'),'tipo':'Insecto', 'name': 'Caterpie N.º010',   'description': 'Para protegerse, despide un hedor horrible por las antenas con el que repele a sus enemigos.', 'code': '10fa3dd3-7c95-4e7f-a90f-ba3a32e3473d', 'thumbnail': 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/010.png', 'price': 180,  'stock': 93   },
+]);
+db.Products.find()
+
+```
+
+Insert 10 registros sobre la collection Messages :
+
+```
+// MongoDB Playground
+// Select the database to use.
+const database = 'eCommerce';
+use(database);
+// The drop() command destroys all data from a collection.
+// Make sure you run it against the correct database and collection.
+db.Messages.drop();
+// Insert a few documents into the sales collection.
+db.Messages.insertMany([
+  { '__id': 1, 'email':'jessurg18@hotmail.com','date':new Date('2021-08-03T08:00:00Z'),messageText:'Hola como estas !!!'},
+  { '__id': 2, 'email':'LUCIOJESUSRAMIREZGAMARRA@GMAIL.COM','date':new Date('2021-08-04T08:00:00Z'),messageText:'Bien Gracias y tu Como estas !!! Que tal todo ?'},
+  { '__id': 3, 'email':'anonymous@mail.com','date':new Date('2021-08-05T08:00:00Z'),messageText:'Hey.... por aca todo bien!'},
+  { '__id': 4, 'email':'jessurg18@hotmail.com','date':new Date('2021-08-06T08:00:00Z'),messageText:'Alguna novedad del Curso de Backend va q va...'},
+  { '__id': 5, 'email':'anonymous@mail.com','date':new Date('2021-08-07T08:00:00Z'),messageText:'Bueno ... avanzando el desafio'},
+  { '__id': 6, 'email':'anonymous@mail.com','date':new Date('2021-08-08T08:00:00Z'),messageText:'Hasta ahora todo tranquilo'},
+  { '__id': 7, 'email':'jessurg18@hotmail.com','date':new Date('2021-08-09T08:00:00Z'),messageText:'Comprendo ... eso es muy bueno'},
+  { '__id': 8, 'email':'anonymous@mail.com','date':new Date('2021-08-10T08:00:00Z'),messageText:'Sin embargo aun no termino pero me falta poco.'},
+  { '__id': 9, 'email':'LUCIOJESUSRAMIREZGAMARRA@GMAIL.COM','date':new Date('2021-08-11T08:00:00Z'),messageText:'Yo aun no empiezo jejeje, espero hacerlo mas tarde'},
+  { '__id': 10,'email':'LUCIOJESUSRAMIREZGAMARRA@GMAIL.COM','date':new Date('2021-08-12T08:00:00Z'),messageText:'Con fe acabo hoy mismo.'},
+]);
+db.Messages.find();
+```
+<p align="center">
+  <p align="center">    
+    <img src="https://github.com/JesusRamirezGamarra/CoderHouse_ReactJS/blob/Desafio-07/public/images/Logo_Negro.png" alt="BFFs" height="250">    
+  </p>
+  <p align="center">
+       CoderHouse - Backend
+  </p>
+</p>
+
+
 
 
 2. Vamos a tener una colección de productos, donde hay que poner valores al campo precio entre los 100 y 5000 pesos (eligiendo valores intermedios, ej: 120, 580, 900, 1280, 1700, 2300, 2860, 3350, 4320, 4990).

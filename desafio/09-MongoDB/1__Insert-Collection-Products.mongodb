@@ -1,16 +1,10 @@
 // MongoDB Playground
-// To disable this template go to Settings | MongoDB | Use Default Template For Playground.
-// Make sure you are connected to enable completions and to be able to run a playground.
-// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
-
 // Select the database to use.
 const database = 'eCommerce';
 use(database);
-
 // The drop() command destroys all data from a collection.
 // Make sure you run it against the correct database and collection.
 db.Products.drop();
-
 // Insert a few documents into the sales collection.
 db.Products.insertMany([
   { '__id': 1, 'timestamp':new Date('2021-08-23T08:00:00Z'),'tipo':'Planta',  'name': 'Bulbasaur N.º001',  'description': 'Este Pokémon nace con una semilla en el lomo, que brota con el paso del tiempo.',  'code': '15fa3dd3-7c95-4e7f-a90f-ba3a32e3473d', 'thumbnail': 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png', 'price': 150,  'stock': 2   },
@@ -24,5 +18,4 @@ db.Products.insertMany([
   { '__id': 9, 'timestamp':new Date('2021-08-22T08:00:00Z'),'tipo':'Agua',    'name': 'Blastoise N.º009',  'description': 'Para acabar con su enemigo, lo aplasta con el peso de su cuerpo. En momentos de apuro, se esconde en el caparazón.', 'code': '95fa3dd3-7c95-4e7f-a90f-ba3a32e3473d', 'thumbnail': 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/009.png', 'price': 250.9, 'stock': 93  },
   { '__id': 10,'timestamp':new Date('2021-08-19T08:00:00Z'),'tipo':'Insecto', 'name': 'Caterpie N.º010',   'description': 'Para protegerse, despide un hedor horrible por las antenas con el que repele a sus enemigos.', 'code': '10fa3dd3-7c95-4e7f-a90f-ba3a32e3473d', 'thumbnail': 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/010.png', 'price': 180,  'stock': 93   },
 ]);
-
 db.Products.find()
