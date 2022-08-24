@@ -121,15 +121,68 @@ db.Messages.find();
   <p align="center">    
     <img src="https://github.com/JesusRamirezGamarra/CoderHouse_Backend/blob/main/desafio/09-MongoDB/Public/img/InsertMessages.png" alt="Insert Messages Collections" with="150">    
   </p>
-  <p align="center" style="font-style: italic;">
+  <p align="center" >
       Insert registros sobre la collection Messages 
   </p>
 </p>
 
 
 2. Vamos a tener una colección de productos, donde hay que poner valores al campo precio entre los 100 y 5000 pesos (eligiendo valores intermedios, ej: 120, 580, 900, 1280, 1700, 2300, 2860, 3350, 4320, 4990).
+
+Update Price in Collection Products
+```
+// MongoDB Playground
+// Select the database to use.
+const database = 'eCommerce';
+use(database);
+
+db.Products.updateMany({ __id: 1 },{$set: { "price": 120 }});
+db.Products.updateMany({ __id: 2 },{$set: { "price": 580 }});
+db.Products.updateMany({ __id: 3 },{$set: { "price": 900 }});
+db.Products.updateMany({ __id: 4 },{$set: { "price": 1280 }});
+db.Products.updateMany({ __id: 5 },{$set: { "price": 1700 }});
+db.Products.updateMany({ __id: 6 },{$set: { "price": 2300 }});
+db.Products.updateMany({ __id: 7 },{$set: { "price": 2860 }});
+db.Products.updateMany({ __id: 8 },{$set: { "price": 3350 }});
+db.Products.updateMany({ __id: 9 },{$set: { "price": 4320 }});
+db.Products.updateMany({ __id: 10},{$set: { "price": 4990 }});
+
+db.Products.find();
+```
 3. Listar todos los documentos en cada colección.
+
+Listar Collection Messages
+```
+const database = 'eCommerce';
+use(database);
+db.Products.find();
+```
+
+Listar Collection Messages
+```
+const database = 'eCommerce';
+use(database);
+db.Messages.find();
+```
+
 4. Mostrar la cantidad de documentos almacenados en cada una de ellas.
+
+Nro de documentos en Collection Products 
+```
+const database = 'eCommerce';
+use(database);
+db.Products.countDocuments();
+```
+
+Nro de documentos en Collection Messages 
+```
+const database = 'eCommerce';
+use(database);
+db.Messages.countDocuments();
+
+```
+
+
 5. Realizar un CRUD sobre la colección de productos:
     - a. Agregar un producto más en la colección de productos.
     - b. Realizar una consulta por nombre de producto específico:
