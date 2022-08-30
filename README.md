@@ -15,3 +15,7 @@ https://github.com/MauricioEF/Comision31025
 
 
 
+#### Tools
+MongoDB for Windows sub subsystem for LINUX ( WSL )
+https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-database
+
