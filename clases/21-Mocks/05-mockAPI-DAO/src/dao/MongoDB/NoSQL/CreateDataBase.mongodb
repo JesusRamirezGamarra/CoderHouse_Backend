@@ -1,0 +1,18 @@
+
+
+const database = 'mockapi';
+const collection = 'users';
+
+// Create a new database.
+use(database);
+
+db.createCollection(collection,
+    {
+        name: String,
+        lastName: String,
+        color: String,
+        phone: String,
+        email: String,
+        music: String
+    }
+)
