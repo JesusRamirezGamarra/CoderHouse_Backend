@@ -22,5 +22,13 @@ Incluir un archivo de configuración (config) que contenga los datos correspondi
 # >>Opcional:
 Hacer lo mismo para bases de datos relacionales: MariaDB/SQLite3.
 
-
+<p align="center">
+  <p align="center">    
     <img src="https://github.com/JesusRamirezGamarra/CoderHouse_Backend/blob/main/desafio/10-MongoSE/public/img/Desafio.JPG" alt="BFFs" height="250">    
+  </p>
+  <p align="center">
+       CoderHouse - Backend
+  </p>
+</p>
+
+ 
