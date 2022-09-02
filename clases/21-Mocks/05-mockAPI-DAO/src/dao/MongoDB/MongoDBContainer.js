@@ -8,12 +8,13 @@ export default class MongoDBContainer{
     }
 
     getAll = async() =>{
-        console.log('getAll')
-        let results = await this.model.find();
+        // console.log('getAll')
+        let results = await this.model.find({});
+        // console.log(results);
         return results;
     }
     save = async(document) =>{
-        console.log('results')
+        // console.log('results')
         let results = await this.model.create(document);
         return results;
     }

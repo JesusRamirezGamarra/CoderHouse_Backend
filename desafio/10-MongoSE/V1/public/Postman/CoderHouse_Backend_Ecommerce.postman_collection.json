@@ -1,0 +1,2432 @@
+{
+	"info": {
+		"_postman_id": "503b5b5b-4dab-4166-a870-e32a31b97221",
+		"name": "CoderHouse_Backend_Ecommerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20414208"
+	},
+	"item": [
+		{
+			"name": "(LOCALHOST) authentication and authorization",
+			"item": [
+				{
+					"name": "Log In.  /API/login  - Requerido para permisos de Administrator",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/API/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"API",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Log In.  /API/login  - Requerido para permisos de Administrator",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20-XHBVm2mKyLgO/2syB5lgs5iSyyQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 03:20:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"description\": \"User logged in\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Log Out.  /API/login  - Requerido para permisos de Administrator",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/API/logOut",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"API",
+								"logOut"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Log Out.  /API/login  - Requerido para permisos de Administrator",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API/logOut",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API",
+										"logOut"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21-OxFabytT6dliw69HW2csMP8wpcY\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 03:29:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"description\": \"User logged out\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "(LOCALHOST) Router: /api/produtcs/",
+			"item": [
+				{
+					"name": "a. GET: '/:pid?' - Me permite listar 1 Producto disponibles ó un producto por su id (disponible para usuarios y administradores)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/API/products/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"API",
+								"products",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "a. GET: '/:pid?' - Me permite listar todos los Productos disponibles",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API/products/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API",
+										"products",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4249"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1099-BAa7ErwSRYmvKhAv9ZGBdyn2K3s\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 00:32:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"description\": \"All Products Catalog\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"timestamp\": 1659991432087,\n            \"name\": \"Bulbasaur N.º001\",\n            \"description\": \"Este Pokémon nace con una semilla en el lomo, que brota con el paso del tiempo.\",\n            \"code\": \"15fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n            \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png\",\n            \"price\": 100,\n            \"stock\": 9979\n        },\n        {\n            \"id\": 2,\n            \"timestamp\": 1659739618951,\n            \"name\": \"Ivysaur N.º002\",\n            \"description\": \"Cuando le crece bastante el bulbo del lomo, pierde la capacidad de erguirse sobre las patas traseras.\",\n            \"code\": \"25fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n            \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png\",\n            \"price\": 125,\n            \"stock\": 1000\n        },\n        {\n            \"id\": 3,\n            \"timestamp\": 1660004780952,\n            \"name\": \"Venusaur N.º003\",\n            \"description\": \"La planta florece cuando absorbe energía solar, lo cual le obliga a buscar siempre la luz del sol.\",\n            \"code\": \"35fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n            \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png\",\n            \"price\": 130,\n            \"stock\": 68\n        },\n        {\n            \"id\": 4,\n            \"timestamp\": 1659999507125,\n            \"name\": \"Charmander N.º004\",\n            \"description\": \"Prefiere las cosas calientes. Dicen que cuando llueve le sale vapor de la punta de la cola.\",\n            \"code\": \"45fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n            \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png\",\n            \"price\": 150,\n            \"stock\": 47\n        },\n        {\n            \"id\": 5,\n            \"timestamp\": 1659739618951,\n            \"name\": \"Charmeleon N.º005\",\n            \"description\": \"Este Pokémon de naturaleza agresiva ataca en combate con su cola llameante y hace trizas al rival con sus afiladas garras\",\n            \"code\": \"55fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n            \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/005.png\",\n            \"price\": 150,\n            \"stock\": 53\n        },\n        {\n            \"id\": 6,\n            \"timestamp\": 1659739618951,\n            \"name\": \"Charizard N.º006\",\n            \"description\": \"Escupe un fuego tan caliente que funde las rocas. Causa incendios forestales sin querer.\",\n            \"code\": \"65fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n            \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png\",\n            \"price\": 375,\n            \"stock\": 53\n        },\n        {\n            \"id\": 7,\n            \"timestamp\": 1659739618951,\n            \"name\": \"Squirtle N.º007\",\n            \"description\": \"Cuando retrae su largo cuello en el caparazón, dispara agua a una presión increíble.\",\n            \"code\": \"75fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n            \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png\",\n            \"price\": 110,\n            \"stock\": 53\n        },\n        {\n            \"id\": 8,\n            \"timestamp\": 1659739618951,\n            \"name\": \"Wartortle N.º008\",\n            \"description\": \"Se lo considera un símbolo de longevidad. Los ejemplares más ancianos tienen musgo sobre el caparazón\",\n            \"code\": \"85fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n            \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/008.png\",\n            \"price\": 150,\n            \"stock\": 53\n        },\n        {\n            \"id\": 9,\n            \"timestamp\": 1659739618951,\n            \"name\": \"Blastoise N.º009\",\n            \"description\": \"Para acabar con su enemigo, lo aplasta con el peso de su cuerpo. En momentos de apuro, se esconde en el caparazón\",\n            \"code\": \"95fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n            \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/009.png\",\n            \"price\": 250,\n            \"stock\": 93\n        },\n        {\n            \"id\": 10,\n            \"timestamp\": 1659739618951,\n            \"name\": \"Caterpie N.º010\",\n            \"description\": \"Para protegerse, despide un hedor horrible por las antenas con el que repele a sus enemigos.\",\n            \"code\": \"10fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n            \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/010.png\",\n            \"price\": 180,\n            \"stock\": 93\n        },\n        {\n            \"id\": 11,\n            \"timestamp\": 1659739618951,\n            \"name\": \"Metapod N.º011\",\n            \"description\": \"Como en este estado solo puede endurecer su coraza, permanece inmóvil a la espera de evolucionar\",\n            \"code\": \"11fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n            \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/011.png\",\n            \"price\": 180,\n            \"stock\": 93\n        },\n        {\n            \"id\": 12,\n            \"timestamp\": 1659739618951,\n            \"name\": \"Butterfree N.º012\",\n            \"description\": \"Aletea a gran velocidad para lanzar al aire sus escamas extremadamente tóxicas\",\n            \"code\": \"12fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n            \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/012.png\",\n            \"price\": 180,\n            \"stock\": 93\n        },\n        {\n            \"id\": 13,\n            \"timestamp\": 1659960824850,\n            \"name\": \"Weedle N.º013\",\n            \"description\": \"El aguijón de la cabeza es muy puntiagudo. Se alimenta de hojas oculto en la espesura de bosques y praderas.\",\n            \"code\": \"13fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n            \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/013.png\",\n            \"price\": 120,\n            \"stock\": 53\n        }\n    ]\n}"
+						},
+						{
+							"name": "a. GET: '/:pid?' - Me permite listar 1 Producto disponible por su Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API/products/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API",
+										"products",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "346"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"15a-tpHu8gvDdAyMNfGJlMOAtwKm7/g\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 00:35:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"description\": \"Product found\",\n    \"data\": {\n        \"id\": 1,\n        \"timestamp\": 1659991432087,\n        \"name\": \"Bulbasaur N.º001\",\n        \"description\": \"Este Pokémon nace con una semilla en el lomo, que brota con el paso del tiempo.\",\n        \"code\": \"15fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n        \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png\",\n        \"price\": 100,\n        \"stock\": 9979\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "b. POST: '/' - Para incorporar productos al listado (disponible para administradores)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Weedle N.º013",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "El aguijón de la cabeza es muy puntiagudo. Se alimenta de hojas oculto en la espesura de bosques y praderas.",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "13fa3dd3-7c95-4e7f-a90f-ba3a32e3473d",
+									"type": "text"
+								},
+								{
+									"key": "thumbnail",
+									"value": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/013.png",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "110",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "53",
+									"type": "text"
+								},
+								{
+									"key": "isAdmin",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/API/products/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"API",
+								"products",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "b. POST: '/' - Para incorporar productos al listado (disponible para administradores)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Weedle N.º013",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "El aguijón de la cabeza es muy puntiagudo. Se alimenta de hojas oculto en la espesura de bosques y praderas.",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "13fa3dd3-7c95-4e7f-a90f-ba3a32e3473d",
+											"type": "text"
+										},
+										{
+											"key": "thumbnail",
+											"value": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/013.png",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "110",
+											"type": "text"
+										},
+										{
+											"key": "stock",
+											"value": "53",
+											"type": "text"
+										},
+										{
+											"key": "isAdmin",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/API/products/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API",
+										"products",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "390"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"186-PGHnHk/emN8jd9upAuikLJJZVeU\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 00:42:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"description\": \"new product successfully created\",\n    \"data\": {\n        \"id\": 13,\n        \"timestamp\": 1660005727788,\n        \"name\": \"Weedle N.º013\",\n        \"description\": \"El aguijón de la cabeza es muy puntiagudo. Se alimenta de hojas oculto en la espesura de bosques y praderas.\",\n        \"code\": \"13fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n        \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/013.png\",\n        \"price\": 110,\n        \"stock\": 53\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "c. PUT: '/:pid' - Actualiza un producto por su id (disponible para administradores)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Weedle N.º013",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "El aguijón de la cabeza es muy puntiagudo. Se alimenta de hojas oculto en la espesura de bosques y praderas.",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "13fa3dd3-7c95-4e7f-a90f-ba3a32e3473d",
+									"type": "text"
+								},
+								{
+									"key": "thumbnail",
+									"value": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/013.pn",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "120",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "99",
+									"type": "text"
+								},
+								{
+									"key": "isAdmin",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/API/products/13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"API",
+								"products",
+								"13"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "c. PUT: '/:pid' - Actualiza un producto por su id (disponible para administradores)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Weedle N.º013",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "El aguijón de la cabeza es muy puntiagudo. Se alimenta de hojas oculto en la espesura de bosques y praderas.",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "13fa3dd3-7c95-4e7f-a90f-ba3a32e3473d",
+											"type": "text"
+										},
+										{
+											"key": "thumbnail",
+											"value": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/013.pn",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "120",
+											"type": "text"
+										},
+										{
+											"key": "stock",
+											"value": "99",
+											"type": "text"
+										},
+										{
+											"key": "isAdmin",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/API/products/13",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API",
+										"products",
+										"13"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c-tAFOzj9FGp9six1sljeGEdxOyKo\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 00:45:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"description\": \"Product with id=13 updated\"\n}"
+						}
+					]
+				},
+				{
+					"name": "d. DELETE: '/:pid' - Borra un producto por su id (disponible para administradores)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "isAdmin",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/API/products/13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"API",
+								"products",
+								"13"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "d. DELETE: '/:pid' - Borra un producto por su id (disponible para administradores)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "isAdmin",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/API/products/13",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API",
+										"products",
+										"13"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3a-ZFZv2MeQMnXVXyFounZlPMrt6Ug\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 00:41:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"description\": \"The product with id=13 has been removed.\"\n}"
+						}
+					]
+				}
+			],
+			"description": "\\#### 1. El router base '**/api/products'** implementará cuatro funcionalidades:\n\n  \n**a. GET: '/:pid?'** \\- Me permite listar todos los productos disponibles ó un producto por su id (disponible para usuarios y administradores)  \n\\`\\`\\`\n\nhttp://localhost:8080/API/products/1\n\nhttp://localhost:8080/API/products/  \n\\`\\`\\`\n\n**b. POST: '/'** - Para incorporar productos al listado (disponible para administradores)\n\n\\`\\`\\`\n\nhttp://localhost:8080/API/products/  \n  \nBODY x-www-Form-urlencoded \"\n\n*   name\":\"Weedle N.º013\",\n*   \"description\":\"El aguijón de la cabeza es muy puntiagudo. Se alimenta de hojas oculto en la espesura de bosques y praderas.\",\n*   \"code\":\"13fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n*   \"thumbnail\":\"https://assets.pokemon.com/assets/cms2/img/pokedex/full/013.png\",\n*   \"price\":110,\n*   \"stock\":53,\n*   \"isAdmin\":true  \n    \\`\\`\\`\n    \n\n**c. PUT: '/:pid'** \\- Actualiza un producto por su id (disponible para administradores)\n\n\\`\\`\\`\n\nhttp://localhost:8080/API/products/13  \n  \nBODY x-www-Form-urlencoded\n\n*   \"name\":\"Weedle N.º013\",\n*   \"description\":\"El aguijón de la cabeza es muy puntiagudo. Se alimenta de hojas oculto en la espesura de bosques y praderas.\",\n*   \"code\":\"13fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n*   \"thumbnail\":\"https://assets.pokemon.com/assets/cms2/img/pokedex/full/013.png\",\n*   \"price\":120,\n*   \"stock\":53,\n*   \"isAdmin\":true\n    \n\n\\`\\`\\`\n\n**d. DELETE: '/:pid'** \\- Borra un producto por su id (disponible para administradores)\n\n\\`\\`\\`\n\nhttp://localhost:8080/API/products/13\n\nBODY x-www-Form-urlencoded\n\n\"isAdmin\":true  \n\\`\\`\\`"
+		},
+		{
+			"name": "(LOCALHOST) Router: /api/carts/",
+			"item": [
+				{
+					"name": "a. POST: '/' - Crea un carrito y devuelve su id.",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/API/carts/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"API",
+								"carts",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "a. POST: '/' - Crea un carrito y devuelve su id.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API/carts/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API",
+										"carts",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "114"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"72-enfVHRvm19bS22gSyjAng6wHOHo\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 00:28:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"description\": \"new cart successfully created with id=3\",\n    \"data\": {\n        \"id\": 3,\n        \"timestamp\": 1660004935242,\n        \"productos\": []\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "b. DELETE: '/:cid' - Vacía un carrito y lo elimina. (SI ELIMINA EL CARRITO)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/API/carts/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"API",
+								"carts",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "b. DELETE: '/:cid' - Vacía un carrito y lo elimina. (SI ELIMINA EL CARRITO)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API/carts/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API",
+										"carts",
+										"3"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "85"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"55-X5gykgFiLDo/0DflFFYsxjcq1Jc\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 00:31:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"class\": \"server\",\n    \"description\": \"Route '/API/carts/3' method 'GET' not implemented.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "c. GET: '/:cid/products' - Me permite listar todos los productos guardados en el carrito (MUESTRAS LOS PRODUCTOS, NO SOLO SUS IDs)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/API/carts/2/products/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"API",
+								"carts",
+								"2",
+								"products",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "c. GET: '/:cid/products' - Me permite listar todos los productos guardados en el carrito (MUESTRAS LOS PRODUCTOS, NO SOLO SUS IDs)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/API/carts/2/products/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API",
+										"carts",
+										"2",
+										"products",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "125"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7d-n7EVPODD3yzcs0xhqUUFrGSwW2Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 00:28:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"description\": \"Cart found, content 3 products.\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"quantity\": 17\n        },\n        {\n            \"id\": 2,\n            \"quantity\": 4\n        },\n        {\n            \"id\": 4,\n            \"quantity\": 7\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "d.1 POST: '/:cid/products' - Para incorporar productos al carrito por su id de producto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "quantity",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/API/carts/2/products/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"API",
+								"carts",
+								"2",
+								"products",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "d. POST: '/:cid/products/pid' - Para incorporar productos al carrito por su id de producto",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "quantity",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/API/carts/2/products/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API",
+										"carts",
+										"2",
+										"products",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "227"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e3-G6LU5Kcvn95T2lFhuG2NYU3TPNE\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 00:26:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"description\": \"(1) unid(s) of (3) - Venusaur N.º003 added successfully in Cart.\",\n    \"data\": {\n        \"id\": 2,\n        \"timestamp\": 1660004780960,\n        \"products\": [\n            {\n                \"id\": 1,\n                \"quantity\": 17\n            },\n            {\n                \"id\": 2,\n                \"quantity\": 4\n            },\n            {\n                \"id\": 3,\n                \"quantity\": 5\n            },\n            {\n                \"id\": 4,\n                \"quantity\": 7\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "d.2 POST: '/:cid/products/:pid' - Para incorporar productos al carrito por su id de producto Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "quantity",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/API/carts/2/products/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"API",
+								"carts",
+								"2",
+								"products",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "e. DELETE: '/:cid/products/:pid' - Eliminar un producto del carrito por su id de carrito y de producto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:8080/API/carts/2/products/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"API",
+								"carts",
+								"2",
+								"products",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "e. DELETE: '/:cid/products/:pid' - Eliminar un producto del carrito por su id de carrito y de producto",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://localhost:8080/API/carts/2/products/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"API",
+										"carts",
+										"2",
+										"products",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "201"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c9-oBrLI2L1DxW22oD8E1bhAI/xmCk\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 00:26:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"description\": \"Producto : (3) - Venusaur N.º003 was removed from your cart.\",\n    \"data\": {\n        \"id\": 2,\n        \"timestamp\": 1660004788790,\n        \"products\": [\n            {\n                \"id\": 1,\n                \"quantity\": 17\n            },\n            {\n                \"id\": 2,\n                \"quantity\": 4\n            },\n            {\n                \"id\": 4,\n                \"quantity\": 7\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "\\#### 2. El router base **'/api/carts'** implementará tres rutas disponibles para usuarios y administradores:\n\n**a. POST: '/'** - Crea un carrito y devuelve su id.\n\n` ``` `\n\n` http://localhost:8080/API/carts/ ``` `  \n**b. DELETE: '/:cid'** - Vacía un carrito y lo elimina. (SI ELIMINA EL CARRITO)  \n` ``` `\n\n` http://localhost:8080/API/carts/1 ``` `  \n**c. GET: '/:cid/products'** - Me permite listar todos los productos guardados en el carrito (MUESTRAS LOS PRODUCTOS, NO SOLO SUS IDs)\n\n` ``` `\n\n`http://localhost:8080/API/carts/2/products`\n\n` ``` `\n\n**d. POST: '/:cid/products/pid'** - Para incorporar productos al carrito por su id de producto\n\n` ``` `\n\n`http://localhost:8080/API/carts/2/products/1`\n\n`BODY x-www-Form-urlencoded`\n\n`\"pid\":1,`\n\n`\"quantity\":10,`\n\n` ``` `\n\n**e. DELETE: '/:cid/products/:pid'** - Eliminar un producto del carrito por su id de carrito y de producto\n\n` ``` `\n\n`http://localhost:8080/API/carts/2/products/1`\n\n` ``` `"
+		},
+		{
+			"name": "(SERVER) Router: /api/produtcs/",
+			"item": [
+				{
+					"name": "a. GET: '/:pid?' - Me permite listar 1 Producto disponibles ó un producto por su id (disponible para usuarios y administradores)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://iris-unexpected-wall.glitch.me/API/products/",
+							"protocol": "https",
+							"host": [
+								"iris-unexpected-wall",
+								"glitch",
+								"me"
+							],
+							"path": [
+								"API",
+								"products",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "a. GET: '/:pid?' - Me permite listar 1 Producto disponibles ó un producto por su id (disponible para usuarios y administradores)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://iris-unexpected-wall.glitch.me/API/products/",
+									"protocol": "https",
+									"host": [
+										"iris-unexpected-wall",
+										"glitch",
+										"me"
+									],
+									"path": [
+										"API",
+										"products",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 05:33:13 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3916"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"f4c-KrQjqV0gTrwn/Zo0/8wytBZVq0Q\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"description\": \"All Products Catalog\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"timestamp\": 1660008035078,\n            \"name\": \"Bulbasaur N.º001\",\n            \"description\": \"Este Pokémon nace con una semilla en el lomo, que brota con el paso del tiempo.\",\n            \"code\": \"15fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n            \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png\",\n            \"price\": 100,\n            \"stock\": 9978\n        },\n        {\n            \"id\": 2,\n            \"timestamp\": 1659739618951,\n            \"name\": \"Ivysaur N.º002\",\n            \"description\": \"Cuando le crece bastante el bulbo del lomo, pierde la capacidad de erguirse sobre las patas traseras.\",\n            \"code\": \"25fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n            \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png\",\n            \"price\": 125,\n            \"stock\": 1000\n        },\n        {\n            \"id\": 3,\n            \"timestamp\": 1660004780952,\n            \"name\": \"Venusaur N.º003\",\n            \"description\": \"La planta florece cuando absorbe energía solar, lo cual le obliga a buscar siempre la luz del sol.\",\n            \"code\": \"35fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n            \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png\",\n            \"price\": 130,\n            \"stock\": 68\n        },\n        {\n            \"id\": 4,\n            \"timestamp\": 1659999507125,\n            \"name\": \"Charmander N.º004\",\n            \"description\": \"Prefiere las cosas calientes. Dicen que cuando llueve le sale vapor de la punta de la cola.\",\n            \"code\": \"45fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n            \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png\",\n            \"price\": 150,\n            \"stock\": 47\n        },\n        {\n            \"id\": 5,\n            \"timestamp\": 1659739618951,\n            \"name\": \"Charmeleon N.º005\",\n            \"description\": \"Este Pokémon de naturaleza agresiva ataca en combate con su cola llameante y hace trizas al rival con sus afiladas garras\",\n            \"code\": \"55fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n            \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/005.png\",\n            \"price\": 150,\n            \"stock\": 53\n        },\n        {\n            \"id\": 6,\n            \"timestamp\": 1659739618951,\n            \"name\": \"Charizard N.º006\",\n            \"description\": \"Escupe un fuego tan caliente que funde las rocas. Causa incendios forestales sin querer.\",\n            \"code\": \"65fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n            \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png\",\n            \"price\": 375,\n            \"stock\": 53\n        },\n        {\n            \"id\": 7,\n            \"timestamp\": 1659739618951,\n            \"name\": \"Squirtle N.º007\",\n            \"description\": \"Cuando retrae su largo cuello en el caparazón, dispara agua a una presión increíble.\",\n            \"code\": \"75fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n            \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png\",\n            \"price\": 110,\n            \"stock\": 53\n        },\n        {\n            \"id\": 8,\n            \"timestamp\": 1659739618951,\n            \"name\": \"Wartortle N.º008\",\n            \"description\": \"Se lo considera un símbolo de longevidad. Los ejemplares más ancianos tienen musgo sobre el caparazón\",\n            \"code\": \"85fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n            \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/008.png\",\n            \"price\": 150,\n            \"stock\": 53\n        },\n        {\n            \"id\": 9,\n            \"timestamp\": 1659739618951,\n            \"name\": \"Blastoise N.º009\",\n            \"description\": \"Para acabar con su enemigo, lo aplasta con el peso de su cuerpo. En momentos de apuro, se esconde en el caparazón\",\n            \"code\": \"95fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n            \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/009.png\",\n            \"price\": 250,\n            \"stock\": 93\n        },\n        {\n            \"id\": 10,\n            \"timestamp\": 1659739618951,\n            \"name\": \"Caterpie N.º010\",\n            \"description\": \"Para protegerse, despide un hedor horrible por las antenas con el que repele a sus enemigos.\",\n            \"code\": \"10fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n            \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/010.png\",\n            \"price\": 180,\n            \"stock\": 93\n        },\n        {\n            \"id\": 11,\n            \"timestamp\": 1659739618951,\n            \"name\": \"Metapod N.º011\",\n            \"description\": \"Como en este estado solo puede endurecer su coraza, permanece inmóvil a la espera de evolucionar\",\n            \"code\": \"11fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n            \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/011.png\",\n            \"price\": 180,\n            \"stock\": 93\n        },\n        {\n            \"id\": 12,\n            \"timestamp\": 1659739618951,\n            \"name\": \"Butterfree N.º012\",\n            \"description\": \"Aletea a gran velocidad para lanzar al aire sus escamas extremadamente tóxicas\",\n            \"code\": \"12fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n            \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/012.png\",\n            \"price\": 180,\n            \"stock\": 93\n        }\n    ]\n}"
+						},
+						{
+							"name": "a. GET: '/:pid?' - Me permite listar 1 Producto disponibles ó un producto por su id (disponible para usuarios y administradores)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://iris-unexpected-wall.glitch.me/API/products/1",
+									"protocol": "https",
+									"host": [
+										"iris-unexpected-wall",
+										"glitch",
+										"me"
+									],
+									"path": [
+										"API",
+										"products",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 05:33:28 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "346"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"15a-eCarCmlgyFfxMj57Y2GiwD7grT8\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"description\": \"Product found\",\n    \"data\": {\n        \"id\": 1,\n        \"timestamp\": 1660008035078,\n        \"name\": \"Bulbasaur N.º001\",\n        \"description\": \"Este Pokémon nace con una semilla en el lomo, que brota con el paso del tiempo.\",\n        \"code\": \"15fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n        \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png\",\n        \"price\": 100,\n        \"stock\": 9978\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "b. POST: '/' - Para incorporar productos al listado (disponible para administradores)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Weedle N.º013",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "El aguijón de la cabeza es muy puntiagudo. Se alimenta de hojas oculto en la espesura de bosques y praderas.",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "13fa3dd3-7c95-4e7f-a90f-ba3a32e3473d",
+									"type": "text"
+								},
+								{
+									"key": "thumbnail",
+									"value": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/013.png",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "110",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "53",
+									"type": "text"
+								},
+								{
+									"key": "isAdmin",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://iris-unexpected-wall.glitch.me/API/products/",
+							"protocol": "https",
+							"host": [
+								"iris-unexpected-wall",
+								"glitch",
+								"me"
+							],
+							"path": [
+								"API",
+								"products",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "b. POST: '/' - Para incorporar productos al listado (disponible para administradores)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Weedle N.º013",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "El aguijón de la cabeza es muy puntiagudo. Se alimenta de hojas oculto en la espesura de bosques y praderas.",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "13fa3dd3-7c95-4e7f-a90f-ba3a32e3473d",
+											"type": "text"
+										},
+										{
+											"key": "thumbnail",
+											"value": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/013.png",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "110",
+											"type": "text"
+										},
+										{
+											"key": "stock",
+											"value": "53",
+											"type": "text"
+										},
+										{
+											"key": "isAdmin",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://iris-unexpected-wall.glitch.me/API/products/",
+									"protocol": "https",
+									"host": [
+										"iris-unexpected-wall",
+										"glitch",
+										"me"
+									],
+									"path": [
+										"API",
+										"products",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 05:33:37 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "390"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"186-MAJbGN5m8ApWiiguIXlY18wASlw\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"description\": \"new product successfully created\",\n    \"data\": {\n        \"id\": 13,\n        \"timestamp\": 1660023217938,\n        \"name\": \"Weedle N.º013\",\n        \"description\": \"El aguijón de la cabeza es muy puntiagudo. Se alimenta de hojas oculto en la espesura de bosques y praderas.\",\n        \"code\": \"13fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n        \"thumbnail\": \"https://assets.pokemon.com/assets/cms2/img/pokedex/full/013.png\",\n        \"price\": 110,\n        \"stock\": 53\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "c. PUT: '/:pid' - Actualiza un producto por su id (disponible para administradores)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Weedle N.º013",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "El aguijón de la cabeza es muy puntiagudo. Se alimenta de hojas oculto en la espesura de bosques y praderas.",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "13fa3dd3-7c95-4e7f-a90f-ba3a32e3473d",
+									"type": "text"
+								},
+								{
+									"key": "thumbnail",
+									"value": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/013.pn",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "120",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "99",
+									"type": "text"
+								},
+								{
+									"key": "isAdmin",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://iris-unexpected-wall.glitch.me/API/products/13",
+							"protocol": "https",
+							"host": [
+								"iris-unexpected-wall",
+								"glitch",
+								"me"
+							],
+							"path": [
+								"API",
+								"products",
+								"13"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "c. PUT: '/:pid' - Actualiza un producto por su id (disponible para administradores)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Weedle N.º013",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "El aguijón de la cabeza es muy puntiagudo. Se alimenta de hojas oculto en la espesura de bosques y praderas.",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "13fa3dd3-7c95-4e7f-a90f-ba3a32e3473d",
+											"type": "text"
+										},
+										{
+											"key": "thumbnail",
+											"value": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/013.pn",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "120",
+											"type": "text"
+										},
+										{
+											"key": "stock",
+											"value": "99",
+											"type": "text"
+										},
+										{
+											"key": "isAdmin",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://iris-unexpected-wall.glitch.me/API/products/13",
+									"protocol": "https",
+									"host": [
+										"iris-unexpected-wall",
+										"glitch",
+										"me"
+									],
+									"path": [
+										"API",
+										"products",
+										"13"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 05:33:54 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"2c-tAFOzj9FGp9six1sljeGEdxOyKo\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"description\": \"Product with id=13 updated\"\n}"
+						}
+					]
+				},
+				{
+					"name": "d. DELETE: '/:pid' - Borra un producto por su id (disponible para administradores)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "isAdmin",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://iris-unexpected-wall.glitch.me/API/products/13",
+							"protocol": "https",
+							"host": [
+								"iris-unexpected-wall",
+								"glitch",
+								"me"
+							],
+							"path": [
+								"API",
+								"products",
+								"13"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "d. DELETE: '/:pid' - Borra un producto por su id (disponible para administradores)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "isAdmin",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://iris-unexpected-wall.glitch.me/API/products/13",
+									"protocol": "https",
+									"host": [
+										"iris-unexpected-wall",
+										"glitch",
+										"me"
+									],
+									"path": [
+										"API",
+										"products",
+										"13"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 05:34:01 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"3a-ZFZv2MeQMnXVXyFounZlPMrt6Ug\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"description\": \"The product with id=13 has been removed.\"\n}"
+						}
+					]
+				}
+			],
+			"description": "\\#### 1. El router base '**/api/products'** implementará cuatro funcionalidades:\n\n  \n**a. GET: '/:pid?'** \\- Me permite listar todos los productos disponibles ó un producto por su id (disponible para usuarios y administradores)  \n\\`\\`\\`\n\nhttp://localhost:8080/API/products/1\n\nhttp://localhost:8080/API/products/  \n\\`\\`\\`\n\n**b. POST: '/'** - Para incorporar productos al listado (disponible para administradores)\n\n\\`\\`\\`\n\nhttp://localhost:8080/API/products/  \n  \nBODY x-www-Form-urlencoded \"\n\n*   name\":\"Weedle N.º013\",\n*   \"description\":\"El aguijón de la cabeza es muy puntiagudo. Se alimenta de hojas oculto en la espesura de bosques y praderas.\",\n*   \"code\":\"13fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n*   \"thumbnail\":\"https://assets.pokemon.com/assets/cms2/img/pokedex/full/013.png\",\n*   \"price\":110,\n*   \"stock\":53,\n*   \"isAdmin\":true  \n    \\`\\`\\`\n    \n\n**c. PUT: '/:pid'** \\- Actualiza un producto por su id (disponible para administradores)\n\n\\`\\`\\`\n\nhttp://localhost:8080/API/products/13  \n  \nBODY x-www-Form-urlencoded\n\n*   \"name\":\"Weedle N.º013\",\n*   \"description\":\"El aguijón de la cabeza es muy puntiagudo. Se alimenta de hojas oculto en la espesura de bosques y praderas.\",\n*   \"code\":\"13fa3dd3-7c95-4e7f-a90f-ba3a32e3473d\",\n*   \"thumbnail\":\"https://assets.pokemon.com/assets/cms2/img/pokedex/full/013.png\",\n*   \"price\":120,\n*   \"stock\":53,\n*   \"isAdmin\":true\n    \n\n\\`\\`\\`\n\n**d. DELETE: '/:pid'** \\- Borra un producto por su id (disponible para administradores)\n\n\\`\\`\\`\n\nhttp://localhost:8080/API/products/13\n\nBODY x-www-Form-urlencoded\n\n\"isAdmin\":true  \n\\`\\`\\`"
+		},
+		{
+			"name": "(SERVER) Router: /api/carts/",
+			"item": [
+				{
+					"name": "a. POST: '/' - Crea un carrito y devuelve su id.",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://iris-unexpected-wall.glitch.me/API/carts/",
+							"protocol": "https",
+							"host": [
+								"iris-unexpected-wall",
+								"glitch",
+								"me"
+							],
+							"path": [
+								"API",
+								"carts",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "a. POST: '/' - Crea un carrito y devuelve su id.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://iris-unexpected-wall.glitch.me/API/carts/",
+									"protocol": "https",
+									"host": [
+										"iris-unexpected-wall",
+										"glitch",
+										"me"
+									],
+									"path": [
+										"API",
+										"carts",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 05:35:56 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "114"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"72-Aa1D/sB0HO1AALOKupjNebdkzm0\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"description\": \"new cart successfully created with id=3\",\n    \"data\": {\n        \"id\": 3,\n        \"timestamp\": 1660023356230,\n        \"productos\": []\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "b. DELETE: '/:cid' - Vacía un carrito y lo elimina. (SI ELIMINA EL CARRITO)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://iris-unexpected-wall.glitch.me/API/carts/3",
+							"protocol": "https",
+							"host": [
+								"iris-unexpected-wall",
+								"glitch",
+								"me"
+							],
+							"path": [
+								"API",
+								"carts",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "b. DELETE: '/:cid' - Vacía un carrito y lo elimina. (SI ELIMINA EL CARRITO)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://iris-unexpected-wall.glitch.me/API/carts/3",
+									"protocol": "https",
+									"host": [
+										"iris-unexpected-wall",
+										"glitch",
+										"me"
+									],
+									"path": [
+										"API",
+										"carts",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 05:36:01 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "54"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"36-aLyK+qiM4wYqnNcMCAYUbFrUwHQ\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"description\": \"The cart with id=3 has been removed.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "c. GET: '/:cid/products' - Me permite listar todos los productos guardados en el carrito (MUESTRAS LOS PRODUCTOS, NO SOLO SUS IDs)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://iris-unexpected-wall.glitch.me/API/carts/3/products/",
+							"protocol": "https",
+							"host": [
+								"iris-unexpected-wall",
+								"glitch",
+								"me"
+							],
+							"path": [
+								"API",
+								"carts",
+								"3",
+								"products",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "c. GET: '/:cid/products' - Me permite listar todos los productos guardados en el carrito (MUESTRAS LOS PRODUCTOS, NO SOLO SUS IDs)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://iris-unexpected-wall.glitch.me/API/carts/3/products/",
+									"protocol": "https",
+									"host": [
+										"iris-unexpected-wall",
+										"glitch",
+										"me"
+									],
+									"path": [
+										"API",
+										"carts",
+										"3",
+										"products",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 05:38:11 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"3b-L6zjkAToR9uf3qx3NOzE2mkcSoU\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"description\": \"Cart found, content 0 products.\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "d.1 POST: '/:cid/products' - Para incorporar productos al carrito por su id de producto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "pid",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://iris-unexpected-wall.glitch.me/API/carts/2/products",
+							"protocol": "https",
+							"host": [
+								"iris-unexpected-wall",
+								"glitch",
+								"me"
+							],
+							"path": [
+								"API",
+								"carts",
+								"2",
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "d.1 POST: '/:cid/products' - Para incorporar productos al carrito por su id de producto",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "pid",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "quantity",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://iris-unexpected-wall.glitch.me/API/carts/2/products",
+									"protocol": "https",
+									"host": [
+										"iris-unexpected-wall",
+										"glitch",
+										"me"
+									],
+									"path": [
+										"API",
+										"carts",
+										"2",
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 11 Aug 2022 12:44:28 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "206"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"ce-gf87TwFnEFjHRDv8q+Hp2KreYWY\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"description\": \"(1) unid(s) of (1) - Bulbasaur N.º001 added successfully in Cart.\",\n    \"data\": {\n        \"id\": 2,\n        \"timestamp\": 1660221868576,\n        \"products\": [\n            {\n                \"id\": 1,\n                \"quantity\": 23\n            },\n            {\n                \"id\": 2,\n                \"quantity\": 4\n            },\n            {\n                \"id\": 4,\n                \"quantity\": 7\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "d.2 POST: '/:cid/products/:pid' - Para incorporar productos al carrito por su id de producto Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "pid",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://iris-unexpected-wall.glitch.me/API/carts/2/products/1",
+							"protocol": "https",
+							"host": [
+								"iris-unexpected-wall",
+								"glitch",
+								"me"
+							],
+							"path": [
+								"API",
+								"carts",
+								"2",
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "d.2 POST: '/:cid/products/:pid' - Para incorporar productos al carrito por su id de producto Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "pid",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "quantity",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://iris-unexpected-wall.glitch.me/API/carts/2/products/1",
+									"protocol": "https",
+									"host": [
+										"iris-unexpected-wall",
+										"glitch",
+										"me"
+									],
+									"path": [
+										"API",
+										"carts",
+										"2",
+										"products",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 11 Aug 2022 12:45:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "206"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"ce-5pk7AddOHoj65hpBtAACf5WtqZE\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"description\": \"(1) unid(s) of (1) - Bulbasaur N.º001 added successfully in Cart.\",\n    \"data\": {\n        \"id\": 2,\n        \"timestamp\": 1660221917278,\n        \"products\": [\n            {\n                \"id\": 1,\n                \"quantity\": 25\n            },\n            {\n                \"id\": 2,\n                \"quantity\": 4\n            },\n            {\n                \"id\": 4,\n                \"quantity\": 7\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "e. DELETE: '/:cid/products/:pid' - Eliminar un producto del carrito por su id de carrito y de producto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:8080/API/carts/2/products/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"API",
+								"carts",
+								"2",
+								"products",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "e. DELETE: '/:cid/products/:pid' - Eliminar un producto del carrito por su id de carrito y de producto",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "https://iris-unexpected-wall.glitch.me/API/carts/2/products/3",
+									"protocol": "https",
+									"host": [
+										"iris-unexpected-wall",
+										"glitch",
+										"me"
+									],
+									"path": [
+										"API",
+										"carts",
+										"2",
+										"products",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 05:39:47 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "201"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"c9-NsH2Aq/4MfLCqpX+HdGNpzoPpXE\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"description\": \"Producto : (3) - Venusaur N.º003 was removed from your cart.\",\n    \"data\": {\n        \"id\": 2,\n        \"timestamp\": 1660023587825,\n        \"products\": [\n            {\n                \"id\": 1,\n                \"quantity\": 20\n            },\n            {\n                \"id\": 2,\n                \"quantity\": 4\n            },\n            {\n                \"id\": 4,\n                \"quantity\": 7\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "\\#### 2. El router base **'/api/carts'** implementará tres rutas disponibles para usuarios y administradores:  \n\n**a. POST: '/'** - Crea un carrito y devuelve su id.\n\n` ``` `\n\n` http://localhost:8080/API/carts/   ``` `  \n**b. DELETE: '/:cid'** \\- Vacía un carrito y lo elimina. (SI ELIMINA EL CARRITO)  \n` ``` `\n\n` http://localhost:8080/API/carts/1   ``` `  \n**c. GET: '/:cid/products'** \\- Me permite listar todos los productos guardados en el carrito (MUESTRAS LOS PRODUCTOS, NO SOLO SUS IDs)\n\n` ``` `\n\n`http://localhost:8080/API/carts/2/products`\n\n` ``` `\n\n**d. POST: '/:cid/products/pid'** - Para incorporar productos al carrito por su id de producto\n\n` ``` `\n\n`http://localhost:8080/API/carts/2/products/1   `\n\n`BODY x-www-Form-urlencoded`\n\n` \"quantity\":10,   ``` `\n\n**e. DELETE: '/:cid/products/:pid'** \\- Eliminar un producto del carrito por su id de carrito y de producto\n\n` ``` `\n\n`http://localhost:8080/API/carts/2/products/1`\n\n` ``` `"
+		},
+		{
+			"name": "(SERVER) authentication and authorization",
+			"item": [
+				{
+					"name": "Log In.  /API/login  - Requerido para permisos de Administrator Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://iris-unexpected-wall.glitch.me/API/login",
+							"protocol": "https",
+							"host": [
+								"iris-unexpected-wall",
+								"glitch",
+								"me"
+							],
+							"path": [
+								"API",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Log In.  /API/login  - Requerido para permisos de Administrator Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://iris-unexpected-wall.glitch.me/API/login",
+									"protocol": "https",
+									"host": [
+										"iris-unexpected-wall",
+										"glitch",
+										"me"
+									],
+									"path": [
+										"API",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 05:30:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"20-XHBVm2mKyLgO/2syB5lgs5iSyyQ\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"description\": \"User logged in\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Log Out.  /API/login  - Requerido para permisos de Administrator Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://iris-unexpected-wall.glitch.me/API/logOut",
+							"protocol": "https",
+							"host": [
+								"iris-unexpected-wall",
+								"glitch",
+								"me"
+							],
+							"path": [
+								"API",
+								"logOut"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Log Out.  /API/login  - Requerido para permisos de Administrator Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://iris-unexpected-wall.glitch.me/API/logOut",
+									"protocol": "https",
+									"host": [
+										"iris-unexpected-wall",
+										"glitch",
+										"me"
+									],
+									"path": [
+										"API",
+										"logOut"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 05:30:47 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"21-OxFabytT6dliw69HW2csMP8wpcY\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"description\": \"User logged out\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -29,7 +29,8 @@ router.get('/',async(req,res)=>{
 
     //const usersService = new Persistencia();
     const usersService = new Persistencia();
-    let results = (await usersService.getPersistencia('MONGODB')).getAll() ;  
+    let results = await(await usersService.getPersistencia('MONGODB')).getAll() ;  
+    console.log(results);
     res.send(results);    
     // let results = await usersService.getPersistencia('MONGODB').getAll()
     // console.log( usersService.getPersistencia())

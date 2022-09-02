@@ -2,8 +2,8 @@
 // Select the database to use.
 const database = 'eCommerce';
 use(database);
-// The drop() command destroys all data from a collection.
-// Make sure you run it against the correct database and collection.
+The drop() command destroys all data from a collection.
+Make sure you run it against the correct database and collection.
 db.Messages.drop();
 // Insert a few documents into the sales collection.
 db.Messages.insertMany([

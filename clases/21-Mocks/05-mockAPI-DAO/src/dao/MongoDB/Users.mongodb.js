@@ -30,8 +30,8 @@ export default class Users extends MongoDBContainer{
         }
         console.log(this.data);
         //await this.model.drop();
-        this.model.deleteMany();
-        //let results = await this.model.insertMany(this.data)
+        //this.model.deleteMany();
+        let results = await this.model.insertMany(this.data)
         // res.send({status:"success",payload:results})
         return true;
     }

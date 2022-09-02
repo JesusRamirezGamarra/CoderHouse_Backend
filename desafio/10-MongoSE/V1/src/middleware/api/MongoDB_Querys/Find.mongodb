@@ -1,0 +1,16 @@
+// MongoDB Playground
+// Select the database to use.
+const database = 'CODERHOUSE_eCommerce_LJRG';
+use(database);
+
+//db.carts.drop()
+
+//db.products.find().pretty();
+
+//db.carts.drop()
+//db.carts.find().pretty()
+
+// db.carts.find({},{timestamp:0,products:0,_id:0,__v:0}).pretty()
+
+db.carts.find().pretty()
+//db.carts.find({id:1},{_id:0,__v:0}).pretty()
