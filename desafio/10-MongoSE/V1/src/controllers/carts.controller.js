@@ -79,6 +79,7 @@ export const cartsController = {
         let lastID = 0
         if (allCarts && allCarts.length) {
           lastID = allCarts[allCarts.length - 1].id
+          //lastID = Math.max(...allCarts.map(cart=>cart.id))
         }
         return Number(lastID) + 1
       }

@@ -1,11 +1,12 @@
 //----------* IMPORTS *----------//
 import admin from 'firebase-admin'
 import { FieldValue } from 'firebase-admin/firestore'
-import config from '../config.js'
-
+import config from '../../config.js'
 //----------* FIREBASE CONNECTION *----------//
+console.log(config.firebase);
 admin.initializeApp({
-    credential: admin.credential.cert(config.firebase),
+    credential: admin.credential.cert(config.firebase.credential),
+    databaseURL:'https://coderhouse-ecommerce-ljrg.firebaseio.com'
 })
 const db = admin.firestore()
 console.log('Firestore is connected!')

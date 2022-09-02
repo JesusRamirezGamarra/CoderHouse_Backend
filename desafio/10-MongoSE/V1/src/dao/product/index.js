@@ -1,7 +1,7 @@
 let productDAO
 
 // switch (process.env.DB_ENV) {
-switch ('mongodb') {    
+switch ('firebase') {    
     case 'json':
         const { default: ProductDAOFileSystem } = await import('./FileSystem.js')
         productDAO = new ProductDAOFileSystem('products')

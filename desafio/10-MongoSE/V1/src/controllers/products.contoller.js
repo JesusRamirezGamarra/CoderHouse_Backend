@@ -47,7 +47,7 @@ export const productsController = {
           const getNewId = () => {
             let lastID = 0
             if (allProducts && allProducts.length) {
-              lastID = allProducts[allProducts.length - 1].id
+                lastID = allProducts[allProducts.length - 1].id
             }
             return Number(lastID) + 1
           }

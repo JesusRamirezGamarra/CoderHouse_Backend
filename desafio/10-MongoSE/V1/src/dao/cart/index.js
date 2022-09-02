@@ -1,7 +1,7 @@
 let cartDAO
 
 //switch (process.env.DB_ENV) {
-switch ('mongodb') {    
+switch ('firebase') {    
     case 'json':
         const { default: CartDAOFileSystem } = await import('./FileSystem.js')
         cartDAO = new CartDAOFileSystem('carts')
