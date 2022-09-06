@@ -55,7 +55,7 @@ new normalizr.schema.Entity , normalizr.denormalize(...,...,...)
 
 <p align="center">
   <p align="center">    
-    <img src="https://github.com/JesusRamirezGamarra/.png" alt="BFFs" height="250">    
+    <img src="https://github.com/JesusRamirezGamarra/CoderHouse_Backend/blob/main/desafio/11-Mocks/public/imagen/All-in-One-Messenger.png" alt="BFFs" height="250">    
   </p>
   <p align="center">
        CoderHouse - Backend
