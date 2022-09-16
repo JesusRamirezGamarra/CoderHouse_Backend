@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "413ee44a-d281-4405-8a0e-d84042bd1701",
+		"name": "CoderHouse_Cookie",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20414208"
+	},
+	"item": [
+		{
+			"name": "SetCookie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"cookiePersonalizada\",\r\n    \"value\":\"Valor de cookie\",\r\n    \"expiresAtInSeconds\":20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cookie_setCookie_Postman",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cookie_setCookie_Postman"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ClearCookie",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cookie_Logout_Postman/cookiePersonalizada",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cookie_Logout_Postman",
+						"cookiePersonalizada"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

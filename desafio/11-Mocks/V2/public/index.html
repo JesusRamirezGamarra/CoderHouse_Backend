@@ -1,0 +1,195 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/icon/favicon.ico" />
+    <title>CH - WebSockets with SQL Database</title>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet" />
+    <link rel="stylesheet" href="https://bootswatch.com/5/sketchy/bootstrap.min.css">
+    <link href="/css/styles.css" rel="stylesheet" />
+    
+    <!-- JavaScript y CSS de AlertifyJS-->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    
+  </head>
+  <body>
+    
+    <div class="row" style="background-color:#FFFFFF;">
+      <div class="col-sm-4" style="text-align: center;" id="Logo-MotorPlantillas">
+          <img src="./img/motorPlantillas/Logo-HBS.png" alt="HBS" />
+      </div>
+      <div class="col-sm-4">
+        <div class="motorPlantillas-container">
+
+          <!-- <form > -->
+            <!-- <h2>Motor Plantillas</h2>        -->
+            <!-- <input type="submit" value="Submit">                  -->
+    
+            <label class="radio-inline">
+              <input type="radio" name="optradio" value="HBS" checked>HBS
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="optradio" value="EJS">EJS
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="optradio" value="PUG">PUG
+            </label>
+            <br><br>
+            <!-- <input type="submit" value="Submit">                              -->
+            <button name="MotorPlantillas" type="submit" class="btn btn-outline-warning" value="Motor Plantillas" accesskey="m" onclick="MotorPlantillasButton()">Cambiar : Motor PLantillas</button>     
+            <br>       
+          <!-- </form>  -->
+
+          <!-- <div class="wrap">
+            <form action="" class="formulario">
+              <div class="radio">
+                <h2>Motor Plantillas</h2>
+        
+                <input type="radio" name="HBS" id="HBS">
+                <label for="HBS">HBS</label>
+            
+                <input type="radio" name="EJS" id="EJS">
+                <label for="EJS">EJS</label>
+            
+                <input type="radio" name="PUG" id="PUG">
+                <label for="PUG">PUG</label>
+              </div> -->
+            
+              <!-- <div class="checkbox">
+                <h2>Checkboxines :D</h2>
+                <input type="checkbox" name="checkbox" id="checkbox1">
+                <label for="checkbox1">Checkboxin 1</label>
+            
+                <input type="checkbox" name="checkbox2" id="checkbox2">
+                <label for="checkbox2">Checkboxin 2</label>
+              </div> 
+            </form>
+          </div>   -->   
+        </div>     
+      </div>     
+      <div class="col-sm-1">
+
+      </div>      
+      <div class="col-sm-3">
+        <div class="container">
+          <div class="button-container">
+            <button name="cerrarsession" type="submit" class="btn btn-outline-danger" value="cerrar sesion" accesskey="c" onclick="CerrarSeccionButton()">cerrar sesion</button>
+          </div>    
+        </div>
+      </div>   
+    </div>
+    
+    <div class="main">
+      <div class="column">
+
+        <div class="row">
+          <!-- <div class="col-sm-6">
+            <div class="container">
+              
+            </div>
+          </div>      -->
+          <div class="col-sm-12">
+            <div class="container">
+
+            </div>
+          </div>   
+        </div>
+
+        <div class="row">
+          <div class="col-sm-3 d-flex justify-content-center">
+            <img src="./img/persistencia/MariaDB.png" alt="MariaDB" />
+          </div>
+          <div class="col-sm-6 d-flex justify-content-center">
+            <h1>WebSockets</h1>
+          </div>
+          <div class="col-sm-3 d-flex justify-content-center">
+            <img src="./img/persistencia/SQLlite.png" alt="SQLlite" />
+          </div>                 
+          <div class="col-sm-3 d-flex justify-content-center">
+            <img src="./img/persistencia/JSON.png" alt="JSON" />
+          </div>                           
+          <div class="col-sm-6 d-flex justify-content-center">
+            <h2>with SQL Database</h2>
+          </div>    
+          <div class="col-sm-3 d-flex justify-content-center">
+
+          </div>                                   
+        </div>
+      
+        <div class="row">
+          <div class="col-sm-6">        
+              <div class="container">
+                <h2>Enter new Product</h2>
+
+                <hr>
+                <div style="display: flex; justify-content: center; align-items: center"></div>
+                  <form id="productForm">
+                    <label>Name</label>
+                    <input type="text" name="title" placeholder="example: Samsung A03 Core 6.5 2GB RAM 32GB" maxlength="25" required />
+
+                    <label>Price</label>
+                    <input type="number" name="price" placeholder="example: 899" min="0" max="100000" step="1" required />
+
+                    <!-- <label>Image URL</label>
+                    <input type="text" name="thumbnail" placeholder="example: https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" /> -->
+                    <label for="image">Image</label>
+                    <input type="file" id="thumbnail" name="thumbnail" accept="image/gif, image/jpg, image/jpeg, image/png" class="form-control" >
+
+
+                    <button type="submit" class="btn btn-outline-primary">Add Product</button>
+                  </form>
+              </div>
+              <div class="container">
+                <h2 class="mb-4">Product View</h2>
+                <hr>
+                <div id="productViewContainer"></div>
+              </div>
+          </div>
+          <div class="col-sm-6">              
+            <div class="chat-container">
+              
+              <h2>Chat Room</h2>
+              <hr>
+              <form id="chatForm">
+                <label for="email">User - Email</label>
+                <input type="email" name="email" placeholder="example@email.com" required />
+
+                <div id="chatContainer" class="chatRoomMessages"></div>
+
+                <textarea
+                  id="textareaMessage"
+                  name="messageText"
+                  placeholder="Enter a message..."
+                  required
+                ></textarea>
+
+                <div class="button-container">
+                  <button name="send" type="submit" class="btn btn-outline-success" value="send" accesskey="s">Send</button>
+                </div>             
+              </form>
+            </div>
+          </div>
+        </div>          
+      </div>
+    </div>
+    
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/scripts.js"></script>    
+<!-- HBS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+<!-- PUG -->
+    <script src="https://pugjs.org/js/pug.js"></script>
+<!-- EJS -->
+    <script src="https://cdn.jsdelivr.net/npm/ejs@3.1.8/ejs.min.js"></script>
+<!-- bootstrap     -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" ></script>
+    
+  </body>
+</html>

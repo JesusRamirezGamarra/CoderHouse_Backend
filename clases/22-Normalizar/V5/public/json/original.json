@@ -1,0 +1,75 @@
+{
+    "id":"1",
+    "title":"CH- faker, Normalizr",
+    "description":"un ejemplo practivo de como Normalizar y Denormalizar viendo efectos en lo generado",
+    "content":"Este es un Grupo Creado para poder chatear con mis compañeros de CODER HOUSE",
+    "author": {
+        "id":1,
+        "email": "luciojesusramirezgamarra@gmail.com",
+        "name": "Jesus",
+        "surname": "Ramirez",
+        "age": "24",
+        "alias": "Jessus",
+        "avatar": "https://cdn4.iconfinder.com/data/icons/people-avatar-filled-outline/64/adult_people_avatar_man_male_employee_tie-128.png"
+    },
+    "chats":[
+        {
+            "id": "8d0d99ad-0302-45d2-9b15-df2001db723d",
+            "author": {
+                "id":1,
+                "email": "luciojesusramirezgamarra@gmail.com",
+                "name": "Jesus",
+                "surname": "Ramirez",
+                "age": "24",
+                "alias": "Jessus",
+                "avatar": "https://cdn4.iconfinder.com/data/icons/people-avatar-filled-outline/64/adult_people_avatar_man_male_employee_tie-128.png"
+            },
+            "message": "Buenos dias Coder ...",
+            "dateMessage": "08/09/2022 11:18:33 am."
+        },
+        {
+            "id": "e001113a-7be7-416b-bee2-9b329393be95",
+            "author": {
+                "id":2,
+                "email": "mishina_daidouji@hotmail.com",
+                "name": "Paola",
+                "surname": "Delgado",
+                "age": "23",
+                "alias": "Pao",
+                "avatar": "https://cdn2.iconfinder.com/data/icons/avatars-60/5985/1-Girl-512.png"
+            },
+            "message": "Buenos dias Coder ...",
+            "dateMessage": "08/09/2022 11:18:33 am."
+        },
+        {
+            "id": "8d0d99ad-0302-45d2-9b15-df2001db724d",
+            "author": {
+                "id":1,
+                "email": "luciojesusramirezgamarra@gmail.com",
+                "name": "Jesus",
+                "surname": "Ramirez",
+                "age": "24",
+                "alias": "Jessus",
+                "avatar": "https://cdn4.iconfinder.com/data/icons/people-avatar-filled-outline/64/adult_people_avatar_man_male_employee_tie-128.png"
+            },            
+            "message": "Buenos dias Coder ...",
+            "dateMessage": "08/09/2022 11:18:33 am."
+            
+        },
+        {
+            "id": "8d0d99ad-0302-45d2-9b15-df2001db725d",
+            "author": {
+                "id":1,
+                "email": "luciojesusramirezgamarra@gmail.com",
+                "name": "Jesus",
+                "surname": "Ramirez",
+                "age": "24",
+                "alias": "Jessus",
+                "avatar": "https://cdn4.iconfinder.com/data/icons/people-avatar-filled-outline/64/adult_people_avatar_man_male_employee_tie-128.png"
+            },            
+            "message": "Buenos dias Coder ...",
+            "dateMessage": "08/09/2022 11:18:33 am."
+            
+        }     
+    ]   
+}

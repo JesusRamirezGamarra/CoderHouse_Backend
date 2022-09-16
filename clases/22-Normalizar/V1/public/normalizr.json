@@ -1,0 +1,56 @@
+{
+    "entities": {
+            "authors": {
+                    "1": {
+                            "id": "1",
+                            "name": "John Doe"
+                    },
+                    "2": {
+                            "id": "2",
+                            "name": "Paco Jones"
+                    },
+                    "3": {
+                            "id": "3",
+                            "name": "Esteban Dido"
+                    }
+            },
+            "comments": {
+                    "1": {
+                            "id": "1",
+                            "author": "2",
+                            "content": "!odio Normalizr...!"
+                    },
+                    "2": {
+                            "id": "2",
+                            "author": "1",
+                            "content": "Ya se :( pero es un tema chill . Si no papa con queso!"
+                    },
+                    "3": {
+                            "id": "3",
+                            "author": "3",
+                            "content": "Buen Post :) . Mas papa con queso no mas ..."
+                    },
+                    "4": {
+                            "id": "4",
+                            "author": "1",
+                            "content": "Gracias Esteban."
+                    }
+            },
+            "posts": {
+                    "1": {
+                            "id": "1",
+                            "title": "Normalizr en la semana chill",
+                            "description": "Un tema mas para pasar chill la semanita :)",
+                            "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis",
+                            "author": "1",
+                            "comments": [
+                                    "1",
+                                    "2",
+                                    "3",
+                                    "4"
+                            ]
+                    }
+            }
+    },
+    "result": "1"
+}

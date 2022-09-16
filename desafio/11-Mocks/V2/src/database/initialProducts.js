@@ -1,0 +1,130 @@
+export const initialProducts = [
+	{
+		"id": 1,
+		"title": "Boxes, customers, inventory",
+		"price": 99.99,
+		"thumbnail": "https://cdn4.iconfinder.com/data/icons/pretty_office_3/256/inventory-maintenance.png"
+	},
+	{
+		"id": 2,
+		"title": "Goods, palet, products x 5 Boxes",
+		"price": 199.99,
+		"thumbnail": "https://cdn0.iconfinder.com/data/icons/containers/512/palet02.png"
+	},
+	{
+		"id": 3,
+		"title": "Goods, palet, products x 18 Boxes",
+		"price": 1330,
+		"thumbnail": "https://cdn0.iconfinder.com/data/icons/containers/512/self1.png"
+	},
+	{
+		"id": 4,
+		"title": "Producto 01",
+		"price": "899",
+		"thumbnail": "https://cdn4.iconfinder.com/data/icons/basic-ui-element-flat-style/512/Basic_UI_Elements_-_2.3_-_Flat_Style_-_36-02-64.png"
+	},
+	{
+		"id": 5,
+		"title": "Producto02",
+		"price": "899",
+		"thumbnail": "https://cdn0.iconfinder.com/data/icons/containers/512/Wood2.png"
+	},
+	{
+		"id": 6,
+		"title": "Producto 03",
+		"price": "213",
+		"thumbnail": "https://cdn-icons-png.flaticon.com/512/1312/1312307.png"
+	},
+	{
+		"id": 7,
+		"title": "Produico 01",
+		"price": "12",
+		"thumbnail": "http://localhost:8080/img/1659596810992-pixiz-05-07-2022-14-38-21.jpg"
+	},
+	{
+		"id": 8,
+		"title": "Producto  01",
+		"price": "213",
+		"thumbnail": "http://localhost:8080/img/1659659199538-Producto00.png"
+	},
+	{
+		"id": 9,
+		"title": "Productos",
+		"price": "899",
+		"thumbnail": "http://localhost:8080/img/1659682494611-1659596491184-x1.png"
+	},
+	{
+		"id": 10,
+		"title": "Producto PUG",
+		"price": "123",
+		"thumbnail": "http://localhost:8080/img/1659682577504-Producto02.png"
+	},
+	{
+		"id": 11,
+		"title": "Producto 01 EJS",
+		"price": "123",
+		"thumbnail": "http://localhost:8080/img/1659682656556-Producto02.png"
+	},
+	{
+		"id": 12,
+		"title": "Producto PUG",
+		"price": "123",
+		"thumbnail": "http://localhost:8080/img/1659682782167-Producto01.png"
+	},
+	{
+		"id": 13,
+		"title": "PRoducto PUG",
+		"price": "123",
+		"thumbnail": "http://localhost:8080/img/1659682885616-Producto01.png"
+	},
+	{
+		"id": 14,
+		"title": "Producto EJS",
+		"price": "123",
+		"thumbnail": "http://localhost:8080/img/1659682934945-1659682885616-Producto01.png"
+	},
+	{
+		"id": 15,
+		"title": "PRoducto01",
+		"price": "12312",
+		"thumbnail": "http://localhost:8080/img/1659682994070-1659682934945-1659682885616-Producto01.png"
+	},
+	{
+		"id": 16,
+		"title": "Producto PUG",
+		"price": "111",
+		"thumbnail": "http://localhost:8080/img/1659683137664-Producto00.png"
+	},
+	{
+		"id": 17,
+		"title": "Producto PUG2",
+		"price": "1243",
+		"thumbnail": "http://localhost:8080/img/1659683168296-1659682782167-Producto01.png"
+	},
+	{
+		"id": 18,
+		"title": "Producto",
+		"price": "12312",
+		"thumbnail": "http://localhost:8080/img/1659683281007-Producto00.png"
+	},
+	{
+		"id": 19,
+		"title": "Re Producto PUG",
+		"price": "123",
+		"thumbnail": "http://localhost:8080/img/1659683337874-Producto02.png"
+	},
+	{
+		"id": 20,
+		"title": "Re Producto EJS",
+		"price": "111",
+		"thumbnail": "http://localhost:8080/img/1659683361860-ProductoNotFound.png"
+	},
+	{
+		"id": 21,
+		"title": "RERE Producto EJS",
+		"price": "123",
+		"thumbnail": "http://localhost:8080/img/1659683396321-Producto02.png"
+	}
+]
+
+export default initialProducts;

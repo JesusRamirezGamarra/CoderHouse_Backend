@@ -1,0 +1,53 @@
+body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.pageContainer{
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+}
+.centroMensajes{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+    padding-left: 3rem;
+    margin-bottom: 2rem;
+    /* background-color: palegreen; */
+    background-color:#f7df1d;
+}
+#messages{
+    margin-bottom: 1rem;
+}
+.imgTabla{
+    width: 32px; 
+    height: 32px;
+}
+.table{
+    /* background-color:#f7df1d; */
+    width: 400px;
+    text-align:center;
+}
+.table>:not(caption)>*>*{
+    padding: 0;
+}
+.author{
+    color: blue;
+}
+.date{
+    color: brown;
+}
+.msg{
+    color: darkgreen;
+    font-style: italic;
+}
+.avatar{
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+}

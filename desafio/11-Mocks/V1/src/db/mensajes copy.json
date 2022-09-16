@@ -1,0 +1,63 @@
+[
+	{
+		"_id": "8d0d99ad-0302-45d2-9b15-df2001db723d",
+		"author": {
+			"email": "luciojesusramirezgamarra@gmail.com",
+			"name": "Jesus",
+			"surname": "Ramirez",
+			"age": "24",
+			"alias": "Jessus",
+			"avatar": "https://cdn4.iconfinder.com/data/icons/people-avatar-filled-outline/64/adult_people_avatar_man_male_employee_tie-128.png"
+		},
+		"text": "Buenos dias Coder ..."
+		
+	},
+	{
+		"_id": "e001113a-7be7-416b-bee2-9b329393be95",
+		"author": {
+			"email": "mishina_daidouji@hotmail.com",
+			"name": "Paola",
+			"surname": "Delgado",
+			"age": "23",
+			"alias": "Pao",
+			"avatar": "https://cdn2.iconfinder.com/data/icons/avatars-60/5985/1-Girl-512.png"
+		},
+		"text": "Los dispuestos a codear te saludan"
+	},
+	{
+		"_id": "5bf755e1-a41c-49ba-b7b6-2fa1c34b87b6",
+		"author": {
+			"email": "vaqva@perritoDeprimido@coderHouse.com",
+			"name": "Mauri",
+			"surname": "MexMex",
+			"age": "29",
+			"alias": "Va q Va ...",
+			"avatar": "https://cdn4.iconfinder.com/data/icons/people-avatar-filled-outline/64/male_glasses_hacker_people_man_programmer_avatar-512.png"
+		},
+		"text": "no olviden activar su modo ultra institnto para codear sin escribir codigo XD"
+	},
+	{
+		"_id": "bd2b2f9c-5316-4ace-880b-abf352e6f8d8",
+		"author": {
+			"email": "programadorRERERE@senior.com",
+			"name": "steve",
+			"surname": "Jobs",
+			"age": "25",
+			"alias": "Got",
+			"avatar": "https://cdn2.iconfinder.com/data/icons/avatars-60/5985/36-Grandfather-512.png"
+		},
+		"text": "Algun dia tendre ese nivel !!! "
+	},
+	{
+		"_id": "4fa8bd7e-b95b-4dea-b797-9a5b9976b104",
+		"author": {
+			"email": "luciojesusramirezgamarra@gmail.com",
+			"nombre": "Jesus",
+			"apellido": "Ramirez",
+			"edad": "26",
+			"alias": "Jessus",
+			"avatar": "https://cdn4.iconfinder.com/data/icons/people-avatar-filled-outline/64/adult_people_avatar_man_male_employee_tie-128.png"
+		},
+		"text": "GOGOGO"
+	}
+]

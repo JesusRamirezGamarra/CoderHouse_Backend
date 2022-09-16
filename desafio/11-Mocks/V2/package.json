@@ -1,0 +1,35 @@
+{
+  "name": "challenge-websockets-with-database",
+  "version": "1.0.1",
+  "description": "",
+  "main": "src/server.js",
+  "type": "module",
+  "engines": {
+    "node": "14.x"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JesusRamirezGamarra/CoderHouse_Backend"
+  },
+  "author": "Jesus Ramirez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JesusRamirezGamarra/CoderHouse_Backend/issues"
+  },
+  "homepage": "https://github.com/JesusRamirezGamarra/CoderHouse_Backend",
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "socket.io": "^4.5.1",
+    "knex": "^2.2.0",
+    "mariadb": "^3.0.1",
+    "mssql": "^9.0.0",
+    "mysql": "^2.18.1",
+    "sqlite3": "^5.0.11"    
+  }
+}

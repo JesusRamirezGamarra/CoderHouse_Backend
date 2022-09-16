@@ -1,0 +1,32 @@
+[
+	{
+		"id": "c2a7f667-3226-4e8f-9744-f4ffe4598e35",
+		"nombre": "Escuadra",
+		"precio": "200",
+		"thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-128.png"
+	},
+	{
+		"id": "94d0ce83-7aa9-4ce6-9aa0-4575cedee7d8",
+		"nombre": "Globo terraqueo",
+		"precio": "1000",
+		"thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/globe-earth-geograhy-planet-school-128.png"
+	},
+	{
+		"id": "36845a77-d549-47a1-8785-8868f10f25e9",
+		"nombre": "Lapiz",
+		"precio": "100",
+		"thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/pencil-pen-stationery-school-128.png"
+	},
+	{
+		"id": "9b6cfa13-c9d3-4c24-812a-81d4f98c9737",
+		"nombre": "Microscopio",
+		"precio": "5000",
+		"thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/microscope-lab-science-school-128.png"
+	},
+	{
+		"id": "c4908458-750a-4ecb-8707-091791a13302",
+		"nombre": "Libro",
+		"precio": "3000",
+		"thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/book-note-paper-school-128.png"
+	}
+]

@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "51d25822-a3d2-4eb9-8766-ed6203ad824e",
+		"name": "clase22",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20336046"
+	},
+	"item": [
+		{
+			"name": "ENVIAR MENSAJE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"email\": \"luciojesusramirezgamarra@gmail.com\",\r\n        \"nombre\": \"Jesus Ramirez\",\r\n        \"apellido\": \"Cid\",\r\n        \"alias\": \"Noe\",\r\n        \"avatar\": \"https://cdn4.iconfinder.com/data/icons/people-avatar-filled-outline/64/girl_female_young_people_woman_teenager_avatar-512.png\",\r\n        \"edad\": \"29\",\r\n        \"mensaje\": \"Que tal, como te va?\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/mensajes",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"mensajes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MENSAJES_NORMALIZADOS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/mensajes",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"mensajes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PRODUCTOS DESDE FAKER",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/productos/productos-test",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"productos",
+						"productos-test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MENSAJES_DESNORMALIZADOS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/mensajes/desnormalized",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"mensajes",
+						"desnormalized"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

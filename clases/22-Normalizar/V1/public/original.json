@@ -1,0 +1,44 @@
+{
+    "id":"1",
+    "title":"Normalizr en la semana chill",
+    "description":"Un tema mas para pasar chill la semanita :)",
+    "content":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis",
+    "author":{
+        "id":"1",
+        "name":"John Doe"
+    },
+    "comments":[
+        {
+            "id":"1",
+            "author":{
+                "id":"2",
+                "name":"Paco Jones"
+            },
+            "content":"!odio Normalizr...!"
+        },
+        {
+            "id":"2",
+            "author":{
+                "id":"1",
+                "name":"John Doe"
+            },
+            "content":"Ya se :( pero es un tema chill . Si no papa con queso!"
+        },
+        {
+            "id":"3",
+            "author":{
+                "id":"3",
+                "name":"Esteban Dido"
+            },
+            "content":"Buen Post :) . Mas papa con queso no mas ..."
+        },
+        {
+            "id":"4",
+            "author":{
+                "id":"1",
+                "name":"John Doe"
+            },
+            "content":"Gracias Esteban."
+        }             
+    ]
+}
