@@ -6,14 +6,25 @@ import MongoStore from 'connect-mongo';
 import {__dirname,___dirname} from '../utils.js';
 
 import mainRouter from '../routes/index.js';
-import config from '../config/index.js';
+//import config from '../config/index.js';
+import config from '../config/config.js';
 
+
+//----------* MONGOOSE CONNECTION *----------//
+try {
+  await mongoose.connect(config.mongodb.cnxStr, config.mongodb.options, () =>
+  console.log('Mongoose is connected!',)
+  )
+  } catch (error) {
+  console.log('Mongoose could not connect.')
+}
 
 const ttlSeconds = 600;
 
 const StoreOptions = {
   store: MongoStore.create({
-    mongoUrl: config.MONGO_ATLAS_URL,
+    //mongoUrl: config.MONGO_ATLAS_URL,
+    mongoUrl:config.mongodb.cnxStr,
     crypto: {
       secret: 'squirrel',
     },

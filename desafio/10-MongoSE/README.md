@@ -36,7 +36,8 @@ Hacer lo mismo para bases de datos relacionales: MariaDB/SQLite3.
 
  
 
- Nota :  La estructura esperara para la el conexion string es  :
+ Nota : 
+La estructura esperara para la el conexion string es  :
 
  ```
 import firebaseConfig from ' JSON conexion string Firebase' assert {type:"json"}

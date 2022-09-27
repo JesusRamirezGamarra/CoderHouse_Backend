@@ -2,6 +2,7 @@ import express from 'express'
 import session from 'express-session'
 import MongoStore from 'connect-mongo';
 import mongoose from 'mongoose';
+import config from './config/config.js'
 
 //import mongoDb from './mongoDB.js'
 import { passportMiddleware, passportSessionHandler } from './middlewares/passport.js'
@@ -10,7 +11,18 @@ import { usersRouter } from './routers/usersRouter.js'
 
 
 const app = express()
-const connection = mongoose.connect("mongodb+srv://coderhouse:Mishina2000@coderhouse-cluster-ljrg.qaohzev.mongodb.net/CoderHouse-Login?retryWrites=true&w=majority")
+// const connection = mongoose.connect("mongodb+srv://coderhouse:Mishina2000@coderhouse-cluster-ljrg.qaohzev.mongodb.net/CoderHouse-Login?retryWrites=true&w=majority")
+
+//----------* MONGOOSE CONNECTION *----------//
+try {
+  await mongoose.connect(config.mongodb.cnxStr, config.mongodb.options, () => {
+  console.log(config.mongodb.cnxStr)
+  console.log('Mongoose is connected!')
+  })
+  } catch (error) {
+  console.log('Mongoose could not connect.')
+}
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -19,7 +31,8 @@ app.use(
   session({
     //store: MongoStore.create({ mongoUrl: mongoDb.sessions }),
     store : MongoStore.create({
-      mongoUrl:"mongodb+srv://coderhouse:Mishina2000@coderhouse-cluster-ljrg.qaohzev.mongodb.net/CoderHouse-Login?retryWrites=true&w=majority",
+      // mongoUrl:"mongodb+srv://coderhouse:Mishina2000@coderhouse-cluster-ljrg.qaohzev.mongodb.net/CoderHouse-Login?retryWrites=true&w=majority",
+      mongoUrl:config.mongodb.cnxStr,
       ttl:3600
     }),
     secret: 'secret',
