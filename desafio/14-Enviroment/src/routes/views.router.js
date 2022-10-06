@@ -68,4 +68,32 @@ router.get('/logout', (req, res) => {
     
 });
 
+////////////////////////////////////////////////////////////////////////////
+
+const infodelProceso = {
+    // [-] Argumentos de entrada  
+    args: process.argv.slice(2),
+    // [-] Path de ejecución
+    execPath: process.cwd(),
+    // [-] Nombre de la plataforma (sistema operativo)      
+    plataforma: process.platform,
+    // [-] Process id
+    processID: process.pid,
+    // [-] Versión de node.js      
+    nodeVersion: process.version,
+    // [-] Carpeta del proyecto
+    carpeta: process.argv[1],
+    // [-] Memoria total reservada (rss)
+    memoria:  ` ${Math.round( JSON.stringify(process.memoryUsage.rss())/ 1024 / 1024 * 100) / 100} MB`,
+
+}
+
+/* --------- INFO ---------- */
+router.get('/info', async(req, res,) => {
+    console.log('/info')
+    const data = infodelProceso
+    res.render('info', {data})
+})
+
+
 export default router;

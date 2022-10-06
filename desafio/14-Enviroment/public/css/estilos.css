@@ -135,3 +135,15 @@ button {
     /* background-color: red; */
     bottom: 0px;
 }
+
+.info{
+    text-align: start;
+}
+
+
+.jumbotronInfo{
+    background-color: black;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px;
+}

@@ -32,3 +32,50 @@ Por ej: /randoms?cant=20000.
  [-] El dato devuelto al frontend será un objeto que contendrá como claves los números random generados junto a la cantidad de veces que salió cada uno. Esta ruta no será bloqueante (utilizar el método fork de child process). Comprobar el no bloqueo con una cantidad de 500.000.000 de randoms.
 
 Observación: utilizar routers y apis separadas para esta funcionalidad.
+
+```
+    npm run DEV 8080
+    npm start PROD 8080
+
+    /info
+    /randoms?cant=20000
+```
+
+
+
+
+
+
+
+
+
+
+NOTA : 
+
+La estructura esperara para la el conexion string es  :
+
+ ```
+import firebaseConfig from ' JSON conexion string Firebase' assert {type:"json"}
+import __dirname from '../utils.js';
+
+export default {
+    fileSystem: {
+        path: __dirname + '/assets/database/',
+    },
+    mongodb: {
+        cnxStr:' Mongo DB Conexion string MongoDB',
+        options : {
+            autoIndex: false, // Don't build indexes
+            maxPoolSize: 10, // Maintain up to 10 socket connections
+            serverSelectionTimeoutMS: 5000, // Keep trying to send operations for 5 seconds
+            socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity
+            family: 4 // Use IPv4, skip trying IPv6
+        }
+    },
+    PORT: process.env.PORT || 8080,
+    firebase: {
+        credential : firebaseConfig
+    },
+}
+
+ ```
