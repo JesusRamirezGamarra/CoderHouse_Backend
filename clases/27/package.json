@@ -1,7 +1,0 @@
-{
-  "type": "module",
-  "dependencies": {
-    "minimist": "^1.2.6",
-    "yargs": "^17.5.1"
-  }
-}
