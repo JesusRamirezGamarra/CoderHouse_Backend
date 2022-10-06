@@ -1,17 +1,17 @@
 //funcion numeros aleatorios
 
-const calcularNumeros = (cant) => {
+const calculateNumbers = (cant) => {
 
     const between = (min, max) => {
         return Math.floor(Math.random() * (max - min) + min);
     };
-    
-    const limiteInferior = 1;
-    const limiteSuperior = 1000;
+
+    const limitInf = 1;
+    const limitSup = 1000;
     const salida = {};
     
     for (let i = 0; i < cant; i++) {
-        const valor = between(limiteInferior,limiteSuperior);
+        const valor = between(limitInf,limitSup);
     
         if(salida[valor])
             salida[valor] = salida[valor]+1;
@@ -23,10 +23,9 @@ const calcularNumeros = (cant) => {
 
 process.on('message', (msg) => {
     let sum
-
     if (msg) {
         const cant = msg
-        sum = calcularNumeros(cant);
+        sum = calculateNumbers(cant);
     }
     process.send(sum);
 
