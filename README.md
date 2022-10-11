@@ -23,3 +23,6 @@ Tool for change de version for ES5 ES6
 * https://babeljs.io/
 * https://ui.toast.com/fe-guide/en_ES5-TO-es6console
 * 
+
+#### Markdown
+* https://code.visualstudio.com/docs/languages/markdown
