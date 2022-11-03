@@ -26,5 +26,7 @@ yarn-error.log*
 
 .vscode
 
+*:Zone.Identifier
+
 #config password Database
 /src/config/
