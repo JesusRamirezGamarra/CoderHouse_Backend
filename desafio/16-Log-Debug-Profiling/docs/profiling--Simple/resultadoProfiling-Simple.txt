@@ -1,0 +1,969 @@
+Statistical profiling result from docs/profiling--Simple/isolate.log, (2714 ticks, 0 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+   1846   68.0%          /usr/bin/node
+     67    2.5%          [vdso]
+     46    1.7%          /usr/lib/x86_64-linux-gnu/libc-2.31.so
+     13    0.5%          /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      6    0.2%    0.8%  LazyCompile: *resolve node:path:1091:10
+      3    0.1%    0.4%  LazyCompile: *normalizeString node:path:66:25
+      2    0.1%    0.3%  Function: ^Module._resolveFilename node:internal/modules/cjs/loader:864:35
+      1    0.0%    0.1%  RegExp: \u0000|\u0009|\u000A|\u000D|\u0020|#|\/|:|<|>|\?|@|\[|\\|\]|\^|\|
+      1    0.0%    0.1%  LazyCompile: *syncExports node:internal/bootstrap/loaders:304:14
+      1    0.0%    0.1%  LazyCompile: *realpathSync node:fs:2474:22
+      1    0.0%    0.1%  LazyCompile: *Module._nodeModulePaths node:internal/modules/cjs/loader:639:37
+      1    0.0%    0.1%  Function: ^validateString node:internal/validators:159:24
+      1    0.0%    0.1%  Function: ^validateBoolean node:internal/validators:215:25
+      1    0.0%    0.1%  Function: ^resolve node:internal/modules/esm/loader:786:16
+      1    0.0%    0.1%  Function: ^newAsyncId node:internal/async_hooks:416:20
+      1    0.0%    0.1%  Function: ^makeRequireFunction node:internal/modules/cjs/helpers:59:29
+      1    0.0%    0.1%  Function: ^isPosixPathSeparator node:path:56:30
+      1    0.0%    0.1%  Function: ^getPathFromURLPosix node:internal/url:1464:29
+      1    0.0%    0.1%  Function: ^basename node:path:1306:11
+      1    0.0%    0.1%  Function: ^Module.require node:internal/modules/cjs/loader:1013:36
+      1    0.0%    0.1%  Function: ^Module._extensions..js node:internal/modules/cjs/loader:1128:37
+      1    0.0%    0.1%  Function: ^Module._compile node:internal/modules/cjs/loader:1073:37
+      1    0.0%    0.1%  Function: *wasm-function[15]
+
+ [C++]:
+   ticks  total  nonlib   name
+    512   18.9%   69.0%  __write
+     52    1.9%    7.0%  _IO_fwrite
+     40    1.5%    5.4%  epoll_pwait
+     20    0.7%    2.7%  __GI___pthread_mutex_unlock
+     17    0.6%    2.3%  std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)
+      9    0.3%    1.2%  __lll_lock_wait
+      7    0.3%    0.9%  __libc_malloc
+      6    0.2%    0.8%  std::ostream::sentry::sentry(std::ostream&)
+      6    0.2%    0.8%  _IO_file_xsputn
+      5    0.2%    0.7%  syscall
+      4    0.1%    0.5%  std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const
+      4    0.1%    0.5%  std::ostream::operator<<(int)
+      4    0.1%    0.5%  __pthread_cond_signal
+      3    0.1%    0.4%  std::locale::id::_M_id() const
+      3    0.1%    0.4%  __mprotect
+      2    0.1%    0.3%  std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const
+      2    0.1%    0.3%  std::__detail::_Prime_rehash_policy::_M_need_rehash(unsigned long, unsigned long, unsigned long) const
+      2    0.1%    0.3%  operator delete(void*)
+      2    0.1%    0.3%  __pthread_cond_wait
+      2    0.1%    0.3%  __GI___pthread_rwlock_unlock
+      1    0.0%    0.1%  std::ostream::flush()
+      1    0.0%    0.1%  std::ostream& std::ostream::_M_insert<long>(long)
+      1    0.0%    0.1%  std::__detail::_Prime_rehash_policy::_M_next_bkt(unsigned long) const
+      1    0.0%    0.1%  operator delete[](void*)
+      1    0.0%    0.1%  fputc
+      1    0.0%    0.1%  do_futex_wait.constprop.0
+      1    0.0%    0.1%  __munmap
+      1    0.0%    0.1%  __mmap
+      1    0.0%    0.1%  __clock_gettime
+      1    0.0%    0.1%  __GI___pthread_rwlock_rdlock
+      1    0.0%    0.1%  __GI___pthread_mutex_lock
+      1    0.0%    0.1%  _IO_file_write
+      1    0.0%    0.1%  _IO_fflush
+
+ [Summary]:
+   ticks  total  nonlib   name
+     27    1.0%    3.6%  JavaScript
+    715   26.3%   96.4%  C++
+     38    1.4%    5.1%  GC
+   1972   72.7%          Shared libraries
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+    417   76.5%   15.4%  __write
+     52    9.5%    1.9%  _IO_fwrite
+     15    2.8%    0.6%  std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)
+      7    1.3%    0.3%  __libc_malloc
+      6    1.1%    0.2%  std::ostream::sentry::sentry(std::ostream&)
+      6    1.1%    0.2%  _IO_file_xsputn
+      5    0.9%    0.2%  syscall
+      5    0.9%    0.2%  __lll_lock_wait
+      4    0.7%    0.1%  std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const
+      4    0.7%    0.1%  std::ostream::operator<<(int)
+      3    0.6%    0.1%  std::locale::id::_M_id() const
+      3    0.6%    0.1%  __mprotect
+      3    0.6%    0.1%  __GI___pthread_mutex_unlock
+      2    0.4%    0.1%  std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const
+      2    0.4%    0.1%  std::__detail::_Prime_rehash_policy::_M_need_rehash(unsigned long, unsigned long, unsigned long) const
+      2    0.4%    0.1%  operator delete(void*)
+      1    0.2%    0.0%  std::ostream::flush()
+      1    0.2%    0.0%  std::ostream& std::ostream::_M_insert<long>(long)
+      1    0.2%    0.0%  std::__detail::_Prime_rehash_policy::_M_next_bkt(unsigned long) const
+      1    0.2%    0.0%  operator delete[](void*)
+      1    0.2%    0.0%  fputc
+      1    0.2%    0.0%  __clock_gettime
+      1    0.2%    0.0%  __GI___pthread_mutex_lock
+      1    0.2%    0.0%  _IO_file_write
+      1    0.2%    0.0%  _IO_fflush
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+   1846   68.0%  /usr/bin/node
+   1587   86.0%    /usr/bin/node
+    862   54.3%      Function: ^compileFunction node:vm:316:25
+    855   99.2%        Function: ^wrapSafe node:internal/modules/cjs/loader:1033:18
+    852   99.6%          Function: ^Module._compile node:internal/modules/cjs/loader:1073:37
+    830   97.4%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1128:37
+     22    2.6%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1128:37
+     71    4.5%      Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+     53   74.6%        Function: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      8   15.1%          Function: ~<anonymous> node:http:1:1
+      8  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      6   11.3%          Function: ~<anonymous> node:tls:1:1
+      6  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      4    7.5%          Function: ~<anonymous> node:internal/child_process:1:1
+      4  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      4    7.5%          Function: ~<anonymous> node:child_process:1:1
+      4  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      4    7.5%          Function: ~<anonymous> node:_http_client:1:1
+      4  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      3    5.7%          LazyCompile: ~lazyWebCrypto node:crypto:125:23
+      3  100.0%            LazyCompile: ~get node:crypto:369:8
+      3    5.7%          LazyCompile: ~initCJSParse node:internal/modules/esm/translators:58:28
+      3  100.0%            LazyCompile: ~commonjsStrategy node:internal/modules/esm/translators:148:60
+      3    5.7%          Function: ~<anonymous> node:internal/cluster/primary:1:1
+      3  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      2    3.8%          LazyCompile: ~lazyLoadStreams node:fs:2907:25
+      2  100.0%            LazyCompile: ~get ReadStream node:fs:3050:17
+      2    3.8%          Function: ~<anonymous> node:tty:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      2    3.8%          Function: ~<anonymous> node:dgram:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      2    3.8%          Function: ~<anonymous> node:cluster:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      2    3.8%          Function: ~<anonymous> node:assert:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      2    3.8%          Function: ~<anonymous> node:_tls_common:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      2    3.8%          Function: ~<anonymous> node:_http_common:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1    1.9%          LazyCompile: ~get node:dns:439:8
+      1  100.0%            /usr/bin/node
+      1    1.9%          Function: ~<anonymous> node:dns:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1    1.9%          Function: ~<anonymous> node:_tls_wrap:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1    1.9%          Function: ~<anonymous> node:_http_outgoing:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+     14   19.7%        Function: ^compileForPublicLoader node:internal/bootstrap/loaders:263:25
+     14  100.0%          Function: ^loadBuiltinModule node:internal/modules/cjs/helpers:45:27
+     14  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:770:24
+      4    5.6%        LazyCompile: ~compileForPublicLoader node:internal/bootstrap/loaders:263:25
+      3   75.0%          LazyCompile: ~loadBuiltinModule node:internal/modules/cjs/helpers:45:27
+      3  100.0%            LazyCompile: ~builtinStrategy node:internal/modules/esm/translators:254:58
+      1   25.0%          Function: ^loadBuiltinModule node:internal/modules/cjs/helpers:45:27
+      1  100.0%            LazyCompile: ~Module._load node:internal/modules/cjs/loader:770:24
+     49    3.1%      Function: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      8   16.3%        Function: ~<anonymous> node:internal/modules/esm/fetch_module:1:1
+      8  100.0%          Function: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      8  100.0%            Function: ~<anonymous> node:internal/modules/esm/get_format:1:1
+      7   14.3%        Function: ~<anonymous> node:internal/process/esm_loader:1:1
+      7  100.0%          Function: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      7  100.0%            Function: ~<anonymous> node:internal/modules/cjs/loader:1:1
+      7   14.3%        Function: ~<anonymous> node:internal/modules/esm/loader:1:1
+      7  100.0%          Function: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      7  100.0%            Function: ~<anonymous> node:internal/process/esm_loader:1:1
+      5   10.2%        LazyCompile: ~initializeCJSLoader node:internal/process/pre_execution:533:29
+      5  100.0%          LazyCompile: ~prepareMainThreadExecution node:internal/process/pre_execution:36:36
+      5  100.0%            Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      3    6.1%        Function: ~<anonymous> node:internal/modules/esm/module_map:1:1
+      3  100.0%          Function: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      3  100.0%            Function: ~<anonymous> node:internal/modules/esm/loader:1:1
+      3    6.1%        Function: ~<anonymous> node:internal/modules/esm/load:1:1
+      3  100.0%          Function: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      3  100.0%            Function: ~<anonymous> node:internal/modules/esm/loader:1:1
+      3    6.1%        Function: ~<anonymous> node:internal/modules/cjs/loader:1:1
+      3  100.0%          Function: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      3  100.0%            LazyCompile: ~initializeCJSLoader node:internal/process/pre_execution:533:29
+      2    4.1%        LazyCompile: ~initializeSourceMapsHandlers node:internal/process/pre_execution:572:38
+      2  100.0%          LazyCompile: ~prepareMainThreadExecution node:internal/process/pre_execution:36:36
+      2  100.0%            Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      2    4.1%        LazyCompile: ~get BlockList node:net:1980:16
+      2  100.0%          Function: ~<anonymous> node:internal/modules/esm/fetch_module:1:1
+      2  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      2    4.1%        Function: ~<anonymous> node:internal/source_map/source_map_cache:1:1
+      2  100.0%          Function: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      2  100.0%            LazyCompile: ~initializeSourceMapsHandlers node:internal/process/pre_execution:572:38
+      2    4.1%        Function: ~<anonymous> node:internal/modules/esm/resolve:1:1
+      2  100.0%          Function: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      2  100.0%            Function: ~<anonymous> node:internal/modules/esm/loader:1:1
+      2    4.1%        Function: ~<anonymous> node:internal/modules/esm/get_format:1:1
+      2  100.0%          Function: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      2  100.0%            Function: ~<anonymous> node:internal/modules/esm/resolve:1:1
+      1    2.0%        LazyCompile: ~initializeReport node:internal/process/pre_execution:310:26
+      1  100.0%          LazyCompile: ~prepareMainThreadExecution node:internal/process/pre_execution:36:36
+      1  100.0%            Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    2.0%        Function: ~<anonymous> node:internal/modules/esm/translators:1:1
+      1  100.0%          Function: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      1  100.0%            Function: ~<anonymous> node:internal/modules/esm/loader:1:1
+      1    2.0%        Function: ~<anonymous> node:internal/fs/promises:1:1
+      1  100.0%          Function: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      1  100.0%            Function: ~<anonymous> node:internal/modules/esm/load:1:1
+     49    3.1%      /usr/bin/node
+     10   20.4%        Function: ^readPackage node:internal/modules/cjs/loader:301:21
+      9   90.0%          Function: ^readPackageScope node:internal/modules/cjs/loader:331:26
+      4   44.4%            Function: ^trySelf node:internal/modules/cjs/loader:451:17
+      4   44.4%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1128:37
+      1   11.1%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1128:37
+      1   10.0%          Function: ^resolveExports node:internal/modules/cjs/loader:482:24
+      1  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:504:28
+      3    6.1%        Function: ^stat node:internal/modules/cjs/loader:151:14
+      2   66.7%          Function: ^Module._findPath node:internal/modules/cjs/loader:504:28
+      1   50.0%            LazyCompile: ~Module._resolveFilename node:internal/modules/cjs/loader:864:35
+      1   50.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:864:35
+      1   33.3%          Function: ^tryFile node:internal/modules/cjs/loader:394:17
+      1  100.0%            Function: ^tryExtensions node:internal/modules/cjs/loader:410:23
+      3    6.1%        Function: ^readPackageScope node:internal/modules/cjs/loader:331:26
+      3  100.0%          Function: ^trySelf node:internal/modules/cjs/loader:451:17
+      3  100.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:864:35
+      2    4.1%        LazyCompile: ~resolvePackageTargetString node:internal/modules/esm/resolve:375:36
+      2  100.0%          LazyCompile: ~resolvePackageTarget node:internal/modules/esm/resolve:443:30
+      2  100.0%            LazyCompile: ~resolvePackageTarget node:internal/modules/esm/resolve:443:30
+      2    4.1%        Function: ^Module.load node:internal/modules/cjs/loader:985:33
+      2  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:770:24
+      2  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:1013:36
+      2    4.1%        Function: ^Module._findPath node:internal/modules/cjs/loader:504:28
+      2  100.0%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:864:35
+      2  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:770:24
+      2    4.1%        Function: ^Module node:internal/modules/cjs/loader:172:16
+      1   50.0%          Function: ^cjsPreparseModuleExports node:internal/modules/esm/translators:194:34
+      1  100.0%            Function: ^commonjsStrategy node:internal/modules/esm/translators:148:60
+      1   50.0%          Function: ^Module._load node:internal/modules/cjs/loader:770:24
+      1  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:1013:36
+      1    2.0%        LazyCompile: ~use /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/express/lib/application.js:194:23
+      1  100.0%          Script: ~<anonymous> file:///home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/src/services/server.js:1:1
+      1  100.0%            /usr/bin/node
+      1    2.0%        LazyCompile: ~realpathSync node:fs:2474:22
+      1  100.0%          LazyCompile: ~finalizeResolution node:internal/modules/esm/resolve:272:28
+      1  100.0%            LazyCompile: ~moduleResolve node:internal/modules/esm/resolve:844:23
+      1    2.0%        LazyCompile: ~populateMaps /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mime-types/index.js:154:23
+      1  100.0%          Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mime-types/index.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1073:37
+      1    2.0%        LazyCompile: ~module.exports /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/set-blocking/index.js:1:27
+      1  100.0%          Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/npmlog/log.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1073:37
+      1    2.0%        LazyCompile: ~makeConnection /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connect.js:256:24
+      1  100.0%          LazyCompile: ~connect /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connect.js:30:17
+      1  100.0%            LazyCompile: ~checkServer /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/sdam/monitor.js:143:21
+      1    2.0%        LazyCompile: ~checkServer /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/sdam/monitor.js:143:21
+      1  100.0%          LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/sdam/monitor.js:229:12
+      1  100.0%            LazyCompile: ~executeAndReschedule /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/utils.js:649:34
+      1    2.0%        LazyCompile: ~checkServer /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/sdam/monitor.js:143:21
+      1  100.0%          LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/sdam/monitor.js:226:12
+      1  100.0%            LazyCompile: ~MonitorInterval._executeAndReschedule /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/sdam/monitor.js:331:38
+      1    2.0%        LazyCompile: ~ThemeSetProto.newTheme /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/gauge/theme-set.js:12:35
+      1  100.0%          LazyCompile: ~ThemeSetProto.addTheme /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/gauge/theme-set.js:24:35
+      1  100.0%            Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/gauge/themes.js:1:1
+      1    2.0%        LazyCompile: ~MongoCredentials /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/auth/mongo_credentials.js:31:16
+      1  100.0%          LazyCompile: ~merge /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/auth/mongo_credentials.js:122:17
+      1  100.0%            LazyCompile: ~parseOptions /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/connection_string.js:204:22
+      1    2.0%        LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/webidl-conversions/lib/index.js:390:11
+      1  100.0%          /usr/bin/node
+      1  100.0%            Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/webidl-conversions/lib/index.js:1:1
+      1    2.0%        LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/connection_string.js:55:72
+      1  100.0%          LazyCompile: ~onresolve node:dns:297:19
+      1    2.0%        LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/helpers/pluralize.js:86:34
+      1  100.0%          /usr/bin/node
+      1  100.0%            LazyCompile: ~pluralize /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/helpers/pluralize.js:82:19
+      1    2.0%        LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connect.js:78:43
+      1  100.0%          LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/auth/scram.js:25:32
+      1  100.0%            LazyCompile: ~<anonymous> node:internal/crypto/random:107:43
+      1    2.0%        LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/@mapbox/node-pre-gyp/lib/util/versioning.js:23:36
+      1  100.0%          /usr/bin/node
+      1  100.0%            Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/@mapbox/node-pre-gyp/lib/util/versioning.js:1:1
+      1    2.0%        LazyCompile: *getOwn node:internal/bootstrap/loaders:187:16
+      1  100.0%          Function: ^syncExports node:internal/bootstrap/loaders:304:14
+      1  100.0%            Function: ^<anonymous> node:internal/bootstrap/loaders:290:15
+      1    2.0%        Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/signal-exit/index.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1073:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1128:37
+      1    2.0%        Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/browserDocument.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1073:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1128:37
+      1    2.0%        Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/graceful-fs/graceful-fs.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1073:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1128:37
+      1    2.0%        Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/finalhandler/node_modules/debug/src/node.js:1:1
+      1  100.0%          LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1073:37
+      1  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1128:37
+      1    2.0%        Function: ^realpathSync node:fs:2474:22
+      1  100.0%          Function: ^toRealPath node:internal/modules/cjs/loader:403:20
+      1  100.0%            Function: ^tryFile node:internal/modules/cjs/loader:394:17
+      1    2.0%        Function: ^compileFunction node:vm:316:25
+      1  100.0%          Function: ^wrapSafe node:internal/modules/cjs/loader:1033:18
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1073:37
+      1    2.0%        Function: ^Module._load node:internal/modules/cjs/loader:770:24
+      1  100.0%          Function: ^Module.require node:internal/modules/cjs/loader:1013:36
+      1  100.0%            Function: ^require node:internal/modules/cjs/helpers:102:31
+      1    2.0%        Function: ^FastBuffer node:internal/buffer:958:14
+      1  100.0%          Function: ^createUnsafeBuffer node:internal/buffer:1059:28
+      1  100.0%            Function: ^createPool node:buffer:155:20
+      1    2.0%        /usr/bin/node
+      1  100.0%          Function: ^SafeSet node:internal/per_context/primordials:379:16
+      1  100.0%            LazyCompile: ~cjsPreparseModuleExports node:internal/modules/esm/translators:194:34
+     33    2.1%      LazyCompile: ~configSecureContext node:internal/tls/secure-context:124:29
+     33  100.0%        LazyCompile: ~createSecureContext node:_tls_common:99:29
+     33  100.0%          LazyCompile: ~connect node:_tls_wrap:1605:35
+     33  100.0%            LazyCompile: ~makeConnection /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connect.js:256:24
+     23    1.4%      Function: ^stat node:internal/modules/cjs/loader:151:14
+     14   60.9%        Function: ^Module._findPath node:internal/modules/cjs/loader:504:28
+     13   92.9%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:864:35
+     13  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:770:24
+      1    7.1%          LazyCompile: ~Module._resolveFilename node:internal/modules/cjs/loader:864:35
+      1  100.0%            LazyCompile: ~Module._load node:internal/modules/cjs/loader:770:24
+      9   39.1%        Function: ^tryFile node:internal/modules/cjs/loader:394:17
+      8   88.9%          Function: ^tryExtensions node:internal/modules/cjs/loader:410:23
+      8  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:504:28
+      1   11.1%          LazyCompile: ~tryPackage node:internal/modules/cjs/loader:348:20
+      1  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:504:28
+     18    1.1%      Function: ^readPackage node:internal/modules/cjs/loader:301:21
+     14   77.8%        Function: ^resolveExports node:internal/modules/cjs/loader:482:24
+     14  100.0%          Function: ^Module._findPath node:internal/modules/cjs/loader:504:28
+     12   85.7%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:864:35
+      2   14.3%            LazyCompile: ~Module._resolveFilename node:internal/modules/cjs/loader:864:35
+      2   11.1%        LazyCompile: ~resolveExports node:internal/modules/cjs/loader:482:24
+      1   50.0%          LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:504:28
+      1  100.0%            LazyCompile: ~Module._resolveFilename node:internal/modules/cjs/loader:864:35
+      1   50.0%          Function: ^Module._findPath node:internal/modules/cjs/loader:504:28
+      1  100.0%            LazyCompile: ~Module._resolveFilename node:internal/modules/cjs/loader:864:35
+      2   11.1%        Function: ^readPackageScope node:internal/modules/cjs/loader:331:26
+      1   50.0%          Function: ^trySelf node:internal/modules/cjs/loader:451:17
+      1  100.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:864:35
+      1   50.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1128:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:985:33
+     17    1.1%      Function: ^getOptions node:internal/fs/utils:319:20
+     16   94.1%        Function: ^readFileSync node:fs:464:22
+     16  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1128:37
+     16  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:985:33
+      1    5.9%        LazyCompile: ~readFileSync node:fs:464:22
+      1  100.0%          LazyCompile: ~cjsPreparseModuleExports node:internal/modules/esm/translators:194:34
+      1  100.0%            LazyCompile: ~commonjsStrategy node:internal/modules/esm/translators:148:60
+
+    512   18.9%  __write
+    417   81.4%    /usr/bin/node
+     32    7.7%      /usr/bin/node
+      2    6.3%        Function: ^getOwn node:internal/bootstrap/loaders:187:16
+      2  100.0%          Function: ^syncExports node:internal/bootstrap/loaders:304:14
+      1   50.0%            LazyCompile: ~<anonymous> node:internal/bootstrap/loaders:290:15
+      1   50.0%            Function: ^<anonymous> node:internal/bootstrap/loaders:290:15
+      1    3.1%        Script: ~<anonymous> file:///home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/src/services/server.js:1:1
+      1  100.0%          /usr/bin/node
+      1  100.0%            /usr/bin/node
+      1    3.1%        Script: ~<anonymous> file:///home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/src/config/config.js:1:1
+      1  100.0%          /usr/bin/node
+      1  100.0%            /usr/bin/node
+      1    3.1%        LazyCompile: ~updateRsNoPrimaryFromMember /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/sdam/topology_description.js:315:37
+      1  100.0%          LazyCompile: ~update /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/sdam/topology_description.js:131:11
+      1  100.0%            LazyCompile: ~serverUpdateHandler /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/sdam/topology.js:319:24
+      1    3.1%        LazyCompile: ~translatePeerCertificate node:_tls_common:125:34
+      1  100.0%          LazyCompile: ~translatePeerCertificate node:_tls_common:125:34
+      1  100.0%            LazyCompile: ~TLSSocket.getPeerCertificate node:_tls_wrap:992:50
+      1    3.1%        LazyCompile: ~shouldUseNative /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/object-assign/index.js:21:25
+      1  100.0%          Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/object-assign/index.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1073:37
+      1    3.1%        LazyCompile: ~resolveExports node:internal/modules/cjs/loader:482:24
+      1  100.0%          LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:504:28
+      1  100.0%            LazyCompile: ~Module._resolveFilename node:internal/modules/cjs/loader:864:35
+      1    3.1%        LazyCompile: ~processCiphers node:internal/tls/secure-context:95:24
+      1  100.0%          LazyCompile: ~configSecureContext node:internal/tls/secure-context:124:29
+      1  100.0%            LazyCompile: ~createSecureContext node:_tls_common:99:29
+      1    3.1%        LazyCompile: ~next /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/whatwg-url/lib/URLSearchParams.js:446:9
+      1  100.0%          LazyCompile: ~parseOptions /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/connection_string.js:204:22
+      1  100.0%            LazyCompile: ~MongoClient /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/mongo_client.js:42:16
+      1    3.1%        LazyCompile: ~module.exports.get_napi_build_versions /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/@mapbox/node-pre-gyp/lib/util/napi.js:115:50
+      1  100.0%          LazyCompile: ~module.exports.expand_commands /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/@mapbox/node-pre-gyp/lib/util/napi.js:94:42
+      1  100.0%            LazyCompile: ~parseOpts /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/@mapbox/node-pre-gyp/lib/node-pre-gyp.js:144:37
+      1    3.1%        LazyCompile: ~isIPv6 node:internal/net:35:16
+      1  100.0%          LazyCompile: ~isIP node:internal/net:39:14
+      1  100.0%            LazyCompile: ~lookupAndConnect node:net:1129:26
+      1    3.1%        LazyCompile: ~init /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/@colors/colors/lib/colors.js:174:14
+      1  100.0%          Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/@colors/colors/lib/colors.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1073:37
+      1    3.1%        LazyCompile: ~finalizeResolution node:internal/modules/esm/resolve:272:28
+      1  100.0%          LazyCompile: ~moduleResolve node:internal/modules/esm/resolve:844:23
+      1  100.0%            LazyCompile: ~defaultResolve node:internal/modules/esm/resolve:984:30
+      1    3.1%        LazyCompile: ~eval_template /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/@mapbox/node-pre-gyp/lib/util/versioning.js:234:23
+      1  100.0%          LazyCompile: ~module.exports.evaluate /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/@mapbox/node-pre-gyp/lib/util/versioning.js:277:35
+      1  100.0%            LazyCompile: ~exports.find /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/@mapbox/node-pre-gyp/lib/pre-binding.js:17:24
+      1    3.1%        LazyCompile: ~configure /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/winston/lib/winston/logger.js:81:12
+      1  100.0%          LazyCompile: ~Logger /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/winston/lib/winston/logger.js:40:14
+      1  100.0%            LazyCompile: ~DerivedLogger /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/winston/lib/winston/create-logger.js:43:16
+      1    3.1%        LazyCompile: ~checkCollectionName /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/utils.js:23:29
+      1  100.0%          LazyCompile: ~Collection /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/collection.js:66:16
+      1  100.0%            LazyCompile: ~collection /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/db.js:192:15
+      1    3.1%        LazyCompile: ~arrayToSafePromiseIterable node:internal/per_context/primordials:435:36
+      1  100.0%          LazyCompile: ~<anonymous> node:internal/per_context/primordials:452:15
+      1  100.0%            /usr/bin/node
+      1    3.1%        LazyCompile: ~Socket node:net:329:16
+      1  100.0%          LazyCompile: ~WriteStream node:tty:84:21
+      1  100.0%            LazyCompile: ~createWritableStdioStream node:internal/bootstrap/switches/is_main_thread:45:35
+      1    3.1%        LazyCompile: ~<anonymous> node:internal/deps/cjs-module-lexer/dist/lexer:1:1252
+      1  100.0%          LazyCompile: ~init node:internal/deps/cjs-module-lexer/dist/lexer:1:1235
+      1  100.0%            LazyCompile: ~initCJSParse node:internal/modules/esm/translators:58:28
+      1    3.1%        LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/sdam/server_selection.js:192:12
+      1  100.0%          LazyCompile: ~processWaitQueue /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/sdam/topology.js:546:26
+      1  100.0%            LazyCompile: ~selectServer /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/sdam/topology.js:252:17
+      1    3.1%        LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/operations/indexes.js:88:36
+      1  100.0%          /usr/bin/node
+      1  100.0%            LazyCompile: ~CreateIndexesOperation /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/operations/indexes.js:84:16
+      1    3.1%        LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/connection_string.js:55:72
+      1  100.0%          LazyCompile: ~onresolve node:dns:297:19
+      1    3.1%        LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/minimist/index.js:21:39
+      1  100.0%          /usr/bin/node
+      1  100.0%            LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/minimist/index.js:19:52
+      1    3.1%        LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/logform/colorize.js:37:49
+      1  100.0%          /usr/bin/node
+      1  100.0%            LazyCompile: ~addColors /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/logform/colorize.js:36:19
+      1    3.1%        Function: ~<anonymous> node:zlib:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1  100.0%            Function: ^compileForPublicLoader node:internal/bootstrap/loaders:263:25
+      1    3.1%        Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/npmlog/log.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1073:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1128:37
+      1    3.1%        Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/connection_string.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1073:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1128:37
+      1    3.1%        Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/express/node_modules/debug/src/node.js:1:1
+      1  100.0%          LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1073:37
+      1  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1128:37
+      1    3.1%        Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/express/lib/express.js:1:1
+      1  100.0%          LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1073:37
+      1  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1128:37
+      1    3.1%        Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/express/lib/application.js:1:1
+      1  100.0%          LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1073:37
+      1  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1128:37
+      1    3.1%        Function: ^processTicksAndRejections node:internal/process/task_queues:67:35
+      6    1.4%      LazyCompile: ~setOption /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/connection_string.js:410:19
+      6  100.0%        LazyCompile: ~parseOptions /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/connection_string.js:204:22
+      6  100.0%          LazyCompile: ~MongoClient /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/mongo_client.js:42:16
+      6  100.0%            LazyCompile: ~connect /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/mongo_client.js:206:19
+      5    1.2%      LazyCompile: ~writeOrBuffer node:internal/streams/writable:368:23
+      5  100.0%        LazyCompile: ~_write node:internal/streams/writable:286:16
+      4   80.0%          Function: ^Writable.write node:internal/streams/writable:336:36
+      3   75.0%            Function: ^ondata node:internal/streams/readable:764:18
+      1   25.0%            LazyCompile: ~ondata node:internal/streams/readable:764:18
+      1   20.0%          LazyCompile: ~Writable.write node:internal/streams/writable:336:36
+      1  100.0%            LazyCompile: ~ondata node:internal/streams/readable:764:18
+      5    1.2%      LazyCompile: ~prepareMainThreadExecution node:internal/process/pre_execution:36:36
+      5  100.0%        Function: ~<anonymous> node:internal/main/run_main_module:1:1
+
+     67    2.5%  [vdso]
+     57   85.1%    /usr/bin/node
+      3    5.3%      Function: ^resetQueue /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/graceful-fs/graceful-fs.js:383:21
+      3  100.0%        Function: ^closeSync /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/graceful-fs/graceful-fs.js:72:24
+      3  100.0%          Function: ^readFileSync node:fs:464:22
+      3  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1128:37
+      3    5.3%      /usr/bin/node
+      1   33.3%        LazyCompile: ~validate /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/aproba/index.js:25:19
+      1  100.0%          LazyCompile: ~module.exports /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/gauge/plumbing.js:6:42
+      1  100.0%            LazyCompile: ~Gauge /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/gauge/index.js:19:16
+      1   33.3%        LazyCompile: ~module.exports.get_napi_build_versions_raw /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/@mapbox/node-pre-gyp/lib/util/napi.js:140:54
+      1  100.0%          LazyCompile: ~module.exports.validate_package_json /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/@mapbox/node-pre-gyp/lib/util/napi.js:46:48
+      1  100.0%            LazyCompile: ~validate_config /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/@mapbox/node-pre-gyp/lib/util/versioning.js:195:25
+      1   33.3%        Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/connection_string.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1073:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1128:37
+      2    3.5%      LazyCompile: ~prepareMainThreadExecution node:internal/process/pre_execution:36:36
+      2  100.0%        Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      2    3.5%      LazyCompile: ~ConnectionPoolMonitoringEvent /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connection_pool_events.js:11:16
+      1   50.0%        LazyCompile: ~ConnectionPoolReadyEvent /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connection_pool_events.js:37:16
+      1  100.0%          LazyCompile: ~ready /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connection_pool.js:139:10
+      1  100.0%            LazyCompile: ~updateServers /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/sdam/topology.js:487:23
+      1   50.0%        LazyCompile: ~ConnectionPoolCreatedEvent /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connection_pool_events.js:24:16
+      1  100.0%          LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connection_pool.js:87:26
+      1  100.0%            LazyCompile: ~processTicksAndRejections node:internal/process/task_queues:67:35
+      2    3.5%      LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connection_pool.js:286:27
+      2  100.0%        LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/sdam/server.js:213:101
+      2  100.0%          LazyCompile: ~handleOperationResult /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/sdam/server.js:285:42
+      2  100.0%            LazyCompile: ~onMessage /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connection.js:156:14
+      1    1.8%      Script: ~<anonymous> file:///home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/src/services/server.js:1:1
+      1  100.0%        /usr/bin/node
+      1  100.0%          /usr/bin/node
+      1  100.0%            LazyCompile: ~run node:internal/modules/esm/module_job:188:12
+      1    1.8%      LazyCompile: ~urlParse node:url:152:18
+      1  100.0%        LazyCompile: ~validate_config /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/@mapbox/node-pre-gyp/lib/util/versioning.js:195:25
+      1  100.0%          LazyCompile: ~exports.find /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/@mapbox/node-pre-gyp/lib/pre-binding.js:17:24
+      1  100.0%            Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/bcrypt/bcrypt.js:1:1
+      1    1.8%      LazyCompile: ~supportsOpMsg /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connection.js:385:23
+      1  100.0%        LazyCompile: ~command /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connection.js:251:12
+      1  100.0%          LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connect.js:78:43
+      1  100.0%            LazyCompile: ~prepareHandshakeDocument /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connect.js:151:34
+      1    1.8%      LazyCompile: ~setStreamTimeout node:internal/stream_base_commons:237:26
+      1  100.0%        LazyCompile: ~connectHandler /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:313:28
+      1  100.0%          Function: ^onceWrapper node:events:622:21
+      1  100.0%            Function: ^emit node:events:460:44
+      1    1.8%      LazyCompile: ~setOption /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/connection_string.js:410:19
+      1  100.0%        LazyCompile: ~parseOptions /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/connection_string.js:204:22
+      1  100.0%          LazyCompile: ~MongoClient /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/mongo_client.js:42:16
+      1  100.0%            LazyCompile: ~connect /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/mongo_client.js:206:19
+      1    1.8%      LazyCompile: ~prepare /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/auth/scram.js:16:12
+      1  100.0%        LazyCompile: ~prepareHandshakeDocument /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connect.js:151:34
+      1  100.0%          LazyCompile: ~performInitialHandshake /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connect.js:62:33
+      1  100.0%            LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connect.js:31:63
+      1    1.8%      LazyCompile: ~parseQuery /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/whatwg-url/lib/url-state-machine.js:1063:63
+      1  100.0%        Function: ^URLStateMachine /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/whatwg-url/lib/url-state-machine.js:481:25
+      1  100.0%          LazyCompile: ~module.exports.basicURLParse /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/whatwg-url/lib/url-state-machine.js:1206:41
+      1  100.0%            LazyCompile: ~URLImpl /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/whatwg-url/lib/URL-impl.js:7:14
+      1    1.8%      LazyCompile: ~onMessage /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connection.js:156:14
+      1  100.0%        LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connection.js:60:44
+      1  100.0%          Function: ^emit node:events:460:44
+      1  100.0%            LazyCompile: ~processIncomingData /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/message_stream.js:84:29
+      1    1.8%      LazyCompile: ~nextTick node:internal/process/task_queues:103:18
+      1  100.0%        LazyCompile: ~resume /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/readable-stream/lib/_stream_readable.js:902:16
+      1  100.0%          LazyCompile: ~Readable.resume /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/readable-stream/lib/_stream_readable.js:886:38
+      1  100.0%            LazyCompile: ~Readable.on /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/readable-stream/lib/_stream_readable.js:804:34
+      1    1.8%      LazyCompile: ~moduleProvider node:internal/modules/esm/loader:454:28
+      1  100.0%        /usr/bin/node
+      1    1.8%      LazyCompile: ~mergeConfigs /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/moment/moment.js:377:26
+      1  100.0%        LazyCompile: ~defineLocale /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/moment/moment.js:2141:26
+      1  100.0%          LazyCompile: ~getSetGlobalLocale /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/moment/moment.js:2116:32
+      1  100.0%            Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/moment/moment.js:11:19
+      1    1.8%      LazyCompile: ~iter /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:75:14
+      1  100.0%        Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1073:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1128:37
+      1    1.8%      LazyCompile: ~insert node:internal/timers:355:16
+      1  100.0%        LazyCompile: ~setInterval node:timers:210:21
+      1  100.0%          LazyCompile: ~setupConnectionsTracking node:_http_server:448:34
+      1  100.0%            LazyCompile: ~Server node:_http_server:458:16
+      1    1.8%      LazyCompile: ~getLocale /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/moment/moment.js:2241:23
+      1  100.0%        LazyCompile: ~getSetGlobalLocale /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/moment/moment.js:2116:32
+      1  100.0%          LazyCompile: ~defineLocale /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/moment/moment.js:2141:26
+      1  100.0%            LazyCompile: ~getSetGlobalLocale /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/moment/moment.js:2116:32
+      1    1.8%      LazyCompile: ~getGlobal /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/bson/lib/utils/global.js:9:19
+      1  100.0%        Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/bson/lib/map.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1073:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1128:37
+      1    1.8%      LazyCompile: ~get /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/index.js:938:16
+      1  100.0%        Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/index.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1073:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1128:37
+      1    1.8%      LazyCompile: ~createApplication /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/express/lib/express.js:37:27
+      1  100.0%        Script: ~<anonymous> file:///home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/src/services/server.js:1:1
+      1  100.0%          /usr/bin/node
+      1  100.0%            /usr/bin/node
+      1    1.8%      LazyCompile: ~collection /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/db.js:195:15
+      1  100.0%        LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/connect-mongo/build/main/lib/MongoStore.js:124:42
+      1  100.0%          /usr/bin/node
+      1  100.0%            Function: ^processTicksAndRejections node:internal/process/task_queues:67:35
+      1    1.8%      LazyCompile: ~checkServer /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/sdam/monitor.js:143:21
+      1  100.0%        LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/sdam/monitor.js:229:12
+      1  100.0%          LazyCompile: ~executeAndReschedule /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/utils.js:649:34
+      1  100.0%            LazyCompile: ~makeInterruptibleAsyncInterval /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/utils.js:594:40
+      1    1.8%      LazyCompile: ~arrayClone node:events:865:20
+      1  100.0%        Function: ^emit node:events:460:44
+      1  100.0%          Function: ^_addListener node:events:541:22
+      1  100.0%            Function: ^addListener node:events:604:58
+      1    1.8%      LazyCompile: ~applySession /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/sessions.js:661:22
+      1  100.0%        LazyCompile: ~command /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection.js:251:12
+      1  100.0%          LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/sdam/server.js:204:42
+      1  100.0%            LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection_pool.js:291:23
+      1    1.8%      LazyCompile: ~afterWrite node:internal/streams/writable:490:20
+      1  100.0%        LazyCompile: ~afterWriteTick node:internal/streams/writable:485:24
+      1  100.0%          LazyCompile: ~processTicksAndRejections node:internal/process/task_queues:67:35
+      1    1.8%      LazyCompile: ~_setClient /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/connection.js:858:20
+      1  100.0%        LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/connection.js:809:20
+      1  100.0%          LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/utils.js:357:13
+      1  100.0%            LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/mongo_client.js:135:58
+      1    1.8%      LazyCompile: ~TopologyDescription /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/sdam/topology_description.js:29:16
+      1  100.0%        LazyCompile: ~Topology /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/sdam/topology.js:41:16
+      1  100.0%          LazyCompile: ~createTopology /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/operations/connect.js:44:24
+      1  100.0%            LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/operations/connect.js:32:67
+      1    1.8%      LazyCompile: ~Timestamp /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/bson/lib/timestamp.js:29:23
+      1  100.0%        Function: ^deserializeObject /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/bson/lib/parser/deserializer.js:65:27
+      1  100.0%          LazyCompile: ~deserialize /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/bson/lib/parser/deserializer.js:36:21
+      1  100.0%            LazyCompile: ~deserialize /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/bson/lib/bson.js:161:21
+      1    1.8%      LazyCompile: ~SessionStrategy /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/passport/lib/strategies/session.js:14:25
+      1  100.0%        LazyCompile: ~Authenticator.init /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/passport/lib/authenticator.js:29:40
+      1  100.0%          LazyCompile: ~Authenticator /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/passport/lib/authenticator.js:13:23
+      1  100.0%            Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/passport/lib/index.js:1:1
+      1    1.8%      LazyCompile: ~Schema.plugin /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/schema.js:1728:35
+      1  100.0%        LazyCompile: ~applyPlugins /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/helpers/schema/applyPlugins.js:3:39
+      1  100.0%          LazyCompile: ~Mongoose._applyPlugins /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/index.js:683:44
+      1  100.0%            LazyCompile: ~Mongoose.model /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/index.js:510:36
+      1    1.8%      LazyCompile: ~Schema /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/schema.js:96:16
+      1  100.0%        Script: ~<anonymous> file:///home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/src/models/User.js:1:1
+      1  100.0%          /usr/bin/node
+      1  100.0%            /usr/bin/node
+      1    1.8%      LazyCompile: ~Readable.on node:internal/streams/readable:886:33
+      1  100.0%        Function: ^once node:events:646:44
+      1  100.0%          LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connect.js:326:33
+      1  100.0%            /usr/bin/node
+      1    1.8%      LazyCompile: ~ObjectDefineProperty.__proto__ node:internal/modules/esm/loader:149:5
+      1  100.0%        LazyCompile: ~resolve node:internal/modules/esm/loader:786:16
+      1  100.0%          LazyCompile: ~getModuleJob node:internal/modules/esm/loader:412:21
+      1  100.0%            LazyCompile: ~import node:internal/modules/esm/loader:507:15
+      1    1.8%      LazyCompile: ~MongoClient /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/mongo_client.js:63:16
+      1  100.0%        LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/connection.js:798:31
+      1  100.0%          /usr/bin/node
+      1  100.0%            LazyCompile: ~Connection.openUri /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/connection.js:680:40
+      1    1.8%      LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:504:28
+      1  100.0%        LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      1  100.0%          LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:74:31
+      1  100.0%            Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    1.8%      LazyCompile: ~Long.lessThanOrEqual /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/bson/lib/long.js:517:47
+      1  100.0%        LazyCompile: ~deserializeObject /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/bson/lib/parser/deserializer.js:65:27
+      1  100.0%          LazyCompile: ~deserializeObject /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/bson/lib/parser/deserializer.js:65:27
+      1  100.0%            LazyCompile: ~deserialize /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/bson/lib/parser/deserializer.js:36:21
+      1    1.8%      LazyCompile: ~Long.add /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/bson/lib/long.js:252:35
+      1  100.0%        LazyCompile: ~Long.subtract /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/bson/lib/long.js:720:40
+      1  100.0%          LazyCompile: ~Long.sub /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/bson/lib/long.js:726:35
+      1  100.0%            LazyCompile: ~Long.compare /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/bson/lib/long.js:291:39
+      1    1.8%      LazyCompile: ~HMAC /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/auth/scram.js:225:14
+      1  100.0%        LazyCompile: ~continueScramConversation /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/auth/scram.js:93:35
+      1  100.0%          LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/auth/scram.js:85:80
+      1  100.0%            LazyCompile: ~onMessage /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connection.js:156:14
+      1    1.8%      LazyCompile: ~CommandOperation /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/operations/command.js:14:16
+      1  100.0%        LazyCompile: ~CreateCollectionOperation /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/operations/create_collection.js:32:16
+      1  100.0%          LazyCompile: ~createCollection /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/db.js:153:21
+      1  100.0%            LazyCompile: ~createCollection /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/connection.js:400:82
+      1    1.8%      LazyCompile: ~<anonymous> node:internal/modules/esm/translators:233:36
+      1  100.0%        /usr/bin/node
+      1  100.0%          LazyCompile: ~cjsPreparseModuleExports node:internal/modules/esm/translators:194:34
+      1  100.0%            LazyCompile: ~commonjsStrategy node:internal/modules/esm/translators:148:60
+      1    1.8%      LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/whatwg-url/lib/URL.js:378:56
+      1  100.0%        LazyCompile: ~getSameObject /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/whatwg-url/lib/utils.js:65:23
+      1  100.0%          LazyCompile: ~get searchParams /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/whatwg-url/lib/URL.js:371:21
+      1  100.0%            LazyCompile: ~ConnectionString /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb-connection-string-url/lib/index.js:82:16
+      1    1.8%      LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:326:33
+      1  100.0%        /usr/bin/node
+      1  100.0%          LazyCompile: ~makeConnection /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:256:24
+      1  100.0%            LazyCompile: ~connect /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:30:17
+      1    1.8%      LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/operations/execute_operation.js:154:61
+      1  100.0%        LazyCompile: ~processWaitQueue /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/sdam/topology.js:546:26
+      1  100.0%          LazyCompile: ~selectServer /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/sdam/topology.js:252:17
+      1  100.0%            LazyCompile: ~executeWithServerSelection /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/operations/execute_operation.js:85:36
+      1    1.8%      LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/operations/connect.js:76:31
+      1  100.0%        LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/sdam/topology.js:195:80
+      1  100.0%          LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connection_pool.js:286:27
+      1  100.0%            LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/sdam/server.js:213:101
+      1    1.8%      LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/connection_string.js:286:113
+      1  100.0%        /usr/bin/node
+      1  100.0%          LazyCompile: ~parseOptions /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/connection_string.js:204:22
+      1  100.0%            LazyCompile: ~MongoClient /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/mongo_client.js:42:16
+      1    1.8%      Function: ~<anonymous> node:internal/source_map/source_map_cache:1:1
+      1  100.0%        Function: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      1  100.0%          LazyCompile: ~initializeSourceMapsHandlers node:internal/process/pre_execution:572:38
+      1  100.0%            LazyCompile: ~prepareMainThreadExecution node:internal/process/pre_execution:36:36
+      1    1.8%      Function: ~<anonymous> node:internal/modules/esm/fetch_module:1:1
+      1  100.0%        Function: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      1  100.0%          Function: ~<anonymous> node:internal/modules/esm/get_format:1:1
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      1    1.8%      Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/@mapbox/node-pre-gyp/lib/node-pre-gyp.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1073:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1128:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:985:33
+
+     52    1.9%  _IO_fwrite
+     52  100.0%    /usr/bin/node
+      4    7.7%      LazyCompile: ~realpathSync node:fs:2474:22
+      4  100.0%        LazyCompile: ~toRealPath node:internal/modules/cjs/loader:403:20
+      4  100.0%          LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:504:28
+      4  100.0%            LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      4    7.7%      LazyCompile: ~patchProcessObject node:internal/process/pre_execution:110:28
+      4  100.0%        LazyCompile: ~prepareMainThreadExecution node:internal/process/pre_execution:36:36
+      4  100.0%          Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      3    5.8%      LazyCompile: ~value node:internal/console/constructor:336:20
+      3  100.0%        LazyCompile: ~log node:internal/console/constructor:375:6
+      3  100.0%          /usr/bin/node
+      3  100.0%            Script: ~<anonymous> file:///home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/src/services/server.js:1:1
+      2    3.8%      LazyCompile: ~toRealPath node:internal/modules/cjs/loader:403:20
+      2  100.0%        LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:504:28
+      2  100.0%          LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      2  100.0%            LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:74:31
+      2    3.8%      LazyCompile: ~stringify node:internal/modules/esm/translators:94:19
+      2  100.0%        LazyCompile: ~moduleStrategy node:internal/modules/esm/translators:114:56
+      2  100.0%          LazyCompile: ~moduleProvider node:internal/modules/esm/loader:454:28
+      2  100.0%            /usr/bin/node
+      2    3.8%      LazyCompile: ~prepareMainThreadExecution node:internal/process/pre_execution:36:36
+      2  100.0%        Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      2    3.8%      LazyCompile: ~onParseError node:internal/url:563:22
+      2  100.0%        /usr/bin/node
+      2  100.0%          Function: ^URL node:internal/url:636:14
+      2  100.0%            LazyCompile: ~defaultResolve node:internal/modules/esm/resolve:984:30
+      2    3.8%      /usr/bin/node
+      1   50.0%        LazyCompile: ~config /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/dotenv/lib/main.js:55:17
+      1  100.0%          Script: ~<anonymous> file:///home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/src/config/config.js:1:1
+      1  100.0%            /usr/bin/node
+      1   50.0%        Function: ~<anonymous> node:_tls_wrap:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      1    1.9%      LazyCompile: ~setInterval node:timers:210:21
+      1  100.0%        LazyCompile: ~setupConnectionsTracking node:_http_server:448:34
+      1  100.0%          LazyCompile: ~Server node:_http_server:458:16
+      1  100.0%            LazyCompile: ~createServer node:http:59:22
+      1    1.9%      LazyCompile: ~set hello /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connection.js:78:14
+      1  100.0%        /usr/bin/node
+      1  100.0%          LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connect.js:88:85
+      1  100.0%            LazyCompile: ~onMessage /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connection.js:156:14
+      1    1.9%      LazyCompile: ~serverUpdateHandler /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/sdam/topology.js:319:24
+      1  100.0%        LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/sdam/topology.js:479:53
+      1  100.0%          Function: ^emit node:events:460:44
+      1  100.0%            LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/sdam/server.js:61:55
+      1    1.9%      LazyCompile: ~resolveOptions /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/utils.js:687:24
+      1  100.0%        LazyCompile: ~createCollection /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/db.js:153:21
+      1  100.0%          LazyCompile: ~createCollection /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/connection.js:400:82
+      1  100.0%            LazyCompile: ~Connection.onOpen /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/connection.js:636:39
+      1    1.9%      LazyCompile: ~resolve node:internal/modules/esm/loader:786:16
+      1  100.0%        /usr/bin/node
+      1    1.9%      LazyCompile: ~readFileHandle node:internal/fs/promises:417:30
+      1  100.0%        /usr/bin/node
+      1    1.9%      LazyCompile: ~query node:dns:313:17
+      1  100.0%        LazyCompile: ~resolveSRVRecord /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/connection_string.js:45:26
+      1  100.0%          LazyCompile: ~connect /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/operations/connect.js:8:17
+      1  100.0%            LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/mongo_client.js:113:52
+      1    1.9%      LazyCompile: ~processTicksAndRejections node:internal/process/task_queues:67:35
+      1    1.9%      LazyCompile: ~performInitialHandshake /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:62:33
+      1  100.0%        LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:31:63
+      1  100.0%          LazyCompile: ~callback /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:269:31
+      1  100.0%            LazyCompile: ~connectHandler /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:313:28
+      1    1.9%      LazyCompile: ~parse node:url:184:37
+      1  100.0%        LazyCompile: ~urlParse node:url:152:18
+      1  100.0%          LazyCompile: ~validate_config /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/@mapbox/node-pre-gyp/lib/util/versioning.js:195:25
+      1  100.0%            LazyCompile: ~exports.find /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/@mapbox/node-pre-gyp/lib/pre-binding.js:17:24
+      1    1.9%      LazyCompile: ~parse /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/nopt/lib/nopt.js:242:16
+      1  100.0%        LazyCompile: ~nopt /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/nopt/lib/nopt.js:26:15
+      1  100.0%          LazyCompile: ~parseOpts /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/@mapbox/node-pre-gyp/lib/node-pre-gyp.js:144:37
+      1  100.0%            LazyCompile: ~Run /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/@mapbox/node-pre-gyp/lib/node-pre-gyp.js:78:13
+      1    1.9%      LazyCompile: ~nextTick node:internal/process/task_queues:103:18
+      1  100.0%        LazyCompile: ~resume /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/readable-stream/lib/_stream_readable.js:902:16
+      1  100.0%          LazyCompile: ~Readable.resume /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/readable-stream/lib/_stream_readable.js:886:38
+      1  100.0%            LazyCompile: ~Readable.on /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/readable-stream/lib/_stream_readable.js:804:34
+      1    1.9%      LazyCompile: ~handleOperationResult /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/sdam/server.js:282:42
+      1  100.0%        LazyCompile: ~onMessage /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection.js:156:14
+      1  100.0%          LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection.js:60:44
+      1  100.0%            Function: ^emit node:events:460:44
+      1    1.9%      LazyCompile: ~getSupportLevel /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/@colors/colors/lib/system/supports-colors.js:142:25
+      1  100.0%        Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/@colors/colors/lib/system/supports-colors.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1073:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1128:37
+      1    1.9%      LazyCompile: ~exports.setup /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/whatwg-url/lib/URL.js:49:17
+      1  100.0%        LazyCompile: ~URL /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/whatwg-url/lib/URL.js:90:16
+      1  100.0%          LazyCompile: ~URLWithoutHost /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb-connection-string-url/lib/index.js:74:1
+      1  100.0%            LazyCompile: ~ConnectionString /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb-connection-string-url/lib/index.js:82:16
+      1    1.9%      LazyCompile: ~decode node:internal/encoding:412:11
+      1  100.0%        LazyCompile: ~stringify node:internal/modules/esm/translators:94:19
+      1  100.0%          LazyCompile: ~moduleStrategy node:internal/modules/esm/translators:114:56
+      1  100.0%            LazyCompile: ~moduleProvider node:internal/modules/esm/loader:454:28
+      1    1.9%      LazyCompile: ~createWritableStdioStream node:internal/bootstrap/switches/is_main_thread:45:35
+      1  100.0%        LazyCompile: ~getStderr node:internal/bootstrap/switches/is_main_thread:168:19
+      1  100.0%          Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/finalhandler/node_modules/debug/src/node.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1073:37
+      1    1.9%      LazyCompile: ~connect /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/sdam/server.js:95:12
+      1  100.0%        LazyCompile: ~createAndConnectServer /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/sdam/topology.js:473:32
+      1  100.0%          LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/sdam/topology.js:172:57
+      1  100.0%            /usr/bin/node
+      1    1.9%      LazyCompile: ~command /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connection.js:251:12
+      1  100.0%        LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connect.js:78:43
+      1  100.0%          LazyCompile: ~prepareHandshakeDocument /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connect.js:151:34
+      1  100.0%            LazyCompile: ~performInitialHandshake /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connect.js:62:33
+      1    1.9%      LazyCompile: ~cjsPreparseModuleExports node:internal/modules/esm/translators:194:34
+      1  100.0%        LazyCompile: ~commonjsStrategy node:internal/modules/esm/translators:148:60
+      1  100.0%          /usr/bin/node
+      1    1.9%      LazyCompile: ~ReadableState node:internal/streams/readable:83:23
+      1  100.0%        LazyCompile: ~Readable node:internal/streams/readable:186:18
+      1  100.0%          LazyCompile: ~Duplex node:internal/streams/duplex:54:16
+      1  100.0%            LazyCompile: ~Socket node:net:329:16
+      1    1.9%      LazyCompile: ~Db /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/db.js:81:16
+      1  100.0%        LazyCompile: ~db /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/mongo_client.js:214:7
+      1  100.0%          LazyCompile: ~_setClient /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/connection.js:858:20
+      1  100.0%            LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/connection.js:809:20
+      1    1.9%      LazyCompile: ~<anonymous> node:path:1082:10
+      1  100.0%        LazyCompile: ~resolve node:path:1091:10
+      1  100.0%          LazyCompile: ~patchProcessObject node:internal/process/pre_execution:110:28
+      1  100.0%            LazyCompile: ~prepareMainThreadExecution node:internal/process/pre_execution:36:36
+      1    1.9%      LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/helpers/promiseOrCallback.js:11:25
+      1  100.0%        LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/index.js:381:32
+      1  100.0%          LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/connection.js:841:7
+      1  100.0%            /usr/bin/node
+      1    1.9%      Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/object-inspect/index.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1073:37
+      1  100.0%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1128:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:985:33
+      1    1.9%      Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/deps.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1073:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1128:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:985:33
+      1    1.9%      Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/query.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1073:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1128:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:985:33
+      1    1.9%      Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/finalhandler/node_modules/debug/src/node.js:1:1
+      1  100.0%        LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1073:37
+      1  100.0%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1128:37
+      1  100.0%            LazyCompile: ~Module.load node:internal/modules/cjs/loader:985:33
+      1    1.9%      Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/@dabh/diagnostics/node/development.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1073:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1128:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:985:33
+      1    1.9%      Function: ^URLStateMachine /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/whatwg-url/lib/url-state-machine.js:481:25
+      1  100.0%        LazyCompile: ~module.exports.basicURLParse /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/whatwg-url/lib/url-state-machine.js:1206:41
+      1  100.0%          LazyCompile: ~URLImpl /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/whatwg-url/lib/URL-impl.js:7:14
+      1  100.0%            LazyCompile: ~exports.setup /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/whatwg-url/lib/URL.js:49:17
+      1    1.9%      Function: ^<anonymous> node:internal/validators:363:42
+      1  100.0%        Function: ^compileFunction node:vm:316:25
+      1  100.0%          Function: ^wrapSafe node:internal/modules/cjs/loader:1033:18
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1073:37
+
+     46    1.7%  /usr/lib/x86_64-linux-gnu/libc-2.31.so
+     44   95.7%    /usr/bin/node
+      6   13.6%      /usr/bin/node
+      1   16.7%        LazyCompile: ~isIPv6 node:internal/net:35:16
+      1  100.0%          LazyCompile: ~isIP node:internal/net:39:14
+      1  100.0%            LazyCompile: ~parseSslOptions /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connect.js:237:25
+      1   16.7%        LazyCompile: ~escapeStringRegexp /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/@colors/colors/lib/colors.js:78:34
+      1  100.0%          LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/@colors/colors/lib/colors.js:99:43
+      1  100.0%            /usr/bin/node
+      1   16.7%        LazyCompile: ~applyQueryMiddleware /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/helpers/query/applyQueryMiddleware.js:27:30
+      1  100.0%          LazyCompile: ~compile /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/model.js:4974:33
+      1  100.0%            LazyCompile: ~Mongoose._model /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/index.js:581:37
+      1   16.7%        Function: ^stat node:internal/modules/cjs/loader:151:14
+      1  100.0%          Function: ^Module._findPath node:internal/modules/cjs/loader:504:28
+      1  100.0%            LazyCompile: ~Module._resolveFilename node:internal/modules/cjs/loader:864:35
+      1   16.7%        Function: ^compileFunction node:vm:316:25
+      1  100.0%          Function: ^wrapSafe node:internal/modules/cjs/loader:1033:18
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1073:37
+      1   16.7%        Function: ^FastBuffer node:internal/buffer:958:14
+      1  100.0%          Function: ^createUnsafeBuffer node:internal/buffer:1059:28
+      1  100.0%            Function: ^allocate node:buffer:403:18
+      3    6.8%      LazyCompile: *realpathSync node:fs:2474:22
+      3  100.0%        Function: ^toRealPath node:internal/modules/cjs/loader:403:20
+      2   66.7%          Function: ^tryFile node:internal/modules/cjs/loader:394:17
+      2  100.0%            Function: ^tryExtensions node:internal/modules/cjs/loader:410:23
+      1   33.3%          Function: ^Module._findPath node:internal/modules/cjs/loader:504:28
+      1  100.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:864:35
+      2    4.5%      LazyCompile: ~Schema.plugin /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/schema.js:1728:35
+      2  100.0%        LazyCompile: ~applyPlugins /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/helpers/schema/applyPlugins.js:3:39
+      2  100.0%          LazyCompile: ~Mongoose._applyPlugins /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/index.js:683:44
+      2  100.0%            LazyCompile: ~Mongoose.model /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/index.js:510:36
+      2    4.5%      Function: ~<anonymous> node:internal/fs/promises:1:1
+      2  100.0%        Function: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      2  100.0%          Function: ~<anonymous> node:internal/modules/esm/load:1:1
+      2  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      1    2.3%      LazyCompile: ~value node:internal/console/constructor:336:20
+      1  100.0%        LazyCompile: ~log node:internal/console/constructor:375:6
+      1  100.0%          /usr/bin/node
+      1  100.0%            Script: ~<anonymous> file:///home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/src/services/server.js:1:1
+      1    2.3%      LazyCompile: ~toRealPath node:internal/modules/cjs/loader:403:20
+      1  100.0%        LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:504:28
+      1  100.0%          LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      1  100.0%            LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:74:31
+      1    2.3%      LazyCompile: ~startSession /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/mongo_client.js:232:17
+      1  100.0%        LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/operations/execute_operation.js:16:48
+      1  100.0%          LazyCompile: ~maybePromise /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/utils.js:344:22
+      1  100.0%            LazyCompile: ~executeOperation /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/operations/execute_operation.js:11:26
+      1    2.3%      LazyCompile: ~setOption /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/connection_string.js:406:19
+      1  100.0%        LazyCompile: ~parseOptions /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/connection_string.js:204:22
+      1  100.0%          LazyCompile: ~MongoClient /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/mongo_client.js:63:16
+      1  100.0%            LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/connection.js:798:31
+      1    2.3%      LazyCompile: ~set pathname node:internal/url:936:15
+      1  100.0%        /usr/bin/node
+      1  100.0%          LazyCompile: ~pathToFileURL node:internal/url:1524:23
+      1  100.0%            LazyCompile: ~<anonymous> node:internal/modules/run_main:55:29
+      1    2.3%      LazyCompile: ~resolve node:path:1091:10
+      1  100.0%        LazyCompile: ~defaultConfiguration /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/express/lib/application.js:77:57
+      1  100.0%          LazyCompile: ~init /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/express/lib/application.js:64:25
+      1  100.0%            LazyCompile: ~createApplication /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/express/lib/express.js:37:27
+      1    2.3%      LazyCompile: ~removeListener node:events:675:28
+      1  100.0%        LazyCompile: ~handleMainPromise node:internal/modules/run_main:62:33
+      1  100.0%          /usr/bin/node
+      1    2.3%      LazyCompile: ~readableAddChunk node:internal/streams/readable:242:26
+      1  100.0%        Function: ^Readable.push node:internal/streams/readable:233:35
+      1  100.0%          LazyCompile: ~writeCommand /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/cmap/message_stream.js:40:17
+      1  100.0%            LazyCompile: ~write /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection.js:403:15
+      1    2.3%      LazyCompile: ~parsePath /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/whatwg-url/lib/url-state-machine.js:991:61
+      1  100.0%        Function: ^URLStateMachine /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/whatwg-url/lib/url-state-machine.js:481:25
+      1  100.0%          LazyCompile: ~module.exports.basicURLParse /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/whatwg-url/lib/url-state-machine.js:1206:41
+      1  100.0%            LazyCompile: ~URLImpl /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/whatwg-url/lib/URL-impl.js:7:14
+      1    2.3%      LazyCompile: ~onresolve node:dns:297:19
+      1    2.3%      LazyCompile: ~moduleResolve node:internal/modules/esm/resolve:844:23
+      1  100.0%        LazyCompile: ~defaultResolve node:internal/modules/esm/resolve:984:30
+      1  100.0%          LazyCompile: ~ObjectDefineProperty.__proto__ node:internal/modules/esm/loader:149:5
+      1  100.0%            LazyCompile: ~resolve node:internal/modules/esm/loader:786:16
+      1    2.3%      LazyCompile: ~moduleProvider node:internal/modules/esm/loader:454:28
+      1  100.0%        /usr/bin/node
+      1    2.3%      LazyCompile: ~makeConnection /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connect.js:256:24
+      1  100.0%        LazyCompile: ~connect /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connect.js:30:17
+      1  100.0%          LazyCompile: ~checkServer /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/sdam/monitor.js:143:21
+      1  100.0%            LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/sdam/monitor.js:226:12
+      1    2.3%      LazyCompile: ~exports.initializeImportMetaObject node:internal/process/esm_loader:19:46
+      1  100.0%        /usr/bin/node
+      1  100.0%          Script: ~<anonymous> file:///home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/src/utils.js:1:1
+      1  100.0%            /usr/bin/node
+      1    2.3%      LazyCompile: ~create /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/connect-mongo/build/main/lib/MongoStore.js:135:18
+      1  100.0%        Script: ~<anonymous> file:///home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/src/services/server.js:1:1
+      1  100.0%          /usr/bin/node
+      1  100.0%            /usr/bin/node
+      1    2.3%      LazyCompile: ~command /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/sdam/server.js:152:12
+      1  100.0%        LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/sdam/topology.js:189:106
+      1  100.0%          LazyCompile: ~processWaitQueue /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/sdam/topology.js:535:26
+      1  100.0%            LazyCompile: ~serverUpdateHandler /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/sdam/topology.js:321:24
+      1    2.3%      LazyCompile: ~auth /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/cmap/auth/scram.js:39:9
+      1  100.0%        LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:88:85
+      1  100.0%          LazyCompile: ~onMessage /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection.js:156:14
+      1  100.0%            LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection.js:60:44
+      1    2.3%      LazyCompile: ~TLSSocket node:_tls_wrap:469:19
+      1  100.0%        LazyCompile: ~connect node:_tls_wrap:1605:35
+      1  100.0%          LazyCompile: ~makeConnection /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connect.js:256:24
+      1  100.0%            LazyCompile: ~connect /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connect.js:30:17
+      1    2.3%      LazyCompile: ~SocketAddress node:internal/socketaddress:47:14
+      1  100.0%        LazyCompile: ~addAddress node:internal/blocklist:60:13
+      1  100.0%          Function: ~<anonymous> node:internal/modules/esm/fetch_module:1:1
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:353:29
+      1    2.3%      LazyCompile: ~Duplex node:internal/streams/duplex:54:16
+      1  100.0%        LazyCompile: ~MessageStream /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/message_stream.js:21:16
+      1  100.0%          LazyCompile: ~Connection /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connection.js:37:16
+      1  100.0%            LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongodb/lib/cmap/connect.js:31:63
+      1    2.3%      LazyCompile: ~<anonymous> node:internal/fs/utils:642:3
+      1  100.0%        Function: ^readSync node:fs:704:18
+      1  100.0%          Function: ^tryReadSync node:fs:443:21
+      1  100.0%            Function: ^readFileSync node:fs:464:22
+      1    2.3%      LazyCompile: ~<anonymous> node:internal/fs/streams:69:62
+      1  100.0%        LazyCompile: ~<anonymous> node:fs:201:10
+      1    2.3%      LazyCompile: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/index.js:380:49
+      1  100.0%        LazyCompile: ~promiseOrCallback /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/helpers/promiseOrCallback.js:8:44
+      1  100.0%          LazyCompile: ~Mongoose._promiseOrCallback /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/index.js:1233:49
+      1  100.0%            LazyCompile: ~Mongoose.connect /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/index.js:376:38
+      1    2.3%      LazyCompile: *readPackageScope node:internal/modules/cjs/loader:331:26
+      1  100.0%        Function: ^Module._extensions..js node:internal/modules/cjs/loader:1128:37
+      1  100.0%          Function: ^Module.load node:internal/modules/cjs/loader:985:33
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:770:24
+      1    2.3%      LazyCompile: *normalizeString node:path:66:25
+      1  100.0%        Function: ^resolve node:path:1091:10
+      1  100.0%          Function: ^Module._findPath node:internal/modules/cjs/loader:504:28
+      1  100.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:864:35
+      1    2.3%      Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/call-bind/callBound.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1073:37
+      1  100.0%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1128:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:985:33
+      1    2.3%      Function: ^resolve node:path:1091:10
+      1  100.0%        Function: ^resolveExports node:internal/modules/cjs/loader:482:24
+      1  100.0%          Function: ^Module._findPath node:internal/modules/cjs/loader:504:28
+      1  100.0%            LazyCompile: ~Module._resolveFilename node:internal/modules/cjs/loader:864:35
+      1    2.3%      Function: ^forEachCode /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/http-errors/index.js:259:38
+      1  100.0%        /usr/bin/node
+      1  100.0%          LazyCompile: ~populateConstructorExports /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/http-errors/index.js:258:37
+      1  100.0%            Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/http-errors/index.js:1:1
+      1    2.3%      Function: ^Module._resolveLookupPaths node:internal/modules/cjs/loader:677:38
+      1  100.0%        Function: ^Module._resolveFilename node:internal/modules/cjs/loader:864:35
+      1  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:770:24
+      1  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:1013:36
+      1    2.3%      Function: ^Module._load node:internal/modules/cjs/loader:770:24
+      1  100.0%        Function: ^Module.require node:internal/modules/cjs/loader:1013:36
+      1  100.0%          Function: ^require node:internal/modules/cjs/helpers:102:31
+      1  100.0%            Function: ~<anonymous> /home/jesus/Proyecto/App/BackEnd/Log-Debug-Profiling/node_modules/mongoose/lib/model.js:1:1
+      1    2.3%      Function: ^Module._findPath node:internal/modules/cjs/loader:504:28
+      1  100.0%        Function: ^Module._resolveFilename node:internal/modules/cjs/loader:864:35
+      1  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:770:24
+      1  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:1013:36
+
+     40    1.5%  epoll_pwait
+

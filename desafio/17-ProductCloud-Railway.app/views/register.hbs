@@ -1,0 +1,14 @@
+<div class="containerBody">
+  <h1>REGISTRARSE</h1>
+  <form class="form" action="api/sessions/register" method="post" role="form" autocomplete="off">
+      <div class="form-group">
+      <input id="name" name='name' placeholder="Tu nombre completo" class="form-control" type="text" required>
+      <input id="username" name='username' placeholder="Tu email" class="form-control" type="text" required>
+      <input type="password" name="password" class="form-control" id="password" placeholder="Tu contraseña" required>
+    </div>
+    <div class="mb-3">
+      <button type="submit">REGISTRARSE</button>
+      <button onclick="location.href = '/login'">Ir a Login</button>
+    </div>
+  </form>
+</div>

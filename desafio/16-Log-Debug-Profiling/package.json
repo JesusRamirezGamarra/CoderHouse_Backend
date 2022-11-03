@@ -1,0 +1,42 @@
+{
+  "name": "login-with-session-passport",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon ./src/index.js -e=DEV -p=8080 -m=FORK",
+    "start": "node ./src/index.js -e=PROD -p=3000 -m=CLUSTER",
+    "transpile": "babel src --out-dir dist",
+    "babel-node": "babel-node --presets=@babel/preset-env",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:profilling": "node --prof --logfile=resultadoBloqueante.log --no-logfile-per-isolate dist/index.js"   
+  },
+  "keywords": [],
+  "author": "Jesus Ramirez",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.14.8",
+    "@babel/node": "^7.14.7",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.14.8",
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.15.4",
+    "bcrypt": "^5.0.1",
+    "compression": "^1.7.4",
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.4",
+    "express-session": "^1.17.3",
+    "minimist": "^1.2.6",
+    "moment": "^2.29.4",
+    "mongoose": "^6.3.5",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "winston": "^3.8.2"
+  }
+}
