@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />  
+    <title>My Awesome App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+        <title>{{title}}</title>
+  </head>
+  <body>
+    <h1>index.handlebars - This is the plan B page</h1>
+    {{!-- We could use the same body as the index.hbs page --}}
+    using the you remember it right ?
+        {{> lovedhamps}}
+        {{> hatedChamps}}
+        <h2>Similar pro player : {{proPlayer}}</h2>
+
+    {{#if listExists}} 
+    <ul>
+        {{#each suggestedChamps}}
+        <li class={{this.lane}}>{{this.name}}</li>
+        {{/each}}
+    </ul>
+    {{/if}}
+  </body>
+</html>

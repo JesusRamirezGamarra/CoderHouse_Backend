@@ -43,18 +43,16 @@ const StoreOptions = {
 
 //Inicializamos Passport
 app.use(passport.initialize());
-
 //Le permitimos a passport que pueda manipular las sesiones
 app.use(session(StoreOptions));
-
 //Permitimos que passport pueda manipular las sessiones de nuestra app
 app.use(passport.session());
-
 //Lógica que ataja el Login de los usuarios
 passport.use("login", loginFunc);
-
 //Lógica que ataja el SignUp de los usuarios
 passport.use("signup", signupFunc);
+
+
 
 const publicPath      = ___dirname +  "/public";
 app.use(express.static(publicPath));

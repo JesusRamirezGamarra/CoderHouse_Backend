@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 import minimist from "minimist";
 
-const MONGO_URL =''
+const MONGO_URL ='mongodb+srv://coderhouse:Mishina2000@coderhouse-cluster-ljrg.qaohzev.mongodb.net/CoderHouse-Login-Passport?retryWrites=true&w=majority'
 const MONGO_USER =''
 
 const {
@@ -12,7 +12,7 @@ const {
 }= minimist(process.argv.slice(2),
             {
                 alias:{e:"MODE",p:"PORT",m:"MODO"},
-                default:{e:'DEV',p:8080,m:"FORK"}
+                default:{e:'DEV',p:8084,m:"FORK"}
             }
 )
 // console.log({MODE:MODE})
